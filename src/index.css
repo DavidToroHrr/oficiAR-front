@@ -1,36 +1,43 @@
 :root {
   /* ==========================================
-     PALETA DE COLORES BASE
-     (Del más oscuro al más claro)
+     BASE COLOR PALETTE
+     (From darkest to lightest)
   ========================================== */
-  --color-azul-muy-oscuro: #051A26;
-  --color-azul-oscuro: #0B3954; 
-  --color-azul-claro: #3D80B7;
+  --color-very-dark-blue: #051A26;
+  --color-dark-blue: #0B3954; 
+  --color-light-blue: #3D80B7;
   
-  --color-amarillo: #FFC107;
+  --color-yellow: #FFC107;
   
-  --color-gris-oscuro: #6C757D;
-  --color-gris-claro: #ADB5BD;
-  --color-blanco: #FFFFFF;
+  --color-dark-gray: #6C757D;
+  --color-light-gray: #ADB5BD;
+  --color-white: #FFFFFF;
 
   /* ==========================================
-     ASIGNACIÓN DE ROLES (Recomendado)
-     Esto te facilitará la vida al programar
+     ROLE ASSIGNMENT (Recommended)
+     This will make your life easier when coding
   ========================================== */
-  --color-fondo-principal: var(--color-blanco);
-  --color-fondo-secundario: #F8F9FA; /* Un gris súper claro opcional para el fondo */
-  --color-texto-principal: var(--color-azul-muy-oscuro);
-  --color-texto-secundario: var(--color-gris-oscuro);
+  --color-primary-background: var(--color-white);
+  --color-secondary-background: #F8F9FA; /* Optional super light gray for background */
+  --color-primary-text: var(--color-very-dark-blue);
+  --color-secondary-text: var(--color-dark-gray);
   
-  --color-primario: var(--color-azul-claro);
-  --color-botones: var(--color-amarillo);
+  --color-primary: var(--color-light-blue);
+  --color-button: var(--color-yellow);
 }
 
-/* Aplicando los colores base a toda tu página */
+/* Applying base colors to your whole page */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--color-fondo-principal);
-  color: var(--color-texto-principal);
+  background-color: var(--color-primary-background);
+  color: var(--color-primary-text);
   margin: 0;
   padding: 0;
+}
+
+
+
+p {
+  font-size: 20px;
+  font-weight: 500;
 }

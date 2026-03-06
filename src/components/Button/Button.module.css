@@ -1,8 +1,8 @@
-.button-component{
-    background-color: #646cff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+.button-component {
+  background-color: var(--color-light-blue);
+  color: var(--color-white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }

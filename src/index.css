@@ -1,68 +1,36 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* ==========================================
+     PALETA DE COLORES BASE
+     (Del más oscuro al más claro)
+  ========================================== */
+  --color-azul-muy-oscuro: #051A26;
+  --color-azul-oscuro: #0B3954; 
+  --color-azul-claro: #3D80B7;
+  
+  --color-amarillo: #FFC107;
+  
+  --color-gris-oscuro: #6C757D;
+  --color-gris-claro: #ADB5BD;
+  --color-blanco: #FFFFFF;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* ==========================================
+     ASIGNACIÓN DE ROLES (Recomendado)
+     Esto te facilitará la vida al programar
+  ========================================== */
+  --color-fondo-principal: var(--color-blanco);
+  --color-fondo-secundario: #F8F9FA; /* Un gris súper claro opcional para el fondo */
+  --color-texto-principal: var(--color-azul-muy-oscuro);
+  --color-texto-secundario: var(--color-gris-oscuro);
+  
+  --color-primario: var(--color-azul-claro);
+  --color-botones: var(--color-amarillo);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Aplicando los colores base a toda tu página */
 body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-fondo-principal);
+  color: var(--color-texto-principal);
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  padding: 0;
 }

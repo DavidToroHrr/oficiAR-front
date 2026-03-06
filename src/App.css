@@ -9,3 +9,19 @@
 body {
   font-family: 'Inter', sans-serif;
 }
+
+
+#button-component{
+  background-color: #646cff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+p{
+  font-size: 100px;
+  font-weight: 100;
+}

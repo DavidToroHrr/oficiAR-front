@@ -1,6 +1,10 @@
 import Header from "../../components/Header/Header"
 import Button from "../../components/Button/Button"
 import SearchBar from "../../components/SearchBar/SearchBar"
+import CarouselOfficers from "../../components/CarouselOfficers/CarouselOfficers"
+import TestimonialCard from "../../components/TestimonialCard/TestimonialCard"
+import TestimonialsSection from "../../components/TestimonialsSection/TestimonialsSection"
+
 export default function DefaultHome(){
     
     return(
@@ -15,7 +19,7 @@ export default function DefaultHome(){
             </Header>
 
 
-        <p className="pt-35 text-5xl font-black text-very-dark-blue text-center ">
+        <p className="pt-48 text-5xl font-black text-very-dark-blue text-center ">
             Soluciones <br/>
             <span className="text-light-blue">profesionales<br/></span> 
             para tu hogar<br/> 
@@ -25,8 +29,13 @@ export default function DefaultHome(){
         <SearchBar>
         </SearchBar>
 
+        <CarouselOfficers>
+        </CarouselOfficers>
+       
 
-            
+        <TestimonialsSection>
+        </TestimonialsSection>
+
         </div>
     )
 }

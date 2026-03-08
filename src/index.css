@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+@source "../node_modules/flowbite-react";
 /* Así se declaran tus colores personalizados en Tailwind v4 */
 @theme {
   --color-very-dark-blue: #051A26;
@@ -8,11 +10,12 @@
   --color-yellow: #FFC107;
   --color-dark-gray: #6C757D;
   --color-light-gray: #ADB5BD;
+  --color-very-ligth-gray: #FFFFFF;
   
   --font-sans: 'Inter', sans-serif;
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #EDEDED;
   color: var(--color-very-dark-blue);
 }

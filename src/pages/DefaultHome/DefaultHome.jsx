@@ -1,6 +1,10 @@
 import Header from "../../components/Header/Header"
 import Button from "../../components/Button/Button"
 import SearchBar from "../../components/SearchBar/SearchBar"
+import CarouselOfficers from "../../components/CarouselOfficers/CarouselOfficers"
+import TestimonialCard from "../../components/TestimonialCard/TestimonialCard"
+import TestimonialsSection from "../../components/TestimonialsSection/TestimonialsSection"
+
 export default function DefaultHome(){
     
     return(

@@ -1,12 +1,10 @@
-import Button from "../../components/Button/Button";
+import FormComponent from "../../components/FormComponent/FormComponent";
 
 export default function Login(){
     return(
         <div>
-            <h1>Login... Jacobo y Vick son gays</h1>
-            <Button>
-
-            </Button>
+            <img src="" alt="" />
+            <FormComponent />
         </div>
     )
 }

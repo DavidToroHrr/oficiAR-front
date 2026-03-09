@@ -8,8 +8,5 @@ export default function WorkerRegister(){
             
         </div>
 
-        
     )
 }
-
-

@@ -5,7 +5,7 @@ import TextInput from '../TextInput/TextInput';
 export default function FormComponent() {
   return (
     // Tarjeta central con efecto semitransparente (Glassmorphism)
-    <div className="bg-very-ligth-gray/70 backdrop-blur-md p-8 w-full max-w-sm rounded-2xl shadow-xl">
+    <div className="bg-very-ligth-gray/70 backdrop-blur-md p-8 w-[425px] rounded-2xl shadow-xl">
       
       {/* Espacio para logo */}
       <div className="flex justify-center mb-6">
@@ -44,7 +44,7 @@ export default function FormComponent() {
         <div className="flex justify-center mb-6">
           <button 
             type="submit" 
-            className="w-3/4 text-very-ligth-gray bg-light-blue hover:bg-dark-blue focus:ring-4 focus:outline-none focus:ring-light-blue/50 font-medium rounded-lg text-sm px-5 py-2 text-center transition-colors"
+            className="w-[125px] text-very-ligth-gray bg-light-blue hover:bg-dark-blue focus:ring-4 focus:outline-none focus:ring-light-blue/50 font-medium rounded-lg text-sm px-5 py-2 text-center transition-colors"
           >
             Ingresar
           </button>
@@ -57,10 +57,19 @@ export default function FormComponent() {
           <div className="flex-grow border-t border-dark-gray"></div>
         </div>
 
-        {/* Espacio para tus botones sociales */}
-        <div className="flex justify-center gap-2">
-          <Button>
-              Microsoft
+        {/* Espacio para los botones sociales */}
+        <div className="flex justify-center gap-2 w-[360px] mx-auto">
+          <Button className='!bg-[#979797] !text-white w-[85.25px] !px-0 !font-medium border-[1.35px] border-black'>
+            Facebook
+          </Button>
+          <Button className='!bg-[#FFFFFF] w-[85.25px] !px-0 !font-medium border-[1.35px] border-black'>
+            Google
+          </Button>
+          <Button className='!bg-[#0077B5] !text-white w-[85.25px] !px-0 !font-medium border-[1.35px] border-black'>
+            Linkedin
+          </Button>
+          <Button className='w-[85.25px] !text-white !px-0 !font-medium border-[1.35px] border-black'>
+            Microsoft
           </Button>
         </div>
       </form>

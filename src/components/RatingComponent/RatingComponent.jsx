@@ -1,4 +1,4 @@
-import { Rating, RatingStar } from "flowbite-react";
+import { Rating } from "flowbite-react";
 export default function RatingComponent({children,descriptionCalification}){
     return(
         <Rating>

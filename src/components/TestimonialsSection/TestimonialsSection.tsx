@@ -5,8 +5,8 @@ export default function TestimonialsSection(){
     const testimonials=[{
         name:"David",
         testimonial:"Muy buen servicio",
-        calification:"5",
-        descriptionCalification:"5 out of 5",
+        calification:"1",
+        descriptionCalification:"1 out of 5",
         date:"2022-01-01"
     },{
         name:"David",
@@ -56,10 +56,10 @@ export default function TestimonialsSection(){
         calification:"5",
         descriptionCalification:"5 out of 5",
         date:"2022-01-01"
-    },{}];
+    }];
     
     return (
-  <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto pt-20">
+  <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto pt-35 px-4">
     {testimonials.map((element, index) => (
       <TestimonialCard
         key={index}

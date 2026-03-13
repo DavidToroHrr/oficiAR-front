@@ -1,43 +1,21 @@
-:root {
-  /* ==========================================
-     BASE COLOR PALETTE
-     (From darkest to lightest)
-  ========================================== */
+@import "tailwindcss";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+@source "../node_modules/flowbite-react";
+/* Así se declaran tus colores personalizados en Tailwind v4 */
+@theme {
   --color-very-dark-blue: #051A26;
-  --color-dark-blue: #0B3954; 
+  --color-dark-blue: #0B3954;
   --color-light-blue: #3D80B7;
-  
   --color-yellow: #FFC107;
-  
   --color-dark-gray: #6C757D;
   --color-light-gray: #ADB5BD;
-  --color-white: #FFFFFF;
-
-  /* ==========================================
-     ROLE ASSIGNMENT (Recommended)
-     This will make your life easier when coding
-  ========================================== */
-  --color-primary-background: var(--color-white);
-  --color-secondary-background: #F8F9FA; /* Optional super light gray for background */
-  --color-primary-text: var(--color-very-dark-blue);
-  --color-secondary-text: var(--color-dark-gray);
+  --color-very-ligth-gray: #FFFFFF;
   
-  --color-primary: var(--color-light-blue);
-  --color-button: var(--color-yellow);
+  --font-sans: 'Inter', sans-serif;
 }
 
-/* Applying base colors to your whole page */
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--color-primary-background);
-  color: var(--color-primary-text);
-  margin: 0;
-  padding: 0;
-}
-
-
-
-p {
-  font-size: 20px;
-  font-weight: 500;
+  background-color: #EDEDED;
+  color: var(--color-very-dark-blue);
 }

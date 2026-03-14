@@ -1,5 +1,7 @@
 import FormComponent from "../../components/FormComponent/FormComponent";
 import background from "../../assets/login_background_image.jpeg"
+import TextInput from "../../components/TextInput/TextInput"
+import Button from "../../components/Button/Button"
 
 export default function Login(){
     return(
@@ -9,7 +11,44 @@ export default function Login(){
             style={{ backgroundImage: `url(${background})` }}
         >
             {/* 2. El formulario ahora se dibujará sobre este fondo y centrado */}
-            <FormComponent />
+            <FormComponent
+                // Espacio para los botones sociales como prop del FormComponent
+                socialButtons={
+                    <div className="flex justify-center gap-2 w-[360px] mx-auto">
+                        <Button className='!bg-soft-gray !text-white w-[85.25px] !px-0 !font-medium border-[1.35px] border-black'>
+                            Facebook
+                        </Button>
+                        <Button className='!bg-white w-[85.25px] !px-0 !font-medium border-[1.35px] border-black'>
+                            Google
+                        </Button>
+                        <Button className='!bg-blue-buttons !text-white w-[85.25px] !px-0 !font-medium border-[1.35px] border-black'>
+                            Linkedin
+                        </Button>
+                        <Button className='w-[85.25px] !text-white !px-0 !font-medium border-[1.35px] border-black'>
+                            Microsoft
+                        </Button>
+                    </div>
+                }
+            >
+
+            {/* Todo lo demás acá abajo (en el cuerpo) se pasa como children por defecto */}
+
+                {/* 3. Input de Email (Estilo Floating Label) */}
+                <TextInput
+                    id="email"
+                    name="email"
+                    type="email"
+                    label="Email"
+                />
+                
+                {/* 4. Input de Contraseña (Estilo Floating Label) */}
+                <TextInput
+                    id="password"
+                    name="password"
+                    type="password"
+                    label="Contraseña"
+                />
+            </FormComponent>
         </div>
     )
 }

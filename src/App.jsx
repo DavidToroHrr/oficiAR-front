@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import WorkerRegister from './pages/WorkerRegister/WorkerRegister';
 import DefaultHome from './pages/DefaultHome/DefaultHome';
+
 function App() {
   return (
     <BrowserRouter>

@@ -14,7 +14,7 @@ export default function Login(){
             <FormComponent
                 // Espacio para los botones sociales como prop del FormComponent
                 socialButtons={
-                    <div className="flex justify-center gap-2 w-[360px] mx-auto">
+                    <div className="flex justify-center gap-1 w-full max-w-[360px] mx-auto">
                         <Button className='!bg-soft-gray !text-white w-[85.25px] !px-0 !font-medium border-[1.35px] border-black'>
                             Facebook
                         </Button>

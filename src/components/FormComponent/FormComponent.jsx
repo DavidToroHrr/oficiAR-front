@@ -11,7 +11,7 @@ export default function FormComponent({children, socialButtons, registerFooter})
       rounded-2xl: Bordes muy redondeados (16px de radio).
       shadow-xl: Sombra exterior grande para darle profundidad 3D y despegable 
         del fondo. */
-    <div className="bg-white/70 backdrop-blur-md p-8 w-[425px] rounded-2xl shadow-xl">
+    <div className="bg-white/70 backdrop-blur-md p-8 w-full max-w-[425px] rounded-2xl shadow-xl">
       
       {/* CONTENEDOR DEL LOGO
           flex justify-center: Usa flexbox para centrar la imagen 

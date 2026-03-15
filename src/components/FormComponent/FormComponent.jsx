@@ -1,6 +1,6 @@
 import logo from '../../assets/logo.png';
 
-export default function FormComponent({children, socialButtons}) {
+export default function FormComponent({children, socialButtons, registerFooter}) {
   return (
     /* CONTENEDOR PRINCIPAL (Glassmorphism)
       bg-white/70: Fondo blanco con 70% de opacidad (semitransparente).
@@ -108,6 +108,8 @@ export default function FormComponent({children, socialButtons}) {
 
         {/* Espacio para botones sociales */}
         {socialButtons}
+
+        {registerFooter}
       </form>
     </div>
   );

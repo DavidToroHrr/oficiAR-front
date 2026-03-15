@@ -7,7 +7,7 @@ export default function FormComponent({children, socialButtons, registerFooter})
       backdrop-blur-md: Aplica el filtro de desenfoque al fondo 
         (lo que haya detrás se ve borroso).
       p-8: Relleno interior (padding) de 32px por todos los lados.
-      w-[425px]: Ancho fijo y estricto de 425 píxeles.
+      w-full max-w-[425px]: Ancho responsive y estricto de 425 píxeles.
       rounded-2xl: Bordes muy redondeados (16px de radio).
       shadow-xl: Sombra exterior grande para darle profundidad 3D y despegable 
         del fondo. */

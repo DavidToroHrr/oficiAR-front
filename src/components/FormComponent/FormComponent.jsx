@@ -1,7 +1,8 @@
 import logo from '../../assets/logo.png';
 
-export default function FormComponent({children, socialButtons, registerFooter}) {
-  return (
+export default function FormComponent({children, socialButtons, registerFooter, buttonLabel = "Ingresar",title = "¡Bienvenido a OficiAR!",showForgotPassword = true,
+  showSeparator = true}) {
+   return (
     /* CONTENEDOR PRINCIPAL (Glassmorphism)
       bg-white/70: Fondo blanco con 70% de opacidad (semitransparente).
       backdrop-blur-md: Aplica el filtro de desenfoque al fondo 
@@ -29,39 +30,40 @@ export default function FormComponent({children, socialButtons, registerFooter})
       </div>
 
       {/* TÍTULO
+          title: Prop que permite cambiar el texto del título desde la vista
+            que use este componente. Por defecto es "¡Bienvenido a OficiAR!".
           text-2xl font-bold: Texto grande (24px) y con grosor en negrita.
           text-center text-very-dark-blue: Centrado y usando la variable de 
             color de index.css.
           mb-8: Margen inferior amplio (32px) para separarlo de los inputs. */}
       <h2 className="text-2xl font-bold text-center text-very-dark-blue mb-8">
-        ¡Bienvenido a OficiAR!
+        {title}
       </h2>
 
       <form>
-        {/* Espacio para TextInputs de correo y contraseña */}
+        {/* Espacio para TextInputs */}
         {children}
 
-        {/* CONTENEDOR ENLACE RECUPERACIÓN
-            flex justify-start: Alinea el contenido a la izquierda (inicio).
-            mb-6: Margen inferior de 24px. */}
-        <div className="flex justify-start mb-6">
-          {/* ENLACE
-              text-xs text-dark-gray italic: Texto muy pequeño (12px), gris 
-                oscuro y en cursiva.
-              hover:text-dark-blue: Al pasar el mouse, cambia al azul oscuro.
-              transition-colors: Hace que el cambio de color al pasar el mouse 
-                sea una animación suave. */}
-          <a href="#" className="text-xs text-dark-gray italic hover:text-dark-blue transition-colors">
-            ¿Olvidaste tu contraseña?
-          </a>
-        </div>
+        {/* ENLACE RECUPERACIÓN
+            showForgotPassword: Prop booleana, true por defecto.
+            El Login lo muestra, el WorkerRegister lo oculta con false. */}
+        {showForgotPassword && (
+          <div className="flex justify-start mb-6">
+            <a href="#" className="text-xs text-dark-gray italic hover:text-dark-blue transition-colors">
+              ¿Olvidaste tu contraseña?
+            </a>
+          </div>
+        )}
 
         {/* CONTENEDOR BOTÓN PRINCIPAL
             flex justify-center mb-6: Lo centra horizontalmente y le da margen 
               abajo. */}
         <div className="flex justify-center mb-6">
-          {/* BOTÓN INGRESAR
-              w-[125px]: Ancho fijo estricto de 125 píxeles.
+          {/* BOTÓN PRINCIPAL
+              buttonLabel: Prop que permite cambiar el texto del botón desde
+                la vista que use este componente. Por defecto es "Ingresar".
+              min-w-[125px] w-auto: Ancho mínimo de 125px, crece si el texto
+                es más largo (ej: "Crear cuenta").
               text-white bg-light-blue: Texto blanco y fondo del azul claro 
                 personalizado.
               hover:bg-dark-blue: Al pasar el mouse, oscurece el fondo.
@@ -75,41 +77,35 @@ export default function FormComponent({children, socialButtons, registerFooter})
                 de color al hacer hover. */}
           <button 
             type="submit" 
-            className="w-[125px] text-white bg-light-blue hover:bg-dark-blue focus:ring-4 focus:outline-none focus:ring-light-blue/50 font-medium rounded-lg text-sm px-5 py-2 text-center transition-colors"
+            className="min-w-[125px] w-auto text-white bg-light-blue hover:bg-dark-blue focus:ring-4 focus:outline-none focus:ring-light-blue/50 font-medium rounded-lg text-sm px-5 py-2 text-center transition-colors"
           >
-            Ingresar
+            {buttonLabel}
           </button>
         </div>
 
-        {/* CONTENEDOR SEPARADOR ("También")
-            flex items-center: Alinea los elementos (líneas y texto) 
-              verticalmente en el centro.
-            my-6: Margen vertical (arriba y abajo) de 24px. */}
-        <div className="flex items-center my-6">
-          {/* LÍNEA IZQUIERDA
-              flex-grow: Esta es la magia. Le dice a la línea "estírate y ocupa 
-                todo el espacio sobrante que puedas".
-              border-t border-dark-gray: Dibuja un borde superior de 1px usando 
-                el color gris oscuro. */}
-          <div className="flex-grow border-t border-dark-gray"></div>
-          
-          {/* TEXTO DEL SEPARADOR
-              flex-shrink-0: Le dice al texto "no te dejes aplastar por las 
-                líneas, mantén tu ancho original".
-              mx-4: Margen horizontal (izquierda y derecha) de 16px para que 
-                las líneas no toquen las letras.
-              text-dark-gray text-sm italic: Color gris oscuro, tamaño pequeño, 
-                cursiva. */}
-          <span className="flex-shrink-0 mx-4 text-dark-gray text-sm italic">También</span>
-          
-          {/* LÍNEA DERECHA (mismas reglas que la izquierda) */}
-          <div className="flex-grow border-t border-dark-gray"></div>
-        </div>
+        {/* SEPARADOR "También" — exclusivo del Login
+            showSeparator: Prop booleana, true por defecto.
+            El Login lo muestra, el WorkerRegister lo oculta con false. */}
+        {showSeparator && (
+          <div className="flex items-center my-6">
+            <div className="flex-grow border-t border-dark-gray"></div>
+            <span className="flex-shrink-0 mx-4 text-dark-gray text-sm italic">También</span>
+            <div className="flex-grow border-t border-dark-gray"></div>
+          </div>
+        )}
 
         {/* Espacio para botones sociales */}
         {socialButtons}
 
-        {registerFooter}
+        {/* FOOTER DEL FORMULARIO
+            registerFooter: Contenido extra debajo de los botones sociales.
+            El WorkerRegister pasa aquí su contenido de "¿Ya tienes cuenta?"
+            y checkboxes. La rayita se maneja dentro del propio registerFooter. */}
+        {registerFooter && (
+          <div className="mt-4">
+            {registerFooter}
+          </div>
+        )}
       </form>
     </div>
   );

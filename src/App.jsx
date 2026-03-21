@@ -8,6 +8,7 @@ import ValidationIdentity from './pages/OfficersView/ValidationIdentity';
 import CertificationsUpload from './pages/OfficersView/CertificationsUpload';
 import SpecificationOfficer from './pages/OfficersView/SpecificationOfficer';
 import BankAccount from './pages/OfficersView/BankAccount';
+
 function App() {
   return (
     <BrowserRouter>

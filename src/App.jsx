@@ -8,7 +8,7 @@ import ValidationIdentity from './pages/OfficersView/ValidationIdentity';
 import CertificationsUpload from './pages/OfficersView/CertificationsUpload';
 import SpecificationOfficer from './pages/OfficersView/SpecificationOfficer';
 import BankAccount from './pages/OfficersView/BankAccount';
-import ValidationComponent from './components/VerificationComponent/VerficationComponent';
+import VerificationComponent from './components/VerificationComponent/VerficationComponent';
 
 function App() {
   return (
@@ -24,16 +24,15 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         <Route path="/worker-register" element={<WorkerRegister />}>
+        </Route>
 
-            <Route path="validation" element={<ValidationComponent />} >
+        <Route path="/validation" element={<VerificationComponent />} >
                 <Route index element={<Navigate to="validation-identity" replace />} />
                 <Route path="validation-identity" element={<ValidationIdentity />} />
                 <Route path="officer-specification" element={<SpecificationOfficer />} />
                 <Route path="certifications" element={<CertificationsUpload />} />
                 <Route path="bank-account" element={<BankAccount />} />
             </Route>
-            
-        </Route>
 
         
 

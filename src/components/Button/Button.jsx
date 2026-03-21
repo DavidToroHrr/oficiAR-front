@@ -1,4 +1,4 @@
-export default function Button({children, className=""}) {
+export default function Button({children, className="", onClick, type = "button"}) {
     return (
         // 1. Así aplicamos la clase usando llaves {} en lugar de comillas
         <div>
@@ -17,7 +17,9 @@ export default function Button({children, className=""}) {
             {/* ${className}: Permite que, si se llama al botón en otra 
             vista y se necesita darle un margen extra o un ancho específico, se pueda 
             pasarle esa clase adicional y se sume a los estilos base */ }
-            <button className={`bg-yellow text-very-dark-blue text-sm font-light px-6 py-2 rounded-full hover:scale-105 transition-transform ${className}`}>
+            <button className={`text-sm px-6 py-2 hover:scale-105 transition-transform ${className}`} onClick={onClick}
+            type={type}
+            >
 
             {children}
 

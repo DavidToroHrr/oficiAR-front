@@ -2,9 +2,17 @@ import FormComponent from "../../components/FormComponent/FormComponent";
 import background from "../../assets/login_background_image.jpeg"
 import TextInput from "../../components/TextInput/TextInput"
 import VerificationComponent from "../../components/VerificationComponent/VerficationComponent";
-import { Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 export default function WorkerRegister(){
+    const navigate = useNavigate();
+
+    function navigationForm(e){
+        console.log("Navegando a validación");
+        e.preventDefault(); // ¡ESTO EVITA QUE LA PÁGINA SE RECARGUE!
+        navigate("/validation");
+    }
    return(
       <div 
             className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center py-8 overflow-y-auto"
@@ -12,7 +20,8 @@ export default function WorkerRegister(){
         >
             <FormComponent
                 title="¡Únete a OficiAR!"
-                buttonLabel="Crear cuenta"
+                buttonLabel="Registrarse"
+                navigationFunction={navigationForm}
                 showForgotPassword={false}
                 showSeparator={false}
                 registerFooter={
@@ -33,7 +42,7 @@ export default function WorkerRegister(){
                             <div className="flex flex-col items-center">
                                 <a 
                                     href="/login"
-                                    className="font-medium text-base italic text-blue-buttons hover:opacity-70 transition-opacity no-underline mb-2"
+                                    className="font-medium text-base italic text-light-blue hover:opacity-70 transition-opacity no-underline mb-2"
                                 >
                                     Inicia Sesión
                                 </a>
@@ -83,8 +92,7 @@ export default function WorkerRegister(){
                 <TextInput id="telefono" name="telefono" type="tel" label="Teléfono (opcional)" />
             </FormComponent>
 
-            <VerificationComponent>
-            </VerificationComponent>
+           
             
         </div>
     );

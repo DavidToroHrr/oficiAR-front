@@ -8,7 +8,7 @@ export default function ValidationIdentity(){
         // CORRECCIÓN 1: w-[955px] cambió a w-full max-w-[955px].
         // CORRECCIÓN 2: Se eliminó h-[755px] para que la altura sea automática.
         // CORRECCIÓN 3: Cambiamos "p" por "p-6 md:p-10".
-        <div className="flex flex-col items-center bg-white/50 w-full max-w-[955px] p-6 md:p-10 rounded-2xl mb-10">
+        <div className="flex flex-col items-center bg-white/70 w-full max-w-[955px] p-6 md:p-10 rounded-2xl mb-10">
             
             <img 
                 src={logoImg} 
@@ -35,7 +35,7 @@ export default function ValidationIdentity(){
 
                 {/* ZONA DEL BOTÓN */}
                 <div className="flex justify-end w-full">
-                    <Button className="bg- text-gray-900 px-8 py-2.5 rounded-lg font-medium hover:bg-yellow-500 transition-colors">
+                    <Button className="bg- text-white px-8 py-2.5 rounded-lg font-medium bg-light-blue transition-colors">
                         Continuar
                     </Button>
                 </div>

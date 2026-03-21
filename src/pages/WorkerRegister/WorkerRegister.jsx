@@ -1,6 +1,8 @@
 import FormComponent from "../../components/FormComponent/FormComponent";
 import background from "../../assets/login_background_image.jpeg"
 import TextInput from "../../components/TextInput/TextInput"
+import VerificationComponent from "../../components/VerificationComponent/VerficationComponent";
+import { Outlet } from "react-router-dom";
 
 export default function WorkerRegister(){
    return(
@@ -80,6 +82,10 @@ export default function WorkerRegister(){
                 {/* Input 6: Teléfono (opcional) */}
                 <TextInput id="telefono" name="telefono" type="tel" label="Teléfono (opcional)" />
             </FormComponent>
+
+            <VerificationComponent>
+            </VerificationComponent>
+            
         </div>
     );
     

@@ -8,6 +8,7 @@ import ValidationIdentity from './pages/OfficersView/ValidationIdentity';
 import CertificationsUpload from './pages/OfficersView/CertificationsUpload';
 import SpecificationOfficer from './pages/OfficersView/SpecificationOfficer';
 import BankAccount from './pages/OfficersView/BankAccount';
+import ValidationComponent from './components/VerificationComponent/VerficationComponent';
 
 function App() {
   return (
@@ -24,12 +25,17 @@ function App() {
 
         <Route path="/worker-register" element={<WorkerRegister />}>
 
-            <Route index element={<Navigate to="validation-identity" replace />} />
-            <Route path="validation-identity" element={<ValidationIdentity />} />
-            <Route path="office-specification" element={<SpecificationOfficer />} />
-            <Route path="certifications" element={<CertificationsUpload />} />
-            <Route path="bank-account" element={<BankAccount />} />
+            <Route path="validation" element={<ValidationComponent />} >
+                <Route index element={<Navigate to="validation-identity" replace />} />
+                <Route path="validation-identity" element={<ValidationIdentity />} />
+                <Route path="officer-specification" element={<SpecificationOfficer />} />
+                <Route path="certifications" element={<CertificationsUpload />} />
+                <Route path="bank-account" element={<BankAccount />} />
+            </Route>
+            
         </Route>
+
+        
 
       </Routes>
     </BrowserRouter>

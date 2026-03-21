@@ -12,23 +12,29 @@ import HowItWorks from "../../components/HowItWorks/HowItWorks"
 export default function DefaultHome(){
     
     return(
+        
         <div>
+            
             <Header> 
-                <a href="">Iniciar Sesion</a>
-                <a href="">Registro</a>
 
                 <Button>
+                    Iniciar Sesion
+                </Button>
+
+                <Button>
+                    Registro
+                </Button>
+
+                <Button className="bg-yellow text-very-dark-blue px-8 py-2.5 rounded-full font-medium transition-colors">
                     Hazte Officer
                 </Button>
             </Header>
-
 
         <SloganApp>
         </SloganApp>
 
         <SearchBar>
         </SearchBar>
-
 
         <h2 className="mt-48 text-5xl font-black text-very-dark-blue text-center ">
                 Descubre algunos de los profesionales con los que <br/>
@@ -42,14 +48,13 @@ export default function DefaultHome(){
                 <span className="text-light-blue">AR</span>
         </h2>
 
-        
         <TestimonialsSection>
         </TestimonialsSection>
-
 
         <h2 className="mt-48 text-5xl font-black text-very-dark-blue text-center mb-10">
                 Tu satisfacción está <span className="text-light-blue">garantizada</span>
         </h2>
+
         <Satisfaction>
         </Satisfaction>
 

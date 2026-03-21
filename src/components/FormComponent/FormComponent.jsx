@@ -1,6 +1,7 @@
 import logo from '../../assets/logo.png';
+import Button from '../Button/Button';
 
-export default function FormComponent({children, socialButtons, registerFooter, buttonLabel = "Ingresar",title = "¡Bienvenido a OficiAR!",showForgotPassword = true,
+export default function FormComponent({children, socialButtons, registerFooter, buttonLabel,navigationFunction,title = "¡Bienvenido a OficiAR!",showForgotPassword = true,
   showSeparator = true}) {
    return (
     /* CONTENEDOR PRINCIPAL (Glassmorphism)
@@ -40,7 +41,7 @@ export default function FormComponent({children, socialButtons, registerFooter, 
         {title}
       </h2>
 
-      <form>
+      <form onSubmit={navigationFunction}>
         {/* Espacio para TextInputs */}
         {children}
 
@@ -75,12 +76,10 @@ export default function FormComponent({children, socialButtons, registerFooter, 
                 y vertical (py).
               text-center transition-colors: Centra el texto y suaviza el cambio 
                 de color al hacer hover. */}
-          <button 
-            type="submit" 
-            className="min-w-[125px] w-auto text-white bg-light-blue hover:bg-dark-blue focus:ring-4 focus:outline-none focus:ring-light-blue/50 font-medium rounded-lg text-sm px-5 py-2 text-center transition-colors"
-          >
+
+          <Button className='min-w-[125px] w-auto text-white bg-light-blue  focus:outline-none font-medium rounded-lg text-sm px-5 py-2 text-center transition-colors' type='submit' >
             {buttonLabel}
-          </button>
+          </Button>
         </div>
 
         {/* SEPARADOR "También" — exclusivo del Login

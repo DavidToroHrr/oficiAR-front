@@ -11,6 +11,7 @@
   --color-yellow: #FFC107;
   --color-dark-gray: #6C757D;
   --color-light-gray: #ADB5BD;
+  --color-very-light-gray: #EDEDED;
   --color-white: #FFFFFF;
   --color-soft-gray: #979797;
   --color-blue-buttons: #0077B5;
@@ -21,4 +22,16 @@
 body {
   background-color: #EDEDED;
   color: var(--color-very-dark-blue);
+}
+
+/* --- HACK PARA EL AUTOCOMPLETADO DE CHROME/EDGE --- */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    /* 1. Congela el fondo blanco por miles de segundos */
+    transition: background-color 5000s ease-in-out 0s;
+    
+    /* 2. Fuerza a que el texto autocompletado respete tu color azul oscuro */
+    -webkit-text-fill-color: var(--color-very-dark-blue); 
 }

@@ -2,7 +2,7 @@ import Button from "../Button/Button";
 
 export default function UploadSelfie(){
     return(
-        <div className="flex flex-col justify-center items-center bg-very-ligth-gray max-w-full w-[370px] h-[290px] p-5 rounded-[0.5rem] ">
+        <div className="flex flex-col justify-center items-center bg-white max-w-full w-[370px] h-[290px] p-5 rounded-[0.5rem] ">
             <h3>Sube tu selfie</h3>
 
             <div className="bg-very-light-gray h-[200px] rounded-[0.5rem] flex flex-col justify-center items-center w-full">

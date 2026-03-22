@@ -16,10 +16,16 @@ export default function DefaultHome(){
         <div>
             
             <Header> 
-                <a href="">Iniciar Sesion</a>
-                <a href="">Registro</a>
 
                 <Button>
+                    Iniciar Sesion
+                </Button>
+
+                <Button>
+                    Registro
+                </Button>
+
+                <Button className="bg-yellow text-very-dark-blue px-8 py-2.5 rounded-full font-medium transition-colors">
                     Hazte Officer
                 </Button>
             </Header>

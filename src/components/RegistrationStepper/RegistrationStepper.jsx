@@ -14,10 +14,10 @@ export default function RegistrationStepper() {
 
   // Identificamos el paso actual
   let pasoActivo = 1; 
-  if (path.includes('validation-identity')) pasoActivo = 1;
-  else if (path.includes('office-specification')) pasoActivo = 2;
-  else if (path.includes('certifications')) pasoActivo = 3;
-  else if (path.includes('bank-account')) pasoActivo = 4;
+  if (path.includes('validation/validation-identity')) pasoActivo = 1;
+  else if (path.includes('validation/officer-specification')) pasoActivo = 2;
+  else if (path.includes('validation/certifications')) pasoActivo = 3;
+  else if (path.includes('validation/bank-account')) pasoActivo = 4;
 
   const progreso = ((pasoActivo - 1) / 4) * 130;
 

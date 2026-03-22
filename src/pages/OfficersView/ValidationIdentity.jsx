@@ -16,7 +16,7 @@ export default function ValidationIdentity(){
                 className="w-[247px] h-[55px] object-contain mb-6" 
             />
 
-            <h2 className="text-2xl font-bold mb-2 text-center text-gray-900">
+            <h2 className="text-2xl font-bold mb-2 text-center text-very-dark-blue">
                 ¡Verifica tu identidad!
             </h2>
 

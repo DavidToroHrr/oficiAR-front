@@ -28,7 +28,7 @@ export default function RegistrationStepper() {
         {/* LÍNEAS DE FONDO */}
         <div className="absolute left-0 top-6 w-full h-1 bg-gray-300 -z-10"></div>
         <div 
-          className="absolute left-0 top-6 h-1 bg-blue-500 -z-10 transition-all duration-500 ease-in-out"
+          className="absolute left-0 top-6 h-1 bg-light-blue -z-10 transition-all duration-500 ease-in-out"
           style={{ width: `${progreso}%` }}
         ></div>
 

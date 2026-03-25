@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login/Login';
@@ -9,6 +8,7 @@ import CertificationsUpload from './pages/OfficersView/CertificationsUpload';
 import SpecificationOfficer from './pages/OfficersView/SpecificationOfficer';
 import BankAccount from './pages/OfficersView/BankAccount';
 import VerificationComponent from './components/VerificationComponent/VerficationComponent';
+import OfficersHome from './pages/OfficersHome/OfficersHome';
 
 function App() {
   return (
@@ -32,9 +32,9 @@ function App() {
                 <Route path="officer-specification" element={<SpecificationOfficer />} />
                 <Route path="certifications" element={<CertificationsUpload />} />
                 <Route path="bank-account" element={<BankAccount />} />
-            </Route>
+        </Route>
 
-        
+        <Route path="/officers-home" element={<OfficersHome />} />
 
       </Routes>
     </BrowserRouter>
@@ -42,4 +42,4 @@ function App() {
 }
 
 export default App
-// siempre qiue hay un retorno de un componente de react, debe estar envuelto en un div...
+// siempre que hay un retorno de un componente de react, debe estar envuelto en un div...

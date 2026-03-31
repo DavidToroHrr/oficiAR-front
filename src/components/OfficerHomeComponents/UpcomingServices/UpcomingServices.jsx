@@ -1,81 +1,74 @@
 export default function UpcomingServices(){
     return(
-        // Tarjeta 1: Próximos Servicios (Aquí luego meteremos una tabla de Flowbite)
-        <div className="bg-white rounded-xl shadow-md p-6 min-h-[350px]">
-            <h2 className="text-2xl font-bold text-black mb-6">Próximos servicios</h2>
-            <p className="text-gray-400 italic">Aquí irá el componente de tabla...</p>
+        // Tarjeta 1: Próximos Servicios
+        // Aquí reutilizamos este componente de Flowbite: https://flowbite.com/docs/components/tables/ 
+        // (sección hover state)
+        <div className="bg-white rounded-xl shadow-md p-6 min-h-[475px]">
+            <h2 className="font-extrabold text-black text-[24px] mb-6">Próximos servicios</h2>
 
-            <div class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default">
-                <table class="w-full text-sm text-left rtl:text-right text-body">
-                    <thead class="text-sm text-body bg-neutral-secondary-medium border-b border-default-medium">
+            <div className="relative overflow-x-auto bg-neutral-primary-soft rounded-base">
+                <table className="w-full text-sm text-left rtl:text-right text-body">
+                    <thead className="text-sm text-body bg-neutral-secondary-medium">
+                        {/* tr: table row (fila de la tabla)
+                        th: table header (encabezado de la tabla)
+                        td: table data (celda de la tabla) */}
                         <tr>
-                            <th scope="col" class="px-6 py-3 font-medium">
-                                Product name
+                            {/* pl: padding-left, pr: padding-right, py: padding-top and padding-bottom */}
+                            <th scope="col" className="pl-0 pr-6 py-3 font-normal text-[20px]">
+                                Cliente
                             </th>
-                            <th scope="col" class="px-6 py-3 font-medium">
-                                Color
+                            <th scope="col" className="px-6 py-3 font-normal text-[20px]">
+                                Hora
                             </th>
-                            <th scope="col" class="px-6 py-3 font-medium">
-                                Category
+                            <th scope="col" className="px-6 py-3 font-normal text-[20px]">
+                                Dirección
                             </th>
-                            <th scope="col" class="px-6 py-3 font-medium">
-                                Price
-                            </th>
-                            <th scope="col" class="px-6 py-3 font-medium">
-                                <span class="sr-only">Edit</span>
+                            <th scope="col" className="px-6 py-3 font-normal text-[20px]">
+                                Oficio
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-neutral-primary-soft border-b border-default hover:bg-neutral-secondary-medium">
-                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
-                                Apple MacBook Pro 17"
-                            </th>
-                            <td class="px-6 py-4">
-                                Silver
+                        <tr className="bg-neutral-primary-soft hover:bg-neutral-secondary-medium">
+                            <td scope="row" className="pl-0 pr-6 py-4 font-light text-heading whitespace-nowrap text-[17px]">
+                                Fernando Toro
                             </td>
-                            <td class="px-6 py-4">
-                                Laptop
+                            <td scope="row" className="px-6 py-4 font-light text-[17px]">
+                                9:00
                             </td>
-                            <td class="px-6 py-4">
-                                $2999
+                            <td scope="row" className="px-6 py-4 font-light text-[17px]">
+                                Cra 45 # 23-56
                             </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="#" class="font-medium text-fg-brand hover:underline">Edit</a>
+                            <td scope="row" className="px-6 py-4 font-light text-[17px]">
+                                Limpieza
                             </td>
                         </tr>
-                        <tr class="bg-neutral-primary-soft border-b border-default hover:bg-neutral-secondary-medium">
-                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
-                                Microsoft Surface Pro
-                            </th>
-                            <td class="px-6 py-4">
-                                White
+                        <tr className="bg-neutral-primary-soft hover:bg-neutral-secondary-medium">
+                            <td scope="row" className="pl-0 pr-6 py-4 font-light text-heading whitespace-nowrap text-[17px]">
+                                Victor Martínez
                             </td>
-                            <td class="px-6 py-4">
-                                Laptop PC
+                            <td scope="row" className="px-6 py-4 font-light text-[17px]">
+                                15:00
                             </td>
-                            <td class="px-6 py-4">
-                                $1999
+                            <td scope="row" className="px-6 py-4 font-light text-[17px]">
+                                Cra 45 # 23-56
                             </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="#" class="font-medium text-fg-brand hover:underline">Edit</a>
+                            <td scope="row" className="px-6 py-4 font-light text-[17px]">
+                                Plomería
                             </td>
                         </tr>
-                        <tr class="bg-neutral-primary-soft hover:bg-neutral-secondary-medium">
-                            <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
-                                Magic Mouse 2
-                            </th>
-                            <td class="px-6 py-4">
-                                Black
+                        <tr className="bg-neutral-primary-soft hover:bg-neutral-secondary-medium">
+                            <td scope="row" className="pl-0 pr-6 py-4 font-light text-heading whitespace-nowrap text-[17px]">
+                                Jacobo Arroyave
                             </td>
-                            <td class="px-6 py-4">
-                                Accessories
+                            <td scope="row" className="px-6 py-4 font-light text-[17px]">
+                                12:00
                             </td>
-                            <td class="px-6 py-4">
-                                $99
+                            <td scope="row" className="px-6 py-4 font-light text-[17px]">
+                                Cra 45 # 23-56
                             </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="#" class="font-medium text-fg-brand hover:underline">Edit</a>
+                            <td scope="row" className="px-6 py-4 font-light text-[17px]">
+                                Electricidad
                             </td>
                         </tr>
                     </tbody>

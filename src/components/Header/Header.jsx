@@ -1,9 +1,11 @@
 import logo from '../../assets/logo.png';
 
 // 1. Recibimos 'children' como propiedad
-export default function Header({ children }) {
+export default function Header({ children, className }) {
     return (
-        <header className="flex items-center justify-between px-8 py-4 bg-white shadow-sm">
+        // Pasamos la propiedad className para modificar estilos del Header
+        // en otras vistas (pages)
+        <header className={`flex items-center justify-between px-8 py-4 bg-white shadow-sm ${className}`}>
             
             {/* El Logo siempre será el mismo en todas las páginas */}
             <div className="flex items-center gap-2 cursor-pointer">

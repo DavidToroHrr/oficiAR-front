@@ -1,19 +1,19 @@
 import logoImg from "../../assets/logo.png"
 import UploadDni from "../../components/UploadDni/UploadDni"
-import UploadSelfie from "../../components/UploadSelfie/UploadSelfie"
+import UploadElement from "../../components/UploadElement/UploadElement"
 import Button from "../../components/Button/Button"
 
-export default function ValidationIdentity(){
-    return(
+export default function ValidationIdentity() {
+    return (
         // CORRECCIÓN 1: w-[955px] cambió a w-full max-w-[955px].
         // CORRECCIÓN 2: Se eliminó h-[755px] para que la altura sea automática.
         // CORRECCIÓN 3: Cambiamos "p" por "p-6 md:p-10".
         <div className="flex flex-col items-center bg-white/70 w-full max-w-[955px] p-6 md:p-10 rounded-2xl mb-10">
-            
-            <img 
-                src={logoImg} 
-                alt="Logo de OficiAR" 
-                className="w-[247px] h-[55px] object-contain mb-6" 
+
+            <img
+                src={logoImg}
+                alt="Logo de OficiAR"
+                className="w-[247px] h-[55px] object-contain mb-6"
             />
 
             <h2 className="text-2xl font-bold mb-2 text-center text-very-dark-blue">
@@ -30,7 +30,7 @@ export default function ValidationIdentity(){
                 {/* ZONA DE TARJETAS */}
                 <div className="flex flex-col md:flex-row gap-5">
                     <UploadDni />
-                    <UploadSelfie />
+                    <UploadElement title="Sube tu selfie" buttonTitle="Subir Selfie" />
                 </div>
 
                 {/* ZONA DEL BOTÓN */}
@@ -41,7 +41,7 @@ export default function ValidationIdentity(){
                 </div>
 
             </div>
-            
+
         </div>
     )
 }

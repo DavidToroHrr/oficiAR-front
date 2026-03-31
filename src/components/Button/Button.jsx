@@ -1,7 +1,14 @@
 export default function Button({children, className="", onClick, type = "button"}) {
     return (
-        // 1. Así aplicamos la clase usando llaves {} en lugar de comillas
-        <div>
+        
+            <button className={`text-sm px-6 py-2 hover:scale-105 transition-transform ${className}`} onClick={onClick}
+            type={type}>
+            {children}
+            </button>
+    )
+}
+// 1. Así aplicamos la clase usando llaves {} en lugar de comillas
+        
             {/* bg-yellow y text-very-dark-blue: Definen el color de fondo 
             (amarillo) y del texto (azul muy oscuro)  */}
             {/* /* text-sm font-light: Hacen que el texto sea pequeño y con un 
@@ -17,13 +24,3 @@ export default function Button({children, className="", onClick, type = "button"
             {/* ${className}: Permite que, si se llama al botón en otra 
             vista y se necesita darle un margen extra o un ancho específico, se pueda 
             pasarle esa clase adicional y se sume a los estilos base */ }
-            <button className={`text-sm px-6 py-2 hover:scale-105 transition-transform ${className}`} onClick={onClick}
-            type={type}
-            >
-
-            {children}
-
-            </button>
-        </div>
-    )
-}

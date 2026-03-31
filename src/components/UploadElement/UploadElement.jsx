@@ -1,9 +1,9 @@
 import Button from "../Button/Button";
 
-export default function UploadSelfie(){
+export default function UploadElement({title,buttonTitle}){
     return(
         <div className="flex flex-col justify-center items-center bg-white max-w-full w-[370px] h-[290px] p-5 rounded-[0.5rem] ">
-            <h3>Sube tu selfie</h3>
+            <h3>{title}</h3>
 
             <div className="bg-very-light-gray h-[200px] rounded-[0.5rem] flex flex-col justify-center items-center w-full">
                 <svg 
@@ -22,7 +22,7 @@ export default function UploadSelfie(){
                     />
                 </svg>
 
-                <Button className="bg-light-blue rounded-[0.5rem]">Subir Selfie</Button>
+                <Button className="bg-light-blue rounded-[0.5rem] !text-white">{buttonTitle}</Button>
             </div>
             
         </div>

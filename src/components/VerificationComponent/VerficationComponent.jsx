@@ -15,10 +15,10 @@ export default function VerificationComponent() {
             <img 
                 src={validationOfficerImg} 
                 alt="Fondo de registro" 
-                className="absolute inset-0 w-full h-full object-cover -z-20 fixed"
+                className="absolute inset-0 w-full h-full object-cover -z-20 fixed "
             />
             {/* Capa oscura semitransparente para que el Stepper y el texto se lean bien */}
-            <div className="absolute inset-0 bg-black/40 -z-10 fixed"></div>
+            <div className="absolute inset-0 bg-white/40 -z-10 fixed"></div>
 
             {/* --- 2. EL CONTENIDO FLOTANTE --- */}
             <div className="relative z-10 flex flex-col flex-grow ">

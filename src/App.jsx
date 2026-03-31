@@ -9,6 +9,8 @@ import CertificationsUpload from './pages/OfficersView/CertificationsUpload';
 import SpecificationOfficer from './pages/OfficersView/SpecificationOfficer';
 import BankAccount from './pages/OfficersView/BankAccount';
 import VerificationComponent from './components/VerificationComponent/VerficationComponent';
+import PricingComponent from './components/PricingComponent/PricingComponent';
+import CheckOutMercadoPago from './components/CheckOutMercadoPago/CheckOutMercadoPago';
 
 function App() {
   return (
@@ -33,9 +35,9 @@ function App() {
                 <Route path="certifications" element={<CertificationsUpload />} />
                 <Route path="bank-account" element={<BankAccount />} />
             </Route>
-
         
-
+        <Route path="/pricing" element={<PricingComponent />} />
+        <Route path="/checkout" element={<CheckOutMercadoPago />} />
       </Routes>
     </BrowserRouter>
   )

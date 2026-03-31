@@ -13,6 +13,7 @@ export default function WorkerRegister(){
         e.preventDefault(); // ¡ESTO EVITA QUE LA PÁGINA SE RECARGUE!
         navigate("/validation");
     }
+
    return(
       <div 
             className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center py-8 overflow-y-auto"

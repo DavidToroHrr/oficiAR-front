@@ -15,6 +15,13 @@ export default function UserServices() {
                 Comunicación con <span className="text-light-blue">trabajadores</span>
             </h2>
 
+            {/* Cartas de servicio */}
+            <div className="flex flex-col gap-5 px-16">
+                <ServiceCard />
+                <ServiceCard />
+                <ServiceCard />
+            </div>
+
         </div>
     )
 }

@@ -5,7 +5,6 @@ import victor from "../../assets/victor.jpeg"
 import jacobo from "../../assets/jacobo.jpeg"
 import david from "../../assets/david.jpeg"
 
-
 export default function UserServices() {
     return (
         <div>
@@ -21,6 +20,7 @@ export default function UserServices() {
 
             {/* Cartas de servicio */}
             <div className="flex flex-col gap-5 px-16 mb-16">
+
                 <ServiceCard 
                     imageSrc={victor} 
                     imageAlt="Victor Manuel"
@@ -29,6 +29,7 @@ export default function UserServices() {
                     fecha="12/05/2023"
                     precio="$50.000"
                 />
+
                 <ServiceCard 
                     imageSrc={david} 
                     imageAlt="David"
@@ -37,6 +38,7 @@ export default function UserServices() {
                     fecha="15/06/2023"
                     precio="$80.000"
                 />
+
                 <ServiceCard 
                     imageSrc={jacobo} 
                     imageAlt="Jacobo"
@@ -45,7 +47,8 @@ export default function UserServices() {
                     fecha="20/07/2023"
                     precio="$60.000"
                 />
-        </div>
+
+            </div>
 
         </div>
     )

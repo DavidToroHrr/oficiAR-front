@@ -1,7 +1,6 @@
 import FormComponent from "../../components/FormComponent/FormComponent";
 import background from "../../assets/login_background_image.jpeg"
 import TextInput from "../../components/TextInput/TextInput"
-import VerificationComponent from "../../components/VerificationComponent/VerficationComponent";
 import { useNavigate } from "react-router-dom";
 
 

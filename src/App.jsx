@@ -34,10 +34,12 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         <Route path="/worker-register" element={<WorkerRegister />}>
+        </Route>
 
+        {/* UserServices va aquí, al mismo nivel que las demás rutas */}
         <Route path="/user-services" element={<UserServices />} />
 
-        </Route>
+        
 
         <Route path="/validation" element={<VerificationComponent />} >
                 <Route index element={<Navigate to="validation-identity" replace />} />

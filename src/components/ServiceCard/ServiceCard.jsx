@@ -1,15 +1,9 @@
-import { Card } from "flowbite-react";
+import OfficerImage from "../OfficerImage/OfficerImage";
 
-export default function ServiceCard() {
+export default function ServiceCard({ imageSrc, imageAlt }) {
     return (
-        <Card
-            theme={{
-                root: {
-                    base: "w-full !bg-white rounded-lg shadow-sm border-0",
-                    children: "px-16 py-14 min-h-[230px] !bg-white"
-                }
-            }}
-        >
-        </Card>
+        <div className="w-full bg-white rounded-[8px] shadow-sm min-h-[230px] flex items-start pl-6 pt-4 pb-4">
+            <OfficerImage src={imageSrc} alt={imageAlt} />
+        </div>
     );
 }

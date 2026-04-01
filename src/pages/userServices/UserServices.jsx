@@ -1,5 +1,6 @@
 import HeaderUserServices from "../../components/HeaderUserServices/HeaderUserServices"
 import Button from "../../components/Button/Button"
+import ServiceCard from "../../components/ServiceCard/ServiceCard"
 
 export default function UserServices() {
     return (
@@ -10,14 +11,10 @@ export default function UserServices() {
                 <Button>Historial</Button>
             </HeaderUserServices>
 
-            {/* Título principal — Inter Extra Bold 40px según Figma
-                mt-16: más espacio desde el header
-                px-24: padding izquierdo que aproxima X:96 de Figma */}
-            <div className="px-24 mt-16">
-                <h2 className="font-['Inter'] font-extrabold text-very-dark-blue" style={{ fontSize: '30px' }}>
-                    Comunicación con <span className="text-light-blue">trabajadores</span>
-                </h2>
-            </div>
+            <h2 className="mt-16 text-3xl font-black text-very-dark-blue px-16 mb-10">
+                Comunicación con <span className="text-light-blue">trabajadores</span>
+            </h2>
+
         </div>
     )
 }

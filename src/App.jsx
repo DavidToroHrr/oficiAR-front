@@ -18,6 +18,7 @@ import NegotiationAndContact from './pages/ContratationOfficerViews/NegotiationA
 import PaymentRelease from './pages/ContratationOfficerViews/PaymentRelease';
 import ServiceExecution from './pages/ContratationOfficerViews/ServiceExecution';
 import PaymentConfirmation from './pages/ContratationOfficerViews/PaymentConfirmation';
+import UserServices from './pages/userServices/UserServices';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         <Route path="/worker-register" element={<WorkerRegister />}>
+
+        <Route path="/user-services" element={<UserServices />} />
+
         </Route>
 
         <Route path="/validation" element={<VerificationComponent />} >

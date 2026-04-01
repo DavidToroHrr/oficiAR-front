@@ -20,11 +20,32 @@ export default function UserServices() {
             </h2>
 
             {/* Cartas de servicio */}
-            <div className="flex flex-col gap-5 px-16">
-                    <ServiceCard imageSrc={victor} imageAlt="Victor Manuel" />
-                    <ServiceCard imageSrc={david} imageAlt="Victor Manuel" />
-                    <ServiceCard imageSrc={jacobo} imageAlt="Victor Manuel" />
-            </div>
+            <div className="flex flex-col gap-5 px-16 mb-16">
+                <ServiceCard 
+                    imageSrc={victor} 
+                    imageAlt="Victor Manuel"
+                    nombre="Plomería, Victor Manuel"
+                    descripcion="Fuga en el fregadero"
+                    fecha="12/05/2023"
+                    precio="$50.000"
+                />
+                <ServiceCard 
+                    imageSrc={david} 
+                    imageAlt="David"
+                    nombre="Electricidad, David Esteban"
+                    descripcion="Corto circuito en el panel"
+                    fecha="15/06/2023"
+                    precio="$80.000"
+                />
+                <ServiceCard 
+                    imageSrc={jacobo} 
+                    imageAlt="Jacobo"
+                    nombre="Carpintería, Jacobo Arroyave"
+                    descripcion="Reparación de puerta dañada"
+                    fecha="20/07/2023"
+                    precio="$60.000"
+                />
+        </div>
 
         </div>
     )

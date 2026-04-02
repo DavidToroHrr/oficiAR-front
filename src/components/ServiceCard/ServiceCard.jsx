@@ -1,5 +1,6 @@
 import OfficerImage from "../OfficerImage/OfficerImage";
 import ServiceCardInfo from "../ServiceCardInfo/ServiceCardInfo";
+import ChatBubbleIcon from "../ChatBubbleIcon/ChatBubbleIcon";
 
 export default function ServiceCard({ imageSrc, imageAlt, nombre, descripcion, fecha, precio }) {
     return (
@@ -11,6 +12,12 @@ export default function ServiceCard({ imageSrc, imageAlt, nombre, descripcion, f
                 fecha={fecha}
                 precio={precio}
             />
+
+         {/* Ícono directo en la carta sin div extra
+                ml-auto lo empuja a la derecha dentro del flex
+                pr-8 para que no quede pegado al borde */}
+            <ChatBubbleIcon />
+            
         </div>
     );
 }

@@ -1,11 +1,14 @@
 import OfficerImage from "../OfficerImage/OfficerImage";
 import ServiceCardInfo from "../ServiceCardInfo/ServiceCardInfo";
 import ChatBubbleIcon from "../ChatBubbleIcon/ChatBubbleIcon";
+import ServiceStatus from "../ServiceStatus/ServiceStatus";
 
-export default function ServiceCard({ imageSrc, imageAlt, nombre, descripcion, fecha, precio }) {
+export default function ServiceCard({ imageSrc, imageAlt, nombre, descripcion, fecha, precio, estado }) {
     return (
-        <div className="w-full bg-white rounded-[8px] shadow-sm flex items-center gap-4 pl-6 py-4 min-w-[300px]">
+        <div className="relative w-full bg-white rounded-[8px] shadow-sm flex items-center gap-4 pl-6 py-4 min-w-[300px]">
+            
             <OfficerImage src={imageSrc} alt={imageAlt} />
+
             <ServiceCardInfo 
                 nombre={nombre}
                 descripcion={descripcion}
@@ -13,10 +16,10 @@ export default function ServiceCard({ imageSrc, imageAlt, nombre, descripcion, f
                 precio={precio}
             />
 
-         {/* Ícono directo en la carta sin div extra
-                ml-auto lo empuja a la derecha dentro del flex
-                pr-8 para que no quede pegado al borde */}
             <ChatBubbleIcon />
+
+            {/* Estado en esquina superior derecha — absolute relativo a la carta */}
+            {estado && <ServiceStatus estado={estado} />}
             
         </div>
     );

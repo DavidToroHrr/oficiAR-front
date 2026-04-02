@@ -22,30 +22,46 @@ export default function UserServices() {
             {/* Cartas de servicio */}
             <div className="flex flex-col gap-5 px-4 mb-4 xl:px-16">
 
-                <ServiceCard 
-                    imageSrc={victor} 
-                    imageAlt="Victor Manuel"
-                    nombre="Plomería, Victor Manuel"
-                    descripcion="Fuga en el fregadero"
-                    fecha="12/05/2023"
-                    precio="$50.000"
-                />
-                <ServiceCard 
-                    imageSrc={david} 
-                    imageAlt="David"
-                    nombre="Electricidad, David Esteban"
-                    descripcion="Corto circuito en el panel"
-                    fecha="15/06/2023"
-                    precio="$80.000"
-                />
-                <ServiceCard 
-                    imageSrc={jacobo} 
-                    imageAlt="Jacobo"
-                    nombre="Carpintería, Jacobo Arroyave"
-                    descripcion="Reparación de puerta dañada"
-                    fecha="20/07/2023"
-                    precio="$60.000"
-                />
+            <ServiceCard 
+                imageSrc={victor} 
+                imageAlt="Victor Manuel"
+                nombre="Plomería, Victor Manuel"
+                descripcion="Fuga en el fregadero"
+                fecha="12/05/2023"
+                precio="$50.000"
+                estado="Caducado"
+            />
+
+            <ServiceCard 
+                imageSrc={david} 
+                imageAlt="David"
+                nombre="Electricidad, David Esteban"
+                descripcion="Corto circuito en el panel"
+                fecha="15/06/2023"
+                precio="$80.000"
+                estado="En discusión"
+            />
+
+            <ServiceCard 
+                imageSrc={jacobo} 
+                imageAlt="Jacobo"
+                nombre="Carpintería, Jacobo Arroyave"
+                descripcion="Reparación de puerta dañada"
+                fecha="20/07/2023"
+                precio="$60.000"
+                estado="Finalizado"
+            />
+
+            <ServiceCard 
+                imageSrc="https://randomuser.me/api/portraits/men/46.jpg"
+                imageAlt="Carlos Mendez"
+                nombre="Electricidad, Carlos Mendez"
+                descripcion="Instalación de toma corrientes"
+                fecha="28/07/2023"
+                precio="$45.000"
+                estado="Liberación de pago"
+            />
+
         </div>
 
         </div>

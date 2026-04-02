@@ -103,7 +103,7 @@ export default function BankAccount() {
             </div>
 
             <div className="flex justify-end w-full">
-                <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-medium transition-colors">
+                <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-medium transition-colors mt-4">
                     Ir a pagar
                 </Button>
             </div>

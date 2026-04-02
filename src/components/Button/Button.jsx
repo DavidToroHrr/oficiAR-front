@@ -1,7 +1,7 @@
 export default function Button({children, className="", onClick, type = "button"}) {
     return (
         
-            <button className={`text-sm px-6 py-2 hover:scale-105 transition-transform ${className}`} onClick={onClick}
+            <button className={`text-sm px-4 py-2 hover:scale-105 transition-transform ${className}`} onClick={onClick}
             type={type}>
             {children}
             </button>

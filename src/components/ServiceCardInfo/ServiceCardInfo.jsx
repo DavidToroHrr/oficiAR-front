@@ -1,6 +1,6 @@
 export default function ServiceCardInfo({ nombre, descripcion, fecha, precio }) {
     return (
-        <div className="flex flex-col justify-start">
+        <div className="flex flex-col justify-start ml-4">
             <h3 className="font-semibold text-xl md:text-2xl text-very-dark-blue mb-3">
                 {nombre}
             </h3>

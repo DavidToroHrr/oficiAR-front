@@ -2,6 +2,7 @@ import OfficerImage from "../OfficerImage/OfficerImage";
 import ServiceCardInfo from "../ServiceCardInfo/ServiceCardInfo";
 import ChatBubbleIcon from "../ChatBubbleIcon/ChatBubbleIcon";
 import ServiceStatus from "../ServiceStatus/ServiceStatus";
+import Button from "../Button/Button";
 
 export default function ServiceCard({ imageSrc, imageAlt, nombre, descripcion, fecha, precio, estado }) {
     return (
@@ -18,8 +19,18 @@ export default function ServiceCard({ imageSrc, imageAlt, nombre, descripcion, f
 
             <ChatBubbleIcon />
 
-            {/* Estado en esquina superior derecha — absolute relativo a la carta */}
             {estado && <ServiceStatus estado={estado} />}
+
+            {/* Botón Aprobar pago — solo en estado Liberación de pago
+                absolute bottom-3 right-3: esquina inferior derecha
+                w-[141px] h-[66px] según Figma
+                flex flex-col para poner Aprobar arriba y pago abajo */}
+            {estado === "Liberación de pago" && (
+                <Button className="absolute bottom-3 right-3 bg-light-blue text-white rounded-[8px] font-medium transition-colors flex flex-col items-center justify-center w-16 h-10 md:w-[141px] md:h-[66px] !px-0 !py-0">
+                    <span className="text-xs md:text-base leading-tight">Aprobar</span>
+                    <span className="text-xs md:text-base leading-tight">pago</span>
+                </Button>
+            )}
             
         </div>
     );

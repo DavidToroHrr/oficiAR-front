@@ -9,6 +9,7 @@ import SpecificationOfficer from './pages/OfficersView/SpecificationOfficer';
 import BankAccount from './pages/OfficersView/BankAccount';
 import VerificationComponent from './components/VerificationComponent/VerficationComponent';
 import OfficersHome from './pages/OfficersHome/OfficersHome';
+import UsersHome from './pages/UsersHome/UsersHome';
 import ValidationIdentity from './pages/ValidationOfficersViews/ValidationIdentity';
 import CertificationsUpload from './pages/ValidationOfficersViews/CertificationsUpload';
 import SpecificationOfficer from './pages/ValidationOfficersViews/SpecificationOfficer';
@@ -49,6 +50,7 @@ function App() {
         </Route>
 
         <Route path="/officers-home" element={<OfficersHome />} />
+        <Route path="/users-home" element={<UsersHome />} />
             </Route>
         
         <Route path="/pricing" element={<PricingComponent />} />

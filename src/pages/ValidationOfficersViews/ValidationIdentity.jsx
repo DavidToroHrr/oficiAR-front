@@ -8,7 +8,7 @@ export default function ValidationIdentity() {
         // CORRECCIÓN 1: w-[955px] cambió a w-full max-w-[955px].
         // CORRECCIÓN 2: Se eliminó h-[755px] para que la altura sea automática.
         // CORRECCIÓN 3: Cambiamos "p" por "p-6 md:p-10".
-        <div className="flex flex-col items-center bg-white/70 w-full max-w-[955px] p-6 md:p-10 rounded-2xl mb-10">
+        <div className="flex flex-col items-center bg-white/70 w-full max-w-[955px] p-6 md:p-10 rounded-2xl mb-10 min-w-[370px]">
 
             <img
                 src={logoImg}

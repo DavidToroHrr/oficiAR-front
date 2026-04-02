@@ -4,7 +4,7 @@ import UploadElement from "../../components/UploadElement/UploadElement"
 
 export default function CertificationsUpload() {
     return (
-        <div className="flex flex-col items-center w-full max-w-[955px] mx-auto p-6 bg-white/70 rounded-2xl shadow-xl mb-10" >
+        <div className="flex flex-col items-center w-full max-w-[955px] mx-auto p-6 bg-white/70 rounded-2xl shadow-xl mb-10 min-w-[370px]" >
             <img
                 src={logoImg}
                 alt="Logo de OficiAR"

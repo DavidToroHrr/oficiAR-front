@@ -23,7 +23,7 @@ export default function Card({image, description}){
                     
                     {/* Título de la oferta */}
                     {/* Ajustamos el tamaño y el color con los predefinidos en index.css */}
-                    <h5 className="text-[36px] font-bold tracking-tight text-light-blue">
+                    <h5 className="text-[36px] font-semibold tracking-tight text-light-blue">
                         {description}
                     </h5>
                     

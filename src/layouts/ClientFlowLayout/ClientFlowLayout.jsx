@@ -1,48 +1,36 @@
 import { Outlet } from "react-router-dom";
 import ContratationStepper from "../../components/ContratationStepper/ContratationStepper";
-
-
-// IMPORTANTE: Mudamos la importación de la imagen para acá
 import validationOfficerImg from "../../assets/client-flow.png";
 import logo from "../../assets/logo.png";
-export default function ClientFlowLayout(){
-    return(
-        <div className="relative flex flex-col min-h-screen items-center">      
+
+export default function ClientFlowLayout() {
+    return (
+        // 1. Agregamos w-full y overflow-x-hidden para evitar el scroll horizontal fantasma
+        <div className="relative flex flex-col min-h-screen items-center w-full overflow-x-hidden">      
             
-            {/* --- 1. EL FONDO GLOBAL (Cubre toda la pantalla) --- */}
-            {/* fixed hace que la imagen se quede quieta aunque hagas scroll */}
+            {/* LOGO */}
             <img 
                 src={logo} 
                 alt="Logo de OficiAR" 
-                className="w-[247px] h-[55px] object-contain mb-8 mt-8" 
+                className="w-[200px] md:w-[247px] object-contain mb-8 mt-8 z-10" 
             />
 
+            {/* FONDO GLOBAL: Quitamos 'absolute', dejamos SOLO 'fixed inset-0' */}
             <img 
                 src={validationOfficerImg} 
                 alt="Fondo de registro" 
-                className="absolute inset-0 w-full h-full object-cover -z-20 fixed "
+                className="fixed inset-0 w-full h-full object-cover -z-20"
             />
-
             
-            {/* Capa oscura semitransparente para que el Stepper y el texto se lean bien */}
-            <div className="absolute inset-0 bg-white/40 -z-10 fixed"></div>
+            {/* CAPA OSCURA: Dejamos SOLO 'fixed inset-0' */}
+            <div className="fixed inset-0 bg-white/40 -z-10"></div>
 
-            
-                {/* El Stepper ahora flota SOBRE la imagen */}
-                <ContratationStepper />
+            <ContratationStepper />
 
-            
-
-                {/* Este div empuja la tarjeta blanca para que quede bien centrada */}
-                <div className="flex-grow flex items-start justify-center px-4 w-full">
-                   
-                    <Outlet />
-                    
-                </div>
-
-
-
-            
+            {/* Contenedor del Outlet: Aseguramos el px-4 para que el chat respire en los bordes del celular */}
+            <div className="flex-grow flex items-start justify-center px-4 w-full mb-10">
+                <Outlet />
+            </div>
 
         </div>
     )

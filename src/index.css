@@ -3,8 +3,8 @@
 @source "../node_modules/flowbite";
 @source "../node_modules/flowbite-react";
 
-/* Así se declaran los colores personalizados en Tailwind v4 */
 @theme {
+  /* TUS COLORES (Los mantienes igual) */
   --color-very-dark-blue: #051A26;
   --color-dark-blue: #0B3954;
   --color-light-blue: #3D80B7;
@@ -17,6 +17,8 @@
   --color-blue-buttons: #0077B5;
   
   --font-sans: 'Inter', sans-serif;
+  
+  /* ¡Eliminamos todas las animaciones extra de aquí! */
 }
 
 body {
@@ -36,4 +38,6 @@ input:-webkit-autofill:active {
     
   /* 2. Fuerza a que el texto autocompletado respete tu color azul oscuro */
   -webkit-text-fill-color: var(--color-very-dark-blue); 
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: var(--color-very-dark-blue); 
 }

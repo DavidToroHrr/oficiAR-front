@@ -9,6 +9,20 @@ import SpecificationOfficer from './pages/OfficersView/SpecificationOfficer';
 import BankAccount from './pages/OfficersView/BankAccount';
 import VerificationComponent from './components/VerificationComponent/VerficationComponent';
 import OfficersHome from './pages/OfficersHome/OfficersHome';
+import ValidationIdentity from './pages/ValidationOfficersViews/ValidationIdentity';
+import CertificationsUpload from './pages/ValidationOfficersViews/CertificationsUpload';
+import SpecificationOfficer from './pages/ValidationOfficersViews/SpecificationOfficer';
+import BankAccount from './pages/ValidationOfficersViews/BankAccount';
+import VerificationComponent from './layouts/VerificationComponent/VerficationComponent';
+import PricingComponent from './components/PricingComponent/PricingComponent';
+import CheckOutMercadoPago from './components/CheckOutMercadoPago/CheckOutMercadoPago';
+import ClientFlowLayout from './layouts/ClientFlowLayout/ClientFlowLayout';
+import ProblemSpecification from './pages/ContratationOfficerViews/ProblemSpecification';
+import OfficerSelection from './pages/ContratationOfficerViews/OfficerSelection';
+import NegotiationAndContact from './pages/ContratationOfficerViews/NegotiationAndContact';
+import PaymentRelease from './pages/ContratationOfficerViews/PaymentRelease';
+import ServiceExecution from './pages/ContratationOfficerViews/ServiceExecution';
+import PaymentConfirmation from './pages/ContratationOfficerViews/PaymentConfirmation';
 
 function App() {
   return (
@@ -35,7 +49,27 @@ function App() {
         </Route>
 
         <Route path="/officers-home" element={<OfficersHome />} />
+            </Route>
+        
+        <Route path="/pricing" element={<PricingComponent />} />
+        <Route path="/checkout" element={<CheckOutMercadoPago />} />
 
+        <Route path="/client-flow" element={<ClientFlowLayout/>} >
+                <Route index element={<Navigate to="problem-specification" replace />} />
+
+                <Route path="problem-specification" element={<ProblemSpecification/>} />
+
+                <Route path="officer-selection" element={<OfficerSelection/>} />
+
+                <Route path="negotiation-and-contact" element={<NegotiationAndContact/>} />
+
+                <Route path="payment-release" element={<PaymentRelease/>} />
+
+                <Route path="service-execution" element={<ServiceExecution/>} />
+
+                <Route path="payment-confirmation" element={<PaymentConfirmation/>} />
+                
+            </Route>
       </Routes>
     </BrowserRouter>
   )

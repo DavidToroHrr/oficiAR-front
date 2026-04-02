@@ -28,7 +28,7 @@ export default function RegistrationStepper() {
         {/* LÍNEAS DE FONDO */}
         <div className="absolute left-0 top-6 w-full h-1 bg-gray-300 -z-10"></div>
         <div 
-          className="absolute left-0 top-6 h-1 bg-blue-500 -z-10 transition-all duration-500 ease-in-out"
+          className="absolute left-0 top-6 h-1 bg-light-blue -z-10 transition-all duration-500 ease-in-out"
           style={{ width: `${progreso}%` }}
         ></div>
 
@@ -41,13 +41,13 @@ export default function RegistrationStepper() {
           // MÁQUINA DE ESTADOS:
           if (paso.id === pasoActivo) {
             // ESTADO 1: Paso Actual (Azul con franja blanca y anillo)
-            circleClasses = "bg-blue-500 border-white ring-2 ring-blue-500 text-white";
+            circleClasses = "bg-light-blue border-white ring-2 ring-light-blue text-white";
             textClasses = "font-bold text-gray-900";
-
+            
           } else if (paso.id < pasoActivo) {
             // ESTADO 2: Pasos Completados (Totalmente azules)
             // Usamos border-blue-500 para que el borde se camufle y no haya franja blanca
-            circleClasses = "bg-blue-500 border-blue-500 text-white";
+            circleClasses = "bg-light-blue border-light-blue text-white";
             textClasses = "font-bold text-gray-900";
 
           } else if (paso.id === pasoActivo + 1) {

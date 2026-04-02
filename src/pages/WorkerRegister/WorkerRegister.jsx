@@ -1,7 +1,6 @@
 import FormComponent from "../../components/FormComponent/FormComponent";
 import background from "../../assets/login_background_image.jpeg"
 import TextInput from "../../components/TextInput/TextInput"
-import VerificationComponent from "../../components/VerificationComponent/VerficationComponent";
 import { useNavigate } from "react-router-dom";
 
 
@@ -13,6 +12,7 @@ export default function WorkerRegister(){
         e.preventDefault(); // ¡ESTO EVITA QUE LA PÁGINA SE RECARGUE!
         navigate("/validation");
     }
+
    return(
       <div 
             className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center py-8 overflow-y-auto"

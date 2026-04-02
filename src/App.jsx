@@ -3,11 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import WorkerRegister from './pages/WorkerRegister/WorkerRegister';
 import DefaultHome from './pages/DefaultHome/DefaultHome';
-import ValidationIdentity from './pages/OfficersView/ValidationIdentity';
-import CertificationsUpload from './pages/OfficersView/CertificationsUpload';
-import SpecificationOfficer from './pages/OfficersView/SpecificationOfficer';
-import BankAccount from './pages/OfficersView/BankAccount';
-import VerificationComponent from './components/VerificationComponent/VerficationComponent';
 import OfficersHome from './pages/OfficersHome/OfficersHome';
 import UsersHome from './pages/UsersHome/UsersHome';
 import ValidationIdentity from './pages/ValidationOfficersViews/ValidationIdentity';
@@ -51,7 +46,6 @@ function App() {
 
         <Route path="/officers-home" element={<OfficersHome />} />
         <Route path="/users-home" element={<UsersHome />} />
-            </Route>
         
         <Route path="/pricing" element={<PricingComponent />} />
         <Route path="/checkout" element={<CheckOutMercadoPago />} />

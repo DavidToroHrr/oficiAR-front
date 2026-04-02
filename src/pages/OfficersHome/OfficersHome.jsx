@@ -9,22 +9,63 @@ import MainTitle from "../../components/OfficerHomeComponents/MainTitle/MainTitl
 import ExclusiveOffers from "../../components/OfficerHomeComponents/ExclusiveOffers/ExclusiveOffers";
 import SecondaryTitle from "../../components/OfficerHomeComponents/SecondaryTitle/SecondaryTitle";
 import Footer from "../../components/FooterComponent/FooterComponent";
+import Cleaning from "../../assets/OfficersHomeCards/limpieza.png";
+import Multimeter from "../../assets/OfficersHomeCards/multimetro.png";
 
 export default function OfficersHome(){
+    const ExclusiveOffersList = [
+        {
+            id: 1,
+            image: Cleaning,
+            // <br/> salto de línea
+            description: <>¡20 % <br/> OFF limpieza!</>
+        },
+        {
+            id: 2,
+            image: Multimeter, 
+            description: <>¡Descuento <br/> flash!</>
+        },
+        {
+            id: 3,
+            image: Multimeter, 
+            description: <div className="mt-5">Por definir</div>
+        },
+        {
+            id: 4,
+            image: Multimeter,
+            description: <>Servicio gratis <br/> de plomería</>
+        },
+        {
+            id: 5,
+            image: Multimeter,
+            description: <div className="mt-5">Por definir</div>
+        },
+        {
+            id: 6,
+            image: Multimeter, 
+            description: <div className="mt-5">Por definir</div>
+        }
+    ];
+
     return(
         <div>
             {/* Aquí usamos el className como variable que viene
             del componente */}
-            <Header className="justify-center gap-25">
-                <Button>
+            {/* w-full: Ocupa el 100% en todas las pantallas.
+                gap-4: Separación pequeña (16px) para celulares.
+                md:gap-25: Separación grande (100px) cuando la pantalla sea mediana (tablets/PC).
+                px-2 md:px-8: Reducimos un poco el padding lateral en celulares para dar más espacio.
+            */}
+            <Header className="w-full justify-center gap-4 md:gap-25 px-2 md:px-8">
+                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
                     Inicio
                 </Button>
-                
-                <Button>
-                    Solicitudes de Servicio
+                                            
+                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
+                    Solicitudes de Servicios
                 </Button>
-
-                <Button>
+                            
+                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
                     Historial de Servicios
                 </Button>
             </Header>
@@ -92,7 +133,9 @@ export default function OfficersHome(){
                 </SecondaryTitle>
                     
                 <div>
-                    <ExclusiveOffers />
+                    <ExclusiveOffers 
+                        list={ExclusiveOffersList}
+                    />
                 </div>
             </div>
 

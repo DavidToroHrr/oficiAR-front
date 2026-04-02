@@ -19,7 +19,7 @@ export default function Card({image, description}){
                 
                 {/* Contenedor del texto en la parte inferior */}
                 {/* Centramos el texto y ajustamos padding */}
-                <div className="flex flex-col items-center justify-center p-2 text-center">
+                <div className="flex flex-col items-center justify-center p-1 text-center">
                     
                     {/* Título de la oferta */}
                     {/* Ajustamos el tamaño y el color con los predefinidos en index.css */}

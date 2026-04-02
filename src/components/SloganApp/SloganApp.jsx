@@ -1,4 +1,4 @@
-export default function SloganApp(){
+export default function pSloganApp(){
     return(
         <div>
             <h1 className="pt-48 text-5xl font-black text-very-dark-blue text-center ">

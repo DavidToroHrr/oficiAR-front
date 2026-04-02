@@ -9,13 +9,13 @@ export default function UploadDni(){
             <div className="bg-very-light-gray h-[100px] rounded-[0.5rem] flex flex-col justify-center items-center w-full">
                 <h3 className="mb-2">Foto frontal del DNI</h3>
 
-                <Button className="bg-light-blue rounded-[0.5rem]">Subir Dni</Button>
+                <Button className="bg-light-blue rounded-[0.5rem] !text-white">Subir Dni</Button>
             </div>
 
             <div className="bg-very-light-gray h-[100px] rounded-[0.5rem] flex flex-col justify-center items-center w-full">
                 <h3 className="mb-2">Foto trasera del DNI</h3>
 
-                <Button className="bg-light-blue rounded-[0.5rem]">Subir Dni</Button>
+                <Button className="bg-light-blue rounded-[0.5rem] !text-white">Subir Dni</Button>
             </div>
 
         </div>

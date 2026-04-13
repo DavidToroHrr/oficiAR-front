@@ -30,18 +30,28 @@ export default function PaymentReleaseChat() {
 
             {/* Agregamos justify-between para mandar uno a cada lado */}
             {/* Agregamos w-full para que el contenedor use todo el ancho disponible */}
-            <div className="flex flex-row justify-between w-full">
-                {/* self-start se pone a flotar a la izquierda ignorando el flex del contenedor padre */}
-                <Button className="bg-light-blue text-white px-8 py-2.5 rounded-[8px] font-bold shadow-md mt-8
-                    ml-20 mb-10 w-[180px] h-[71px] text-[20px] flex items-center justify-center">
+            {/* px-4 para celular (margen pequeño a los lados)
+                md:px-20 para PC (recuperamos el margen de 80px)
+                gap-4 para que NUNCA se toquen, sin importar qué tan pequeña sea la pantalla */}
+            <div className="flex flex-row justify-between w-full px-4 md:px-20 mt-8 mb-10 gap-4">
+                
+                <Button className="bg-light-blue text-white rounded-[8px] font-bold shadow-md 
+                                w-full max-w-[150px] md:max-w-[180px] 
+                                h-[50px] md:h-[71px] 
+                                text-sm md:text-[20px] 
+                                flex items-center justify-center">
                     Regresar
                 </Button>
 
-                {/* self-end se pone a flotar a la derecha ignorando el flex del contenedor padre */}
-                <Button className="bg-light-blue text-white px-8 py-2.5 rounded-[8px] font-bold shadow-md mt-8
-                    mr-20 mb-10 w-[180px] h-[71px] text-[20px] flex items-center justify-center">
+                {/* Se agregó leading-tight para que el salto de línea (<br/>) no separe tanto el texto */}
+                <Button className="bg-light-blue text-white rounded-[8px] font-bold shadow-md 
+                                w-full max-w-[150px] md:max-w-[180px] 
+                                h-[50px] md:h-[71px] 
+                                text-sm md:text-[20px] leading-tight
+                                flex items-center justify-center text-center">
                     Volver al <br/> historial
                 </Button>
+                
             </div>
         </div>
     )

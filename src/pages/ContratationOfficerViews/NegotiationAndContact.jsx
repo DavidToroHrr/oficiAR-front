@@ -2,12 +2,19 @@ import Button from "../../components/Button/Button";
 import InteractiveChat from "../../components/InteractiveChat/InteractiveChat";
 
 export default function NegotiationAndContact() {
+    const chatMessages = [
+        { id: 1, text: "¿Tiene disponibilidad para el próximo miércoles?", sender: "them", time: "7:20" },
+        { id: 2, text: "Cuento con disponibilidad a las 9am.", sender: "me", time: "7:20" },
+        { id: 3, text: "Perfecto, queda agendado para el miércoles a las 9 am", sender: "them", time: "7:20" },
+        { id: 4, text: "¡Muchas gracias!", sender: "me", time: "7:20" }
+    ];
+
     return (
         <div className="flex flex-col items-center">
             <h2 className="mb-4 text-4xl md:text-5xl font-black text-very-dark-blue text-center pt-5">
                 Negociación y <span className="text-light-blue">Contacto</span>
             </h2>
-            <InteractiveChat />
+            <InteractiveChat initialMessages={chatMessages}/>
             <div className="flex flex-row justify-between w-full mt-8 pb-10 gap-4">
                 
                 {/* Botón Secundario (Regresar) */}

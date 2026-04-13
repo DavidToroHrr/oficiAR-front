@@ -20,6 +20,9 @@ import PaymentRelease from './pages/ContratationOfficerViews/PaymentRelease';
 import ServiceExecution from './pages/ContratationOfficerViews/ServiceExecution';
 import PaymentConfirmation from './pages/ContratationOfficerViews/PaymentConfirmation';
 import UserServices from './pages/userServices/UserServices';
+import ServicesHistoryChat from './pages/ServicesHistoryChat/ServicesHistoryChat';
+import PaymentReleaseChat from './pages/PaymentRealeaseChat/PaymentReleaseChat';
+import ClientRequestsChat from './pages/ClientRequestsChat/ClientRequestsChat';
 
 function App() {
   return (
@@ -72,6 +75,11 @@ function App() {
                 <Route path="payment-confirmation" element={<PaymentConfirmation/>} />
                 
             </Route>
+
+        <Route path="services-history-chat" element={<ServicesHistoryChat />} />
+        <Route path="payment-release-chat" element={<PaymentReleaseChat />} />
+        <Route path="client-requests-chat" element={<ClientRequestsChat />} />
+
       </Routes>
     </BrowserRouter>
   )

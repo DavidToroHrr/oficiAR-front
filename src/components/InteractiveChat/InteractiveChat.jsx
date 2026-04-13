@@ -1,13 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 
-export default function InteractiveChat() {
-    // 1. EL ESTADO DEL CHAT (La "Falsa" Base de Datos)
-    const [messages, setMessages] = useState([
-        { id: 1, text: "¿Tiene disponibilidad para el próximo miércoles?", sender: "them", time: "7:20" },
-        { id: 2, text: "Cuento con disponibilidad a las 9am.", sender: "me", time: "7:20" },
-        { id: 3, text: "Perfecto, queda agendado para el miércoles a las 9 am", sender: "them", time: "7:20" },
-        { id: 4, text: "¡Muchas gracias!", sender: "me", time: "7:20" }
-    ]);
+export default function InteractiveChat({ initialMessages = [] }) {
+    // Arreglo de mensajes dinámicos, vienen de las vistas donde se usa este componente
+    const [messages, setMessages] = useState(initialMessages);
     
     const [inputValue, setInputValue] = useState("");
     const chatContainerRef = useRef(null);
@@ -41,7 +36,7 @@ export default function InteractiveChat() {
         // CONTENEDOR PRINCIPAL: Simula la pantalla de un celular o un widget flotante
         <div className="w-full max-w-md mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[700px] border border-gray-200">
             
-            {/* --- HEADER AZUL --- */}
+            {/* HEADER AZUL */}
             <div className="bg-light-blue px-4 py-3 flex justify-between items-center text-white">
                 <div className="flex items-center gap-3">
                     {/* Avatar del Trabajador (Hernán) */}
@@ -62,7 +57,7 @@ export default function InteractiveChat() {
                 </button>
             </div>
 
-            {/* --- ÁREA DE MENSAJES (Scrollable) --- */}
+            {/* ÁREA DE MENSAJES (Scrollable)  */}
             {/* Usamos bg-very-light-gray para el fondo suave del chat */}
             <div 
                 ref={chatContainerRef}
@@ -99,7 +94,7 @@ export default function InteractiveChat() {
                 })}
             </div>
 
-            {/* --- ÁREA DE INPUT Y CHIPS DE RESPUESTA RÁPIDA --- */}
+            {/* ÁREA DE INPUT Y CHIPS DE RESPUESTA RÁPIDA */}
             <div className="bg-white p-3 border-t border-gray-100">
                 
                 {/* Chips de sugerencias */}
@@ -126,7 +121,7 @@ export default function InteractiveChat() {
                     />
                     
                     {/* Botón de Enviar (Flecha amarilla) */}
-                    {/* Usamos tu color --color-yellow exacto */}
+                    {/* Usamos color --color-yellow exacto */}
                     <button 
                         type="submit" 
                         disabled={!inputValue.trim()} // Se desactiva si está vacío

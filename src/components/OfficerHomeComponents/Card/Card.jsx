@@ -5,25 +5,27 @@ export default function Card({image, description}){
     // cambiar el formato del nombre de las clases a CamelCase 
     // Todo porque estamos en React, no en HTML
     return(
-        <div className="bg-white rounded-lg shadow-md overflow-hidden max-w-sm">
+        <div className="bg-white rounded-lg shadow-md overflow-hidden max-w-[280px] w-full mx-auto">
             
             {/* Convertimos el enlace en un div vertical simple */}
             <div className="flex flex-col">
                 
                 {/* Imagen en la parte superior */}
-                {/* Usamos object-cover y un alto fijo (h-48) para que la imagen siempre se vea bien */}
+                {/* Usamos object-cover y un alto fijo (h-32) para que la imagen siempre se vea bien */}
                 <img 
-                    className="object-cover w-full h-48" 
+                    className="object-cover w-full h-32" 
                     src={image} 
                 />
                 
                 {/* Contenedor del texto en la parte inferior */}
                 {/* Centramos el texto y ajustamos padding */}
-                <div className="flex flex-col items-center justify-center p-1 text-center">
+                <div className="flex flex-col items-center justify-center p-4 text-center">
                     
                     {/* Título de la oferta */}
                     {/* Ajustamos el tamaño y el color con los predefinidos en index.css */}
-                    <h5 className="text-[36px] font-semibold tracking-tight text-light-blue">
+                    {/* Cambiamos text-[36px] por algo responsive: text-lg en celulares y 
+                        text-xl en pantallas grandes */}
+                    <h5 className="text-lg md:text-xl font-semibold tracking-tight text-light-blue">
                         {description}
                     </h5>
                     

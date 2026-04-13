@@ -28,7 +28,7 @@ export default function OfficersHome(){
         {
             id: 3,
             image: Multimeter, 
-            description: <div className="mt-5">Por definir</div>
+            description: <div className="mt-3">Por definir</div>
         },
         {
             id: 4,
@@ -38,12 +38,12 @@ export default function OfficersHome(){
         {
             id: 5,
             image: Multimeter,
-            description: <div className="mt-5">Por definir</div>
+            description: <div className="mt-3">Por definir</div>
         },
         {
             id: 6,
             image: Multimeter, 
-            description: <div className="mt-5">Por definir</div>
+            description: <div className="mt-3">Por definir</div>
         }
     ];
 
@@ -53,21 +53,27 @@ export default function OfficersHome(){
             del componente */}
             {/* w-full: Ocupa el 100% en todas las pantallas.
                 gap-4: Separación pequeña (16px) para celulares.
-                md:gap-25: Separación grande (100px) cuando la pantalla sea mediana (tablets/PC).
                 px-2 md:px-8: Reducimos un poco el padding lateral en celulares para dar más espacio.
             */}
-            <Header className="w-full justify-center gap-4 md:gap-25 px-2 md:px-8">
-                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
-                    Inicio
-                </Button>
-                                            
-                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
-                    Solicitudes de Servicios
-                </Button>
-                            
-                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
-                    Historial de Servicios
-                </Button>
+            {/* Clases actualizadas para apilar en celular (flex-col) y separar a los lados en PC (justify-between) */}
+            <Header className="w-full flex flex-col md:flex-row items-center justify-center gap-4 px-2 md:px-8">
+                
+                {/* Un div agrupando los botones para que se mantengan en su propia fila */}
+                <div className="flex justify-center ml-10 gap-2 md:gap-6">
+                    
+                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
+                        Inicio
+                    </Button>
+                                                            
+                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
+                        Solicitudes de Servicios
+                    </Button>
+                                
+                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
+                        Historial de Servicios
+                    </Button>
+
+                </div>
             </Header>
 
             {/* Contenedor principal: le damos un padding (p-30) para que no se pegue a los bordes */}

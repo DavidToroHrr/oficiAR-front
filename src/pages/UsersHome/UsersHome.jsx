@@ -96,7 +96,7 @@ export default function UsersHome(){
             {
                 id: 3,
                 image: Multimeter, 
-                description: <div className="mt-5">Por definir</div>
+                description: <div className="mt-3">Por definir</div>
             },
             {
                 id: 4,
@@ -106,12 +106,12 @@ export default function UsersHome(){
             {
                 id: 5,
                 image: Multimeter,
-                description: <div className="mt-5">Por definir</div>
+                description: <div className="mt-3">Por definir</div>
             },
             {
                 id: 6,
                 image: Multimeter, 
-                description: <div className="mt-5">Por definir</div>
+                description: <div className="mt-3">Por definir</div>
             }
     ];
 
@@ -119,21 +119,28 @@ export default function UsersHome(){
         <div>
             {/* w-full: Ocupa el 100% en todas las pantallas
                 gap-4: Separación pequeña (16px) para celulares
-                md:gap-25: Separación grande (100px) cuando la pantalla sea mediana (tablets/PC)
                 px-2 md:px-8: Reducimos un poco el padding lateral en celulares para dar más espacio.
             */}
-            <Header className="w-full justify-center gap-4 md:gap-25 px-2 md:px-8">
-                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
-                    Inicio
-                </Button>
-                                            
-                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
-                    Servicios
-                </Button>
+            {/* Agregamos contenedor para botones para que se muestren en su propia fila
+                Y el logo quede arriba de ellos */}
+            <Header className="w-full flex flex-col md:flex-row items-center justify-center gap-4 px-2 md:px-8">
                             
-                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
-                    Perfil
-                </Button>
+                {/* Un div agrupando los botones para que se mantengan en su propia fila */}
+                <div className="flex justify-center ml-10 gap-2 md:gap-6">
+                                
+                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
+                        Inicio
+                    </Button>
+                                                                        
+                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
+                        Servicios
+                    </Button>
+                                            
+                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
+                        Historial de Servicios
+                    </Button>
+            
+                </div>
             </Header>
 
             <div className="px-4 py-8 lg:px-35 lg:mt-15 lg:mb-10 max-w-7xl mx-auto">
@@ -163,7 +170,7 @@ export default function UsersHome(){
                 text-sm md:text-base: Letra un poco más pequeña en móvil, tamaño normal en PC
                 py-3 md:py-4: Un poco menos de altura en celular, más alto en PC */}
                 <Button className="flex mx-auto mb-25 bg-light-blue text-white w-full md:w-auto text-sm md:text-base py-3 px-6 md:py-4 md:px-8 lg:px-10 lg:py-8 rounded-[8px]
-                    font-extrabold lg:text-[36px]">
+                    font-extrabold lg:text-[20px]">
 
                     Solicitar un servicio
                 </Button>

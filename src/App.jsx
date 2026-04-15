@@ -23,6 +23,7 @@ import UserServices from './pages/userServices/UserServices';
 import ServicesHistoryChat from './pages/ServicesHistoryChat/ServicesHistoryChat';
 import PaymentReleaseChat from './pages/PaymentRealeaseChat/PaymentReleaseChat';
 import ClientRequestsChat from './pages/ClientRequestsChat/ClientRequestsChat';
+import ClientServiceRequests from './pages/ClientServiceRequests/ClientServiceRequests';
 
 function App() {
   return (
@@ -43,8 +44,6 @@ function App() {
         {/* UserServices va aquí, al mismo nivel que las demás rutas */}
         <Route path="/user-services" element={<UserServices />} />
 
-        
-
         <Route path="/validation" element={<VerificationComponent />} >
                 <Route index element={<Navigate to="validation-identity" replace />} />
                 <Route path="validation-identity" element={<ValidationIdentity />} />
@@ -60,25 +59,27 @@ function App() {
         <Route path="/checkout" element={<CheckOutMercadoPago />} />
 
         <Route path="/client-flow" element={<ClientFlowLayout/>} >
-                <Route index element={<Navigate to="problem-specification" replace />} />
+          <Route index element={<Navigate to="problem-specification" replace />} />
 
-                <Route path="problem-specification" element={<ProblemSpecification/>} />
+          <Route path="problem-specification" element={<ProblemSpecification/>} />
 
-                <Route path="officer-selection" element={<OfficerSelection/>} />
+          <Route path="officer-selection" element={<OfficerSelection/>} />
 
-                <Route path="negotiation-and-contact" element={<NegotiationAndContact/>} />
+          <Route path="negotiation-and-contact" element={<NegotiationAndContact/>} />
 
-                <Route path="payment-release" element={<PaymentRelease/>} />
+          <Route path="payment-release" element={<PaymentRelease/>} />
 
-                <Route path="service-execution" element={<ServiceExecution/>} />
+          <Route path="service-execution" element={<ServiceExecution/>} />
 
-                <Route path="payment-confirmation" element={<PaymentConfirmation/>} />
+          <Route path="payment-confirmation" element={<PaymentConfirmation/>} />
                 
-            </Route>
+        </Route>
 
         <Route path="services-history-chat" element={<ServicesHistoryChat />} />
         <Route path="payment-release-chat" element={<PaymentReleaseChat />} />
         <Route path="client-requests-chat" element={<ClientRequestsChat />} />
+
+        <Route path="client-service-requests" element={<ClientServiceRequests />} />
 
       </Routes>
     </BrowserRouter>

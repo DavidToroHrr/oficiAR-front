@@ -3,10 +3,16 @@
 
 import { Footer, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, FooterTitle } from "flowbite-react";
 import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
-
+import logo from "../../assets/logo.png";
 export default function FooterComponent() {
   return (
-    <Footer bgDark  >
+    <Footer bgDark   >
+      <div className="diplay-flex flex-row w-full" >
+
+      <div className="w-full pt-10 pl-5">
+        <img src={logo} alt="OficiAR Logo" className="h-10 w-40 object-cover object-center scale-120" />
+      </div>
+      
       <div className="w-full pt">
         <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
           <div>
@@ -55,6 +61,8 @@ export default function FooterComponent() {
             <FooterIcon href="#" icon={BsDribbble} />
           </div>
         </div>
+      </div>
+
       </div>
     </Footer>
   );

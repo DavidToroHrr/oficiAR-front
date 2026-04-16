@@ -24,6 +24,8 @@ import ServicesHistoryChat from './pages/ServicesHistoryChat/ServicesHistoryChat
 import PaymentReleaseChat from './pages/PaymentRealeaseChat/PaymentReleaseChat';
 import ClientRequestsChat from './pages/ClientRequestsChat/ClientRequestsChat';
 import ClientServiceRequests from './pages/ClientServiceRequests/ClientServiceRequests';
+import UserHistorial from './pages/UserHistorial/UserHistorial';
+
 
 function App() {
   return (
@@ -43,6 +45,9 @@ function App() {
 
         {/* UserServices va aquí, al mismo nivel que las demás rutas */}
         <Route path="/user-services" element={<UserServices />} />
+
+
+        <Route path="/user-historial" element={<UserHistorial />} />
 
         <Route path="/validation" element={<VerificationComponent />} >
                 <Route index element={<Navigate to="validation-identity" replace />} />

@@ -91,7 +91,7 @@ export default function UserServices() {
                 Comunicación con <span className="text-light-blue">trabajadores</span>
             </h2>
 
-            <div className="flex flex-col gap-5 px-4 mb-4 xl:px-16">
+            <div className="flex flex-col gap-5 px-4 mb-32 xl:px-16">
                 {servicios.map(servicio => (
                     <ServiceCard
                         key={servicio.id}

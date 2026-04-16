@@ -4,7 +4,7 @@ import ChatBubbleIcon from "../ChatBubbleIcon/ChatBubbleIcon";
 import ServiceStatus from "../ServiceStatus/ServiceStatus";
 import Button from "../Button/Button";
 
-export default function ServiceCard({ imageSrc, imageAlt, nombre, descripcion, fecha, precio, estado }) {
+export default function ServiceCard({ imageSrc, imageAlt, nombre, descripcion, fecha, precio, estado, icono, botonAccion }) {
     return (
         <div className="relative w-full bg-white rounded-[8px] shadow-sm flex items-center gap-4 pl-6 py-4 min-w-[300px]">
             
@@ -17,16 +17,20 @@ export default function ServiceCard({ imageSrc, imageAlt, nombre, descripcion, f
                 precio={precio}
             />
 
-            <ChatBubbleIcon />
+            {icono ? icono : <ChatBubbleIcon />}
 
             {estado && <ServiceStatus estado={estado} />}
 
-            {estado === "Liberación de pago" && (
+            {/* Botón de UserServices — Aprobar pago */}
+            {estado === "Liberación de pago" && !botonAccion && (
                 <Button className="absolute bottom-3 right-3 bg-light-blue text-white rounded-[8px] font-medium transition-colors flex flex-col items-center justify-center w-12 h-8 sm:w-16 sm:h-10 md:w-[141px] md:h-[66px] !px-0 !py-0">
                     <span className="text-[9px] sm:text-xs md:text-base leading-tight">Aprobar</span>
                     <span className="text-[9px] sm:text-xs md:text-base leading-tight">pago</span>
                 </Button>
             )}
+
+            {/* Botón personalizado desde la vista — Finalizar servicio */}
+            {botonAccion && estado === "En ejecución" && botonAccion}
             
         </div>
     );

@@ -58,7 +58,7 @@ const historial = [
     },
     {
         id: 5,
-        imageSrc: jacobo,
+        imageSrc: tuberiaRota,
         imageAlt: "Jacobo Arroyave",
         nombre: "Jacobo Arroyave",
         descripcion: "Reparación de puerta principal dañada",

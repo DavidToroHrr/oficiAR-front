@@ -1,4 +1,5 @@
 import ImgOfficer from "../../assets/officer.png"
+import Typography from "../Typography/Typography"
 
 export default function HowItWorks() { 
     return (
@@ -9,9 +10,9 @@ export default function HowItWorks() {
                 {/* --- LA TARJETA BLANCA (Adelante) --- */}
                 {/* z-10 la trae hacia adelante. relative es necesario para que z-10 funcione */}
                 <div className="relative z-10 flex flex-col justify-center bg-white w-full max-w-[610px] rounded-[2rem] p-10 shadow-2xl">
-                    <h2 className="text-2xl font-extrabold mb-10">
+                    <Typography variant="h2" className="mb-10">
                         ¿Cómo funciona? 
-                    </h2>
+                    </Typography>
 
                     {/* Paso 1 (Cambié items-center por items-start para que la bolita no se baje si el texto es largo) */}
                     <div className="flex items-start mb-8">
@@ -19,9 +20,9 @@ export default function HowItWorks() {
                             1
                         </div>
                         <div className="ml-6 max-w-sm">
-                            <p className="text-x1 text-very-dark-blue leading-relaxed">
+                            <Typography variant="body" className="text-very-dark-blue">
                                 Encuentra al profesional que necesitas. Revisa sus calificaciones y trabajos anteriores registrados en la blockchain, asegurando que cada reseña es auténtica e inalterable.
-                            </p>
+                            </Typography>
                         </div>
                     </div>
 
@@ -31,9 +32,9 @@ export default function HowItWorks() {
                             2
                         </div>
                         <div className="ml-6 max-w-sm">
-                            <p className="text-x1 text-very-dark-blue leading-relaxed">
+                            <Typography variant="body" className="text-very-dark-blue">
                                 Una vez acordado el presupuesto, los fondos se resguardan. El dinero no se libera hasta que ambos confirmen que el trabajo se completó.
-                            </p>
+                            </Typography>
                         </div>   
                     </div>
 
@@ -43,9 +44,9 @@ export default function HowItWorks() {
                             3
                         </div>
                         <div className="ml-6 max-w-sm">
-                            <p className="text-x1 text-very-dark-blue leading-relaxed">
+                            <Typography variant="body" className="text-very-dark-blue">
                                 Confirma en la app para liberar el pago al profesional. Tu calificación del servicio se graba de forma permanente, ayudando a toda la comunidad.
-                            </p>
+                            </Typography>
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,5 @@
+import Typography from "../Typography/Typography";
+
 export default function Satisfaction() {
   return (
     // section es semánticamente mejor que un div para un bloque grande de contenido
@@ -9,32 +11,32 @@ export default function Satisfaction() {
           
           {/* Bloque 1 */}
           <div>
-            <h3 className="text-xl font-bold text-very-dark-blue mb-4">
+            <Typography variant="h3" className="mb-4">
               Garantía de <span className="text-light-blue">satisfacción</span>
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
+            </Typography>
+            <Typography variant="body">
               Si el servicio no cumple tus expectativas, trabajaremos contigo para solucionarlo y asegurarnos de que quedes conforme.
-            </p>
+            </Typography>
           </div>
 
           {/* Bloque 2 */}
           <div>
-            <h3 className="text-xl font-bold text-very-dark-blue mb-4">
+            <Typography variant="h3" className="mb-4">
               Profesionales <span className="text-light-blue">verificados</span>
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
+            </Typography>
+            <Typography variant="body">
               Antes de formar parte de OficiAR, cada prestador pasa por un proceso de validación de identidad y revisión de antecedentes.
-            </p>
+            </Typography>
           </div>
 
           {/* Bloque 3 */}
           <div>
-            <h3 className="text-xl font-bold text-very-dark-blue mb-4">
+            <Typography variant="h3" className="mb-4">
               Soporte <span className="text-light-blue">dedicado</span>
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
+            </Typography>
+            <Typography variant="body">
               Nuestro equipo está disponible para ayudarte todos los días, brindándote asistencia clara y ágil en cada paso del proceso.
-            </p>
+            </Typography>
           </div>
 
         </div>

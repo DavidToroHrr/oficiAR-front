@@ -8,6 +8,7 @@ import Footer from "../../components/FooterComponent/FooterComponent"
 import Satisfaction from "../../components/Satisfaction/Satisfaction"
 import SloganApp from "../../components/SloganApp/SloganApp"
 import HowItWorks from "../../components/HowItWorks/HowItWorks"
+import Typography from "../../components/Typography/Typography"
 
 export default function DefaultHome(){
     
@@ -46,24 +47,25 @@ export default function DefaultHome(){
         <SearchBar>
         </SearchBar>
 
-        <h2 className="mt-20 text-2xl font-black text-very-dark-blue text-center ">
-                Descubre algunos de los profesionales con los que <br/>
-                <span className="text-light-blue">contamos</span>
-        </h2>
+        <Typography variant="h2" className="mt-20 text-center">
+            Descubre algunos de los profesionales con los que <br/>
+            <span className="text-light-blue">contamos</span>
+        </Typography>
+
         <CarouselOfficers>
         </CarouselOfficers>
        
-        <h2 className="mt-20 text-2xl font-black text-very-dark-blue text-center ">
-                Descubre qué opinan algunos clientes sobre Ofici
-                <span className="text-light-blue">AR</span>
-        </h2>
+        <Typography variant="h2" className="mt-20 text-center">
+            Descubre qué opinan algunos clientes sobre Ofici
+            <span className="text-light-blue">AR</span>
+        </Typography>
 
         <TestimonialsSection>
         </TestimonialsSection>
 
-        <h2 className="mt-20 text-2xl font-black text-very-dark-blue text-center mb-10">
-                Tu satisfacción está <span className="text-light-blue">garantizada</span>
-        </h2>
+        <Typography variant="h2" className="mt-20 text-center mb-10">
+            Tu satisfacción está <span className="text-light-blue">garantizada</span>
+        </Typography>
 
         <Satisfaction>
         </Satisfaction>

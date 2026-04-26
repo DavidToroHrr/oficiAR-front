@@ -1,11 +1,13 @@
 import HeaderUserServices from "../../components/HeaderUserServices/HeaderUserServices"
 import Button from "../../components/Button/Button"
 import ServiceCard from "../../components/ServiceCard/ServiceCard"
+// IMPORTAMOS EL PAGINADOR
+import PaginatedList from "../../components/PaginatedList/PaginatedList" 
+
 import victor from "../../assets/victor.jpeg"
 import jacobo from "../../assets/jacobo.jpeg"
 import david from "../../assets/david.jpeg"
 import Footer from "../../components/FooterComponent/FooterComponent"
-
 
 const estadosDisponibles = [
     "Caducado",
@@ -91,19 +93,28 @@ export default function UserServices() {
                 Comunicación con <span className="text-light-blue">trabajadores</span>
             </h2>
 
-            <div className="flex flex-col gap-5 px-4 mb-32 xl:px-16">
-                {servicios.map(servicio => (
-                    <ServiceCard
-                        key={servicio.id}
-                        imageSrc={servicio.imageSrc}
-                        imageAlt={servicio.imageAlt}
-                        nombre={servicio.nombre}
-                        descripcion={servicio.descripcion}
-                        fecha={servicio.fecha}
-                        precio={servicio.precio}
-                        estado={servicio.estado}
-                    />
-                ))}
+            {/* Mantenemos tus márgenes en este div contenedor */}
+            <div className="px-4 mb-32 xl:px-16">
+                
+                {/* LA PAGINACIÓN HACE EL TRABAJO PESADO */}
+                <PaginatedList 
+                    items={servicios} 
+                    itemsPerPage={3} // Muestra 3 tarjetas por página
+                    listClassName="flex flex-col gap-5 w-full" // Mantiene el espaciado vertical original
+                    renderItem={(servicio) => (
+                        <ServiceCard
+                            key={servicio.id}
+                            imageSrc={servicio.imageSrc}
+                            imageAlt={servicio.imageAlt}
+                            nombre={servicio.nombre}
+                            descripcion={servicio.descripcion}
+                            fecha={servicio.fecha}
+                            precio={servicio.precio}
+                            estado={servicio.estado}
+                        />
+                    )}
+                />
+
             </div>
 
             <Footer />

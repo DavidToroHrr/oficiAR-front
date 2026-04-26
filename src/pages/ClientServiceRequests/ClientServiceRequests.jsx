@@ -3,6 +3,11 @@ import Button from "../../components/Button/Button";
 import MainTitle from "../../components/OfficerHomeComponents/MainTitle/MainTitle";
 import Footer from "../../components/FooterComponent/FooterComponent";
 import ClientRequestCard from "../../components/ClientRequestCard/ClientRequestCard";
+import useResponsiveItems from "../../hooks/useResponsiveItems"
+
+// 1. IMPORTAMOS NUESTRO COMPONENTE DE PAGINACIÓN
+import PaginatedList from "../../components/PaginatedList/PaginatedList";
+
 import BrokenPipe from "../../assets/tuberia_rota.png";
 import GasLeak from "../../assets/escape_gas.png";
 
@@ -19,6 +24,9 @@ export default function ClientServiceRequests() {
         { id: 9, name: "Jacobito AP", type: "Tubería rota", date: "12/05/2023", img: BrokenPipe },
         { id: 10, name: "Jacobito AP", type: "Tubería rota", date: "12/05/2023", img: BrokenPipe }
     ];
+    const responsiveItemsPerPage=useResponsiveItems(3,6);
+
+    
 
     return (
         <div className="min-h-screen flex flex-col">
@@ -36,25 +44,25 @@ export default function ClientServiceRequests() {
                     Solicitudes de <span className="text-light-blue">Servicio</span>
                 </MainTitle>
 
-                {/* CONTENEDOR GRID: 
-                grid-cols-1: 1 columna en móvil
-                md:grid-cols-2: 2 columnas en tablets/laptops pequeñas
-                xl:grid-cols-2: Se mantuvo en 2, se puede variar si se quiere
-                gap-6: Espacio entre las tarjetas */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 justify-items-center">
-                    {services.map((service) => (
+                {/* 2. REEMPLAZAMOS EL DIV GRID Y EL .MAP POR LA PAGINACIÓN */}
+                <PaginatedList 
+                    items={services} 
+                    itemsPerPage={responsiveItemsPerPage} // Usamos 6 para que sean 3 filas perfectas de 2 columnas
+                    listClassName="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 justify-items-center" // Tus mismas clases de Grid
+                    renderItem={(service) => (
                         <ClientRequestCard
-                            key={service.id} // Siempre se usa una key única al hacer maps
+                            key={service.id}
                             clientName={service.name}
                             requestType={service.type}
                             date={service.date}
                             imageUrl={service.img}
                         />
-                    ))}
-                </div>
+                    )}
+                />
+
             </div>
 
-            <Footer />     
+            <Footer />    
         </div>
     );
 }

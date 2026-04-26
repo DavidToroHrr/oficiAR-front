@@ -1,8 +1,10 @@
 // 1. Importas tu componente Button (Ajusta la ruta según tu estructura de carpetas)
 import Button from "../../components/Button/Button";
 import pricingImg from "../../assets/pricing.png";
+import useFormNavigation from "../../hooks/useFormNavigation";
 
 export default function PricingSection() {
+    const { goNext } = useFormNavigation();
     return (
         <div className="relative flex flex-col min-h-screen">
             
@@ -75,7 +77,7 @@ export default function PricingSection() {
                 <Button 
                     type="button" 
                     className="w-full max-w-[460px] text-white bg-light-blue font-bold rounded-xl text-lg sm:text-xl px-5 py-4 shadow-lg"
-                    onClick={() => console.log("Redirigiendo a pagar...")}
+                    onClick={()=>goNext("/checkout")}
                 >
                     Activar Suscripción Anual
                 </Button>

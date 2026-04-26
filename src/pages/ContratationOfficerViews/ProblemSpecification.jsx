@@ -4,8 +4,12 @@ import TextInput from "../../components/TextInput/TextInput";
 import UploadElement from "../../components/UploadElement/UploadElement";
 import DatePickerInput from "../../components/DatePickerInput/DatePickerInput";
 import Button from "../../components/Button/Button";
+import useFormNavigation from "../../hooks/useFormNavigation";
 
 export default function ProblemSpecification() {
+    const { goBack, goNext } = useFormNavigation();
+
+
     const [tecnicoSeleccionado, setTecnicoSeleccionado] = useState(null);
 
     const listaTecnicos = [
@@ -91,7 +95,8 @@ export default function ProblemSpecification() {
             
             {/* --- FOOTER: Botón Siguiente --- */}
             <div className="flex justify-end w-full mt-16 pt-6">
-                <Button className="bg-light-blue hover:bg-blue-buttons text-white px-10 py-3 rounded-lg font-bold transition-colors shadow-md">
+                <Button className="bg-light-blue hover:bg-blue-buttons text-white px-10 py-3 rounded-lg font-bold transition-colors shadow-md"
+                onClick={()=>goNext("/client-flow/officer-selection")}>
                     Siguiente
                 </Button>
             </div>

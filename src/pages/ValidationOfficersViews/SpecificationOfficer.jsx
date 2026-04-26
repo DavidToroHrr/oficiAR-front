@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import logoImg from '../../assets/logo.png';
-import TextInput from "../../components/TextInput/TextInput";
 import Button from "../../components/Button/Button";
+import useFormNavigation from "../../hooks/useFormNavigation";
 
 export default function SpecificationOfficer() {
+    const { goNext } = useFormNavigation();
     // Aquí guardaremos el oficio que el trabajador elija para luego mandarlo a la base de datos
     const [oficioSeleccionado, setOficioSeleccionado] = useState(null);
 
@@ -50,7 +51,8 @@ export default function SpecificationOfficer() {
             </div>
         
             <div className="flex justify-end w-full">
-                <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-medium transition-colors">
+                <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-medium transition-colors"
+                onClick={()=>goNext("/validation/certifications")}>
                     Continuar
                 </Button>
             </div>

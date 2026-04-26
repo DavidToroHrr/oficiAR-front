@@ -1,10 +1,15 @@
 import Button from "../../components/Button/Button";
 import WorkerProfileCard from "../../components/WorkerProfileCard/WorkerProfileCard";
 
+// 1. IMPORTAMOS NUESTRO COMPONENTE PAGINADOR
+import PaginatedList from "../../components/PaginatedList/PaginatedList";
+import useResponsiveItems from "../../hooks/useResponsiveItems"
+import useFormNavigation from "../../hooks/useFormNavigation";
+
 export default function NegotiationAndContact() {
-    
-    // 1. EL ARREGLO DE DATOS (Simulando la base de datos de OficiAR)
-    // Agregué algunos datos extra para que veas cómo se llena la cuadrícula
+    const { goBack, goNext } = useFormNavigation();
+
+    // 1. EL ARREGLO DE DATOS (IDs corregidos para que sean únicos)
     const trabajadoresDisponibles = [
         {
             id: 1,
@@ -33,32 +38,38 @@ export default function NegotiationAndContact() {
             nombre: "Mariana Gómez",
             descripcion: "Pintora profesional. Especialista en acabados de interiores, fachadas y estuco veneciano.",
             calificacion: "5/5"
-        },{
-            id: 4,
-            imagenUrl: "https://randomuser.me/api/portraits/women/33.jpg",
-            nombre: "Mariana Gómez",
-            descripcion: "Pintora profesional. Especialista en acabados de interiores, fachadas y estuco veneciano.",
-            calificacion: "5/5"
-        },{
-            id: 4,
-            imagenUrl: "https://randomuser.me/api/portraits/women/33.jpg",
-            nombre: "Mariana Gómez",
-            descripcion: "Pintora profesional. Especialista en acabados de interiores, fachadas y estuco veneciano.",
-            calificacion: "5/5"
-        },{
+        },
+        {
             id: 5,
             imagenUrl: "https://randomuser.me/api/portraits/women/33.jpg",
-            nombre: "Mariana Gómez",
+            nombre: "Mariana Gómez (2)",
             descripcion: "Pintora profesional. Especialista en acabados de interiores, fachadas y estuco veneciano.",
             calificacion: "5/5"
-        },{
+        },
+        {
             id: 6,
             imagenUrl: "https://randomuser.me/api/portraits/women/33.jpg",
-            nombre: "Mariana Gómez",
+            nombre: "Mariana Gómez (3)",
+            descripcion: "Pintora profesional. Especialista en acabados de interiores, fachadas y estuco veneciano.",
+            calificacion: "5/5"
+        },
+        {
+            id: 7,
+            imagenUrl: "https://randomuser.me/api/portraits/women/33.jpg",
+            nombre: "Mariana Gómez (4)",
+            descripcion: "Pintora profesional. Especialista en acabados de interiores, fachadas y estuco veneciano.",
+            calificacion: "5/5"
+        },
+        {
+            id: 8,
+            imagenUrl: "https://randomuser.me/api/portraits/women/33.jpg",
+            nombre: "Mariana Gómez (5)",
             descripcion: "Pintora profesional. Especialista en acabados de interiores, fachadas y estuco veneciano.",
             calificacion: "5/5"
         }
     ];
+
+    const responsiveItemsPerPage= useResponsiveItems(3,6);
 
     return (
         // Contenedor principal para darle márgenes y centrar el contenido
@@ -68,31 +79,28 @@ export default function NegotiationAndContact() {
                 Selecciona a tu <span className="text-light-blue">Officer</span>
             </h2>
 
-            {/* 2. EL GRID DE 2 COLUMNAS */}
-            {/* grid-cols-1 para celulares, md:grid-cols-2 para pantallas más grandes */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                {/* 3. EL MAPEO DINÁMICO */}
-                {trabajadoresDisponibles.map((trabajador) => (
+            {/* 2. REEMPLAZAMOS EL GRID Y EL MAP POR PAGINATEDLIST */}
+            <PaginatedList 
+                items={trabajadoresDisponibles} 
+                itemsPerPage={responsiveItemsPerPage} // 4 tarjetas por página (2 filas de 2 columnas)
+                listClassName="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center" // Tus clases de grid intactas
+                renderItem={(trabajador) => (
                     <WorkerProfileCard 
-                        // La prop 'key' es obligatoria en React cuando usas .map()
                         key={trabajador.id} 
-                        
-                        // Pasamos las propiedades dinámicamente
                         imagenUrl={trabajador.imagenUrl} 
                         nombre={trabajador.nombre} 
                         descripcion={trabajador.descripcion} 
                         calificacion={trabajador.calificacion} 
-                        
-                        // Hacemos que el botón también sea dinámico y reconozca a quién tocaste
-                        onSiguienteClick={() => console.log(`Iniciando negociación con: ${trabajador.nombre}`)}
+                        onSiguienteClick={()=>goNext("/client-flow/negotiation-and-contact")}
                     />
-                ))}
-                
-            </div>
+                )}
+            />
 
+            {/* Botón de regresar inferior */}
             <div className="flex justify-start w-full mt-10">
-                <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-medium transition-colors">
+                <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-medium transition-colors"
+                onClick={goBack}
+                >
                     Regresar
                 </Button>
             </div>

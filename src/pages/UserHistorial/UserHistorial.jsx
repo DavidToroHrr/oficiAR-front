@@ -3,9 +3,14 @@ import ServiceCard from "../../components/ServiceCard/ServiceCard"
 import HeadphonesIcon from "../../components/HeadphonesIcon/HeadphonesIcon"
 import Footer from "../../components/FooterComponent/FooterComponent"
 import HeaderUserServices from "../../components/HeaderUserServices/HeaderUserServices"
+// 1. IMPORTAMOS NUESTRO COMPONENTE ESTRELLA
+import PaginatedList from "../../components/PaginatedList/PaginatedList" 
+
 import jacobo from "../../assets/jacobo.jpeg"
 import escapeGas from "../../assets/escape_gas.png"
 import tuberiaRota from "../../assets/tuberia_rota.png"
+
+import useResponsiveItems from "../../hooks/useResponsiveItems"
 
 const estadosDisponibles = [
     "Caducado",
@@ -85,7 +90,10 @@ const botonFinalizar = (
     </Button>
 );
 
+
 export default function UserHistorial() {
+    const responsiveItemsPerPage= useResponsiveItems(3,6);
+
     return (
         <div>
             <HeaderUserServices>
@@ -104,21 +112,30 @@ export default function UserHistorial() {
                 Historial de <span className="text-light-blue">servicios</span>
             </h2>
 
-            <div className="flex flex-col gap-5 px-4 mb-32 xl:px-16">
-                {historial.map(servicio => (
-                    <ServiceCard
-                        key={servicio.id}
-                        imageSrc={servicio.imageSrc}
-                        imageAlt={servicio.imageAlt}
-                        nombre={servicio.nombre}
-                        descripcion={servicio.descripcion}
-                        fecha={servicio.fecha}
-                        precio={servicio.precio}
-                        estado={servicio.estado}
-                        icono={<HeadphonesIcon />}
-                        botonAccion={botonFinalizar}
-                    />
-                ))}
+            {/* Envolvemos en el contenedor original para mantener tus márgenes */}
+            <div className="px-4 mb-32 xl:px-16">
+                
+                {/* 2. REEMPLAZAMOS EL .MAP POR LA PAGINACIÓN */}
+                <PaginatedList 
+                    items={historial} 
+                    itemsPerPage={responsiveItemsPerPage} // Mostramos 3 servicios por página
+                    listClassName="flex flex-col gap-5 w-full" // Mantenemos tu diseño de lista vertical
+                    renderItem={(servicio) => (
+                        <ServiceCard
+                            key={servicio.id}
+                            imageSrc={servicio.imageSrc}
+                            imageAlt={servicio.imageAlt}
+                            nombre={servicio.nombre}
+                            descripcion={servicio.descripcion}
+                            fecha={servicio.fecha}
+                            precio={servicio.precio}
+                            estado={servicio.estado}
+                            icono={<HeadphonesIcon />}
+                            botonAccion={botonFinalizar}
+                        />
+                    )}
+                />
+
             </div>
 
             <Footer />

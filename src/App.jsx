@@ -25,7 +25,7 @@ import PaymentReleaseChat from './pages/PaymentRealeaseChat/PaymentReleaseChat';
 import ClientRequestsChat from './pages/ClientRequestsChat/ClientRequestsChat';
 import ClientServiceRequests from './pages/ClientServiceRequests/ClientServiceRequests';
 import UserHistorial from './pages/UserHistorial/UserHistorial';
-
+import UserServicesChat from './pages/UserServicesChat/UserServicesChat';
 
 function App() {
   return (
@@ -46,6 +46,7 @@ function App() {
         {/* UserServices va aquí, al mismo nivel que las demás rutas */}
         <Route path="/user-services" element={<UserServices />} />
 
+        <Route path="/user-services-chat" element={<UserServicesChat />} />
 
         <Route path="/user-historial" element={<UserHistorial />} />
 

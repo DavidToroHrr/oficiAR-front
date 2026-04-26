@@ -146,7 +146,7 @@ export default function SelectionCalendarCard({ className = "" }) {
                 </button>
                 <button 
                     type="button" 
-                    className="flex-grow py-3 px-6 text-white bg-blue-buttons hover:bg-dark-blue transition-colors rounded-[1rem] font-bold text-lg text-center shadow-xl hover:scale-105"
+                    className="flex-grow py-3 px-6 text-white bg-light-blue hover:bg-dark-blue transition-colors rounded-[1rem] font-bold text-lg text-center shadow-xl hover:scale-105"
                 >
                     Aplicar
                 </button>

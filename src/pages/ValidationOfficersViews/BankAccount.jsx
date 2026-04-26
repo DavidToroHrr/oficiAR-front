@@ -2,8 +2,10 @@ import { useState } from "react";
 import logoImg from "../../assets/logo.png";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import Button from "../../components/Button/Button";
+import useFormNavigation from "../../hooks/useFormNavigation";
 
 export default function BankAccount() {
+    const { goNext } = useFormNavigation();
     // 1. Estados para guardar toda la información del formulario
     const [bancoSeleccionado, setBancoSeleccionado] = useState(null);
     const [numeroIdentificacion, setNumeroIdentificacion] = useState("");
@@ -103,7 +105,8 @@ export default function BankAccount() {
             </div>
 
             <div className="flex justify-end w-full">
-                <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-medium transition-colors mt-4">
+                <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-medium transition-colors mt-4"
+                onClick={()=>goNext("/pricing")}>
                     Ir a pagar
                 </Button>
             </div>

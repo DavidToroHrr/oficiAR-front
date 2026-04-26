@@ -2,8 +2,10 @@ import logoImg from "../../assets/logo.png"
 import UploadDni from "../../components/UploadDni/UploadDni"
 import UploadElement from "../../components/UploadElement/UploadElement"
 import Button from "../../components/Button/Button"
+import useFormNavigation from "../../hooks/useFormNavigation"
 
 export default function ValidationIdentity() {
+    const { goNext } = useFormNavigation();
     return (
         // CORRECCIÓN 1: w-[955px] cambió a w-full max-w-[955px].
         // CORRECCIÓN 2: Se eliminó h-[755px] para que la altura sea automática.
@@ -35,7 +37,8 @@ export default function ValidationIdentity() {
 
                 {/* ZONA DEL BOTÓN */}
                 <div className="flex justify-end w-full">
-                    <Button className="bg- text-white px-8 py-2.5 rounded-lg font-medium bg-light-blue transition-colors">
+                    <Button className="bg- text-white px-8 py-2.5 rounded-lg font-medium bg-light-blue transition-colors"
+                    onClick={()=>goNext("/validation/officer-specification")}>
                         Continuar
                     </Button>
                 </div>

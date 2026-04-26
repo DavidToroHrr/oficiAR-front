@@ -64,7 +64,7 @@ export default function TestimonialsSection() {
     ];
     const responsiveItemsPerPage= useResponsiveItems(3,6);
     return (
-        <section className="max-w-5xl mx-auto pt-36 px-4">
+        <section className="max-w-5xl mx-auto pt-20 px-4">
             
             {/* LA MAGIA DE LA PAGINACIÓN */}
             <PaginatedList 

@@ -1,7 +1,7 @@
 export default function pSloganApp(){
     return(
         <div>
-            <h1 className="pt-48 text-5xl font-black text-very-dark-blue text-center ">
+            <h1 className="pt-20 text-2xl font-black text-very-dark-blue text-center ">
                 Soluciones <br/>
                 <span className="text-light-blue">profesionales<br/></span> 
                 para tu hogar<br/> 

@@ -16,11 +16,16 @@ const profesionales = [
 ];
 
 // 2. Definimos la clase responsiva gigante UNA SOLA VEZ en una variable
-const alturaCarrusel = "h-70 sm:h-64 xl:h-100 2xl:h-96";
+// Mantenemos el w-full para la imagen, pero ajusté un poco las alturas 
+// para que no quede cuadrado y mantenga una buena proporción rectangular al ser menos ancho.
+const alturaCarrusel = "w-full h-[200px] sm:h-[250px] md:h-[350px]";
 
 export default function CarouselOfficers() {
   return (
-    <div className="max-w-7xl mx-auto mt-10 px-4 pt-16">
+    // w-[95%] en móviles (deja un bordecito pequeño)
+    // md:w-[80%] en tablets/PC (ocupa solo el 80% de la pantalla)
+    // max-w-5xl asegura que nunca crezca más allá de 1024px
+    <div className="w-[95%] md:w-[80%] max-w-5xl mx-auto mt-10 px-4 pt-16">
       
       <Carousel 
         autoPlay={true} 

@@ -123,10 +123,9 @@ export default function UsersHome(){
             */}
             {/* Agregamos contenedor para botones para que se muestren en su propia fila
                 Y el logo quede arriba de ellos */}
-            <Header className="w-full flex flex-col md:flex-row items-center justify-center gap-4 px-2 md:px-8">
+            <Header className="w-full flex flex-row md:flex-row items-center justify-between gap-4 px-2 md:px-8">
                             
-                {/* Un div agrupando los botones para que se mantengan en su propia fila */}
-                <div className="flex justify-center ml-10 gap-2 md:gap-6">
+                
                                 
                     <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
                         Inicio
@@ -140,7 +139,7 @@ export default function UsersHome(){
                         Historial de Servicios
                     </Button>
             
-                </div>
+                
             </Header>
 
             <div className="px-4 py-8 lg:px-35 lg:mt-15 lg:mb-10 max-w-7xl mx-auto">

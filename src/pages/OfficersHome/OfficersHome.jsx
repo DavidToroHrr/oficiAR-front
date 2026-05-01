@@ -56,11 +56,9 @@ export default function OfficersHome(){
                 px-2 md:px-8: Reducimos un poco el padding lateral en celulares para dar más espacio.
             */}
             {/* Clases actualizadas para apilar en celular (flex-col) y separar a los lados en PC (justify-between) */}
-            <Header className="w-full flex flex-col md:flex-row items-center justify-center gap-4 px-2 md:px-8">
+            <Header className="w-full flex flex-row md:flex-row items-center justify-between gap-4 px-2 md:px-8">
                 
-                {/* Un div agrupando los botones para que se mantengan en su propia fila */}
-                <div className="flex justify-center ml-10 gap-2 md:gap-6">
-                    
+                
                     <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
                         Inicio
                     </Button>
@@ -73,7 +71,7 @@ export default function OfficersHome(){
                         Historial de Servicios
                     </Button>
 
-                </div>
+                
             </Header>
 
             {/* Contenedor principal: le damos un padding (p-30) para que no se pegue a los bordes */}

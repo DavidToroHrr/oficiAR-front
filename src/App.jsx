@@ -34,8 +34,6 @@ function App() {
         {/* Ruta para el inicio (cuando entras a localhost:5173/) */}
         <Route path="/" element={<DefaultHome />} />
         
-        {/* Ruta para las solicitudes (localhost:5173/solicitudes) */}
-        <Route path="/solicitudes" element={<h1>Panel de Solicitudes</h1>} />
         
         {/* Puedes ir agregando todas las que necesites para tu entrega */}
         <Route path="/login" element={<Login />} />

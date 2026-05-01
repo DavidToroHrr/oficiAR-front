@@ -31,12 +31,12 @@ export default function ClientServiceRequests() {
     return (
         <div className="min-h-screen flex flex-col">
             
-            <Header className="w-full flex flex-col md:flex-row items-center justify-center gap-4 px-2 md:px-8">
-                <div className="flex justify-center ml-10 gap-2 md:gap-6">
+            <Header className="w-full flex flex-row md:flex-row items-center justify-between gap-4 px-2 md:px-8">
+                
                     <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">Inicio</Button>
                     <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">Solicitudes de Servicios</Button>
                     <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">Historial de Servicios</Button>
-                </div>
+                
             </Header>
 
             <div className="flex-grow w-full px-4 py-8 lg:px-35 lg:mb-10 max-w-7xl mx-auto">

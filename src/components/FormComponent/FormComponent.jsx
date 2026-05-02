@@ -1,5 +1,4 @@
-import logo from '../../assets/logo.png';
-import Button from '../Button/Button';
+import logo from '../../assets/logo.svg';import Button from '../Button/Button';
 
 export default function FormComponent({children, socialButtons, registerFooter, buttonLabel,navigationFunction,title = "¡Bienvenido a OficiAR!",showForgotPassword = true,
   showSeparator = true}) {

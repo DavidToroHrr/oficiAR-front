@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../../assets/logo.png';
-
+import logo from '../../assets/logo.svg';
 export default function Header({ children, className = "" }) {
     // Estado para controlar si el cajón (drawer) está abierto o cerrado en móvil
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);

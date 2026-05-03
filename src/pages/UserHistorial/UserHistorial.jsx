@@ -11,6 +11,7 @@ import escapeGas from "../../assets/escape_gas.png"
 import tuberiaRota from "../../assets/tuberia_rota.png"
 
 import useResponsiveItems from "../../hooks/useResponsiveItems"
+import useFormNavigation from "../../hooks/useFormNavigation"
 
 const estadosDisponibles = [
     "Caducado",
@@ -93,17 +94,30 @@ const botonFinalizar = (
 
 export default function UserHistorial() {
     const responsiveItemsPerPage= useResponsiveItems(3,6);
+    const { goBack, goNext } = useFormNavigation();
+
 
     return (
         <div>
             <HeaderUserServices>
-                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4 text-black">
+                {/* Inicio — goBack() va a la página anterior (officers-home) */}
+                <Button 
+                    className="text-xs sm:text-base px-2 py-2 sm:px-4 text-black"
+                    onClick={() => goNext("/officers-home")}
+                >
                     Inicio
                 </Button>
-                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4 text-black">
+
+                {/* Solicitudes de Servicios — goNext() va a client-service-requests */}
+                <Button 
+                    className="text-xs sm:text-base px-2 py-2 sm:px-4 text-black"
+                    onClick={() => goNext("/client-service-requests")}
+                >
                     Solicitudes de Servicios
                 </Button>
-                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4 text-black">
+
+                {/* Historial de Servicios — página actual, sin navegación */}
+                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4 text-light-blue font-bold border-b-2 border-light-blue">
                     Historial de Servicios
                 </Button>
             </HeaderUserServices>
@@ -130,7 +144,7 @@ export default function UserHistorial() {
                             fecha={servicio.fecha}
                             precio={servicio.precio}
                             estado={servicio.estado}
-                            icono={<HeadphonesIcon />}
+                            icono={<HeadphonesIcon onClick={() => goNext("/services-history-chat")} />}
                             botonAccion={botonFinalizar}
                         />
                     )}

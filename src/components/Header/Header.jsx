@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../../assets/logo.svg';
-export default function Header({ children, className = "" }) {
+import ClickableLogo from '../ClickableLogo/ClickableLogo';
+export default function Header({ children, className = "", navigateTo }) {
     // Estado para controlar si el cajón (drawer) está abierto o cerrado en móvil
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -8,9 +9,7 @@ export default function Header({ children, className = "" }) {
         <header className={`flex items-center justify-between px-4 md:px-8 py-4 bg-white shadow-sm relative w-full ${className}`}>
             
             {/* 1. EL LOGO (Siempre visible) */}
-            <div className="flex items-center gap-2 cursor-pointer z-50">
-                <img src={logo} alt="OficiAR Logo" className="h-5 w-24 object-cover object-center scale-150 ml-4 md:ml-0" />
-            </div>
+            <ClickableLogo navigateTo={navigateTo} />
 
             {/* 2. NAVEGACIÓN DESKTOP (Oculta en celular, visible en PC/Tablet grande) */}
             <nav className="hidden md:flex items-center gap-6">

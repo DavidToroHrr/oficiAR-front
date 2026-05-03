@@ -12,6 +12,7 @@ import Footer from "../../components/FooterComponent/FooterComponent";
 import Cleaning from "../../assets/OfficersHomeCards/limpieza.png";
 import Multimeter from "../../assets/OfficersHomeCards/multimetro.png";
 import useFormNavigation from "../../hooks/useFormNavigation";
+import ClickableLogo from "../../components/ClickableLogo/ClickableLogo";
 
 export default function OfficersHome(){
     const ExclusiveOffersList = [
@@ -59,7 +60,7 @@ export default function OfficersHome(){
                 px-2 md:px-8: Reducimos un poco el padding lateral en celulares para dar más espacio.
             */}
             {/* Clases actualizadas para apilar en celular (flex-col) y separar a los lados en PC (justify-between) */}
-            <Header className="w-full flex flex-row md:flex-row items-center justify-between gap-4 px-2 md:px-8">
+            <Header className="w-full flex flex-row md:flex-row items-center justify-between gap-4 px-2 md:px-8" navigateTo={"/"}>
                 
                 <Button 
                     className="text-xs sm:text-base px-2 py-2 sm:px-4"

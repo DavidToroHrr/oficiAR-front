@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from '../../assets/logo.svg';
 import ClickableLogo from '../ClickableLogo/ClickableLogo'
-export default function HeaderUserServices({ children }) {
+export default function HeaderUserServices({ children, navigateTo }) {
     // 1. Estado para controlar el cajón (drawer)
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -9,7 +9,7 @@ export default function HeaderUserServices({ children }) {
         <header className="flex items-center justify-between px-4 md:px-8 py-4 bg-white shadow-sm relative w-full">
                             
                 {/* 1. EL LOGO (Visible en ambas vistas) */}
-                <ClickableLogo navigateTo="/officers-home" />
+                <ClickableLogo navigateTo={navigateTo} />
 
                 {/* 2. NAVEGACIÓN DESKTOP (Oculta en celular, visible en md) */}
                 <nav className="hidden md:flex items-center justify-center gap-6">

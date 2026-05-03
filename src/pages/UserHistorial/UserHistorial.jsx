@@ -99,7 +99,7 @@ export default function UserHistorial() {
 
     return (
         <div>
-            <HeaderUserServices>
+            <HeaderUserServices navigateTo="/officers-home">
                 {/* Inicio — goBack() va a la página anterior (officers-home) */}
                 <Button 
                     className="text-xs sm:text-base px-2 py-2 sm:px-4 text-black"

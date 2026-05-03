@@ -5,6 +5,7 @@ import UploadElement from "../../components/UploadElement/UploadElement";
 import DatePickerInput from "../../components/DatePickerInput/DatePickerInput";
 import Button from "../../components/Button/Button";
 import useFormNavigation from "../../hooks/useFormNavigation";
+import Typography from "../../components/Typography/Typography";
 
 export default function ProblemSpecification() {
     const { goBack, goNext } = useFormNavigation();
@@ -25,9 +26,9 @@ export default function ProblemSpecification() {
         <div className="w-full max-w-7xl mx-auto px-4 py-8">
             
             {/* TÍTULO */}
-            <h2 className="mb-12 text-4xl md:text-5xl font-black text-very-dark-blue text-center">
+            <Typography variant="h1" className="mb-12 text-center">
                 Describe tu <span className="text-light-blue">problema</span>
-            </h2>
+            </Typography>
 
             {/* GRID DE 3 COLUMNAS: 1 en celular, 3 en pantallas grandes (lg) */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-12">
@@ -35,9 +36,11 @@ export default function ProblemSpecification() {
                 {/* --- COLUMNA 1: Datos Básicos --- */}
                 <div className="flex flex-col gap-6">
                     <div className="flex flex-col gap-2">
-                        <p className="text-sm text-gray-800 font-medium">
+                        {/* USAMOS SUBTITLE ideal para instrucciones de campos */}
+                        <Typography variant="subtitle">
                             Elige el técnico que se acomoda a tus necesidades
-                        </p>
+                        </Typography>
+
                         <Dropdown 
                             label="Seleccionar"
                             options={listaTecnicos}
@@ -46,9 +49,10 @@ export default function ProblemSpecification() {
                     </div>
                     
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm text-gray-800 font-medium">
+                        <Typography variant="subtitle">
                             Indícanos tu dirección
-                        </label>
+                        </Typography>
+
                         <input 
                             type="text" 
                             placeholder="Ej. Calle 123 #45-67"
@@ -57,9 +61,10 @@ export default function ProblemSpecification() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm text-gray-800 font-medium">
+                        <Typography variant="subtitle">
                             Título del problema
-                        </label>
+                        </Typography>
+
                         <input 
                             type="text" 
                             placeholder="Ej. Fuga de agua en el lavaplatos"
@@ -71,9 +76,10 @@ export default function ProblemSpecification() {
                 {/* --- COLUMNA 2: Fecha --- */}
                 <div className="flex flex-col gap-6">
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm text-gray-800 font-medium">
+                        <Typography variant="subtitle" className="text-center">
                             ¿Para cuándo necesitas el servicio?
-                        </label>
+                        </Typography>
+
                         <DatePickerInput className="w-full" />
                     </div>
                 </div>
@@ -81,9 +87,10 @@ export default function ProblemSpecification() {
                 {/* --- COLUMNA 3: Evidencia Visual --- */}
                 <div className="flex flex-col gap-6">
                     <div className="flex flex-col gap-2 h-full">
-                        <label className="text-sm text-gray-800 font-medium">
+                        <Typography variant="subtitle" className="text-center">
                             Evidencia visual
-                        </label>
+                        </Typography>
+
                         <UploadElement 
                             title="Sube una foto de tu problema" 
                             buttonTitle="Subir" 
@@ -94,7 +101,7 @@ export default function ProblemSpecification() {
             </div>
             
             {/* --- FOOTER: Botón Siguiente --- */}
-            <div className="flex justify-end w-full mt-16 pt-6">
+            <div className="flex justify-end w-full mt-8 pt-6">
                 <Button className="bg-light-blue hover:bg-blue-buttons text-white px-10 py-3 rounded-lg font-bold transition-colors shadow-md"
                 onClick={()=>goNext("/client-flow/officer-selection")}>
                     Siguiente

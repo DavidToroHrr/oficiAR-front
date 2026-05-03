@@ -5,6 +5,7 @@ import WorkerProfileCard from "../../components/WorkerProfileCard/WorkerProfileC
 import PaginatedList from "../../components/PaginatedList/PaginatedList";
 import useResponsiveItems from "../../hooks/useResponsiveItems"
 import useFormNavigation from "../../hooks/useFormNavigation";
+import Typography from "../../components/Typography/Typography";
 
 export default function NegotiationAndContact() {
     const { goBack, goNext } = useFormNavigation();
@@ -75,9 +76,12 @@ export default function NegotiationAndContact() {
         // Contenedor principal para darle márgenes y centrar el contenido
         <div className="w-full max-w-5xl mx-auto px-4 py-8">
             
-            <h2 className="mb-12 text-4xl md:text-5xl font-black text-very-dark-blue text-center">
+            {/* CAMBIO A TYPOGRAPHY: 
+                Eliminamos text-4xl, md:text-5xl y font-black. 
+                Mantenemos mb-12 y text-center para el layout */}
+            <Typography variant="h1" className="mb-12 text-center">
                 Selecciona a tu <span className="text-light-blue">Officer</span>
-            </h2>
+            </Typography>
 
             {/* 2. REEMPLAZAMOS EL GRID Y EL MAP POR PAGINATEDLIST */}
             <PaginatedList 

@@ -2,6 +2,7 @@ import InteractiveChat from "../../components/InteractiveChat/InteractiveChat";
 import Logo from "../../assets/logo.png";
 import Button from "../../components/Button/Button";
 import Background from "../../assets/chat-background.png";
+import Typography from "../../components/Typography/Typography";
 
 export default function ServicesHistoryChat() {
     const chatConCliente = [
@@ -20,9 +21,9 @@ export default function ServicesHistoryChat() {
             <div className="flex flex-col items-center gap-15">
                 <img src={Logo} className="w-[247px] h-[55px] mt-5" />
 
-                <h2 className="mb-4 text-4xl md:text-[25px] font-extrabold text-center pt-5">
-                    En unos breves instates el cliente <br/> se pondrá en contacto contigo
-                </h2>
+                <Typography variant="h2" className="mb-4 text-center pt-5">
+                    En unos breves instantes el cliente <br/> se pondrá en contacto contigo
+                </Typography>
 
                 <InteractiveChat initialMessages={chatConCliente}/>
 

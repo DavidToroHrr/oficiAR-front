@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Typography from "../Typography/Typography";
 
 export default function SelectionCalendarCard({ className = "" }) {
     // Replicamos la cuadrícula exacta de image_9.png
@@ -68,9 +69,9 @@ export default function SelectionCalendarCard({ className = "" }) {
                     </button>
                 </div>
                 
-                <h3 className="text-xl font-semibold text-very-dark-blue">
+                <Typography variant="h3">
                     Diciembre 2025
-                </h3>
+                </Typography>
                 
                 <div className="flex gap-2">
                     <button type="button" className="p-3 text-gray-400 hover:text-black hover:bg-gray-100 rounded-xl transition-colors font-bold text-xl leading-none">
@@ -85,9 +86,13 @@ export default function SelectionCalendarCard({ className = "" }) {
             {/* 2. DÍAS DE LA SEMANA */}
             <div className="grid grid-cols-7 gap-1 mb-3">
                 {dayNames.map((day) => (
-                    <div key={day} className="text-center text-sm font-medium text-gray-400 py-3">
+                    <Typography 
+                        key={day} 
+                        variant="small" 
+                        className="text-center py-3 font-medium"
+                    >
                         {day}
-                    </div>
+                    </Typography>
                 ))}
             </div>
 

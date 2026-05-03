@@ -1,4 +1,5 @@
 import { FiCheckCircle, FiHeadphones, FiXCircle } from "react-icons/fi";
+import Typography from "../Typography/Typography";
 
 export default function ClientRequestCard({clientName, requestType, date, imageUrl}) {
     return (
@@ -16,10 +17,18 @@ export default function ClientRequestCard({clientName, requestType, date, imageU
             {/* Sección de contenido (Derecha) */}
             <div className="flex flex-col flex-grow justify-center gap-2">
                 
-                <h3 className="font-bold text-black text-base">{clientName}</h3>
+                <Typography variant="h3">
+                    {clientName}
+                </Typography>
+                
                 <div className="mb-2">
-                    <p className="font-light text-black text-[13px] mt-1">Solicitud: {requestType}</p>
-                    <p className="font-light text-black text-[13px]">Fecha: {date}</p>
+                    <Typography variant="small" className="mt-1">
+                        Solicitud: <span className="font-medium text-very-dark-blue">{requestType}</span>
+                    </Typography>
+
+                    <Typography variant="small">
+                        Fecha: <span className="font-medium text-very-dark-blue">{date}</span>
+                    </Typography>
                 </div>
 
                 {/* Sección de botones con forma de íconos */}

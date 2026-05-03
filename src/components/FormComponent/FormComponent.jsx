@@ -1,4 +1,5 @@
 import logo from '../../assets/logo.svg';import Button from '../Button/Button';
+import Typography from '../Typography/Typography';
 
 export default function FormComponent({children, socialButtons, registerFooter, buttonLabel,navigationFunction,title = "¡Bienvenido a OficiAR!",showForgotPassword = true,
   showSeparator = true}) {
@@ -29,16 +30,11 @@ export default function FormComponent({children, socialButtons, registerFooter, 
          <img src={logo} alt="OficiAR Logo" className="h-5 w-24 object-cover object-center scale-150" />
       </div>
 
-      {/* TÍTULO
-          title: Prop que permite cambiar el texto del título desde la vista
-            que use este componente. Por defecto es "¡Bienvenido a OficiAR!".
-          text-2xl font-bold: Texto grande (24px) y con grosor en negrita.
-          text-center text-very-dark-blue: Centrado y usando la variable de 
-            color de index.css.
-          mb-8: Margen inferior amplio (32px) para separarlo de los inputs. */}
-      <h2 className="text-2xl font-bold text-center text-very-dark-blue mb-8">
+      {/* Usamos h2. Eliminamos text-2xl y font-bold. El componente ya trae 
+        el color correcto */}
+      <Typography variant="h2" className="text-center mb-8">
         {title}
-      </h2>
+      </Typography>
 
       <form onSubmit={navigationFunction}>
         {/* Espacio para TextInputs */}
@@ -49,8 +45,12 @@ export default function FormComponent({children, socialButtons, registerFooter, 
             El Login lo muestra, el WorkerRegister lo oculta con false. */}
         {showForgotPassword && (
           <div className="flex justify-start mb-6">
-            <a href="#" className="text-xs text-dark-gray italic hover:text-dark-blue transition-colors">
-              ¿Olvidaste tu contraseña?
+            {/* Usamos small. 
+              Ideal para enlaces secundarios e itálicos */}
+            <a href="#">
+              <Typography variant="small" className="italic hover:text-dark-blue transition-colors">
+                ¿Olvidaste tu contraseña?
+              </Typography>
             </a>
           </div>
         )}
@@ -87,7 +87,9 @@ export default function FormComponent({children, socialButtons, registerFooter, 
         {showSeparator && (
           <div className="flex items-center my-6">
             <div className="flex-grow border-t border-dark-gray"></div>
-            <span className="flex-shrink-0 mx-4 text-dark-gray text-sm italic">También</span>
+            <Typography variant="small" className="flex-shrink-0 mx-4 italic !text-dark-gray">
+              También
+            </Typography>
             <div className="flex-grow border-t border-dark-gray"></div>
           </div>
         )}

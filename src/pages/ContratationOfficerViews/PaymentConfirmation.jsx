@@ -1,39 +1,43 @@
-
 import Button from "../../components/Button/Button";
 import useFormNavigation from "../../hooks/useFormNavigation";
+import Typography from "../../components/Typography/Typography";
 
 export default function PaymentConfirmation() {
     const { goBack, goNext } = useFormNavigation();
 
     return (
         <div>
-            <h2 className="mb-12 text-4xl md:text-5xl font-black text-very-dark-blue text-center">
+            {/* Usamos h1 para consistencia total */}
+            <Typography variant="h1" className="mb-12 text-center">
                 Resumen de tu <span className="text-light-blue">solicitud</span>
-            </h2>
+            </Typography>
 
             <div className="flex flex-col items-center w-full max-w-[955px] mx-auto p-6 bg-white/70 rounded-2xl shadow-xl mb-10" >
-                <h3 className="text-2xl font-bold mb-2 text-center text-very-dark-blue">
+                <Typography variant="h2" className="mb-4 text-center">
                     Detalles del servicio
-                </h3>
+                </Typography>
 
+                {/* FILAS DE DATOS: 
+                    Usamos h3 para las etiquetas (Labels) y body para los valores
+                */}
                 <div className="flex justify-between py-4 gap-4">
-                    <h4>Tipo de servicio: </h4>
-                    <p>Nombre del técnico</p>
+                    <Typography variant="h3">Tipo de servicio:</Typography>
+                    <Typography variant="body">Nombre del técnico</Typography>
                 </div>
 
                 <div className="flex justify-between py-4 gap-4">
-                    <h4>Fecha y hora: </h4>
-                    <p>Fecha y hora</p>
+                    <Typography variant="h3">Fecha y hora:</Typography>
+                    <Typography variant="body">Fecha y hora</Typography>
                 </div>
 
                 <div className="flex justify-between py-4 gap-4">
-                    <h4>Lugar: </h4>
-                    <p>Lugar</p>
+                    <Typography variant="h3">Lugar:</Typography>
+                    <Typography variant="body">Lugar</Typography>
                 </div>
 
                 <div className="flex justify-between py-4 gap-4">
-                    <h4>Total importe: </h4>
-                    <p>Precio</p>
+                    <Typography variant="h3" className="text-light-blue">Total importe:</Typography>
+                    <Typography variant="h3" className="text-light-blue">Precio</Typography>
                 </div>
             </div>
 

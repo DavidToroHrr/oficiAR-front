@@ -12,7 +12,7 @@ export default function HeaderUserServices({ children }) {
                 
                 {/* 1. EL LOGO (Visible en ambas vistas) */}
                 <div className="flex items-center justify-center cursor-pointer z-50 ml-4 md:ml-0">
-                    <img src={logo} alt="OficiAR Logo" className="h-5 w-auto object-cover object-center scale-150" />
+                    <img src={logo} alt="OficiAR Logo" className="h-5 w-24 object-cover object-center scale-150" />
                 </div>
 
                 {/* 2. NAVEGACIÓN DESKTOP (Oculta en celular, visible en md) */}

@@ -84,9 +84,9 @@ export default function UserServices() {
     return (
         <div>
             <HeaderUserServices>
-                <Button className="text-black">Inicio</Button>
-                <Button className="text-black">Servicios</Button>
-                <Button className="text-black">Historial</Button>
+                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4 text-black">Inicio</Button>
+                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4 text-black">Servicios</Button>
+                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4 text-black">Historial</Button>
             </HeaderUserServices>
 
             <h2 className="mt-16 text-3xl font-black text-very-dark-blue px-16 mb-10">

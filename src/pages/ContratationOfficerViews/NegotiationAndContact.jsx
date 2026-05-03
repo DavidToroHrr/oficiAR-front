@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import InteractiveChat from "../../components/InteractiveChat/InteractiveChat";
 import useFormNavigation from "../../hooks/useFormNavigation";
+import Typography from "../../components/Typography/Typography";
 
 export default function NegotiationAndContact() {
     const { goBack, goNext } = useFormNavigation();
@@ -16,9 +17,11 @@ export default function NegotiationAndContact() {
 
     return (
         <div className="flex flex-col items-center">
-            <h2 className="mb-4 text-4xl md:text-5xl font-black text-very-dark-blue text-center pt-5">
+            {/* Se refactoriza el tamaño con Typography */}
+            <Typography variant="h1" className="text-center pt-5 mb-4">
                 Negociación y <span className="text-light-blue">Contacto</span>
-            </h2>
+            </Typography>
+
             <InteractiveChat initialMessages={chatMessages}/>
             <div className="flex flex-row justify-between w-full mt-8 pb-10 gap-4">
                 

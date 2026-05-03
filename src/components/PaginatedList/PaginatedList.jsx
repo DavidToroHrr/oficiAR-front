@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Typography from "../Typography/Typography";
 
 export default function PaginatedList({ 
     items, 
@@ -13,7 +14,11 @@ export default function PaginatedList({
         setCurrentPage(1);
     }, [items]);
 
-    if (!items || items.length === 0) return <p className="text-gray-500 text-center py-8">No hay elementos para mostrar.</p>;
+    if (!items || items.length === 0) return (
+        <Typography variant="body" className="text-center py-8">
+            No hay elementos para mostrar.
+        </Typography>
+    );
 
     // 1. La Matemática Interna
     const totalPages = Math.ceil(items.length / itemsPerPage);
@@ -84,9 +89,12 @@ export default function PaginatedList({
 
                     {/* INDICADOR MÓVIL (Visible solo en Celulares) */}
                     {/* Agregamos whitespace-nowrap para que no se divida en dos líneas */}
-                    <span className="sm:hidden text-xs sm:text-sm font-medium text-gray-500 whitespace-nowrap">
+                    <Typography 
+                        variant="small" 
+                        className="sm:hidden whitespace-nowrap"
+                    >
                         Pág {currentPage} de {totalPages}
-                    </span>
+                    </Typography>
 
                     {/* BOTÓN SIGUIENTE */}
                     <button 

@@ -2,18 +2,25 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import WaitingSpinner from "../../components/WaitingSpinner/WaitingSpinner";
 import useFormNavigation from "../../hooks/useFormNavigation";
+import Typography from "../../components/Typography/Typography";
 
 export default function PaymentRelease() {
     const { goNext } = useFormNavigation();
 
     return (
         <div className="flex flex-col items-center">
-            <h2 className="mb-12 mt-12 text-4xl md:text-5xl font-black text-very-dark-blue text-center">
+            {/* Usamos h1 para el mensaje de tranquilidad principal */}
+            <Typography variant="h1" className="mb-12 mt-12 text-center">
                 Tu pago está <span className="text-light-blue">resguardado</span>
-            </h2>
-            <p className="text-center text-very-dark-blue text-lg mb-8">
-                Mientras <span className="font-bold">Hernán J.</span> realiza el trabajo, tu dinero permanece seguro en nuestra plataforma.
-            </p>
+            </Typography>
+
+            {/* Usamos body. 
+                Quitamos text-lg y text-very-dark-blue porque body ya tiene un color 
+                y tamaño equilibrado para lectura */}
+            <Typography variant="body" className="text-center mb-8 max-w-2xl">
+                Mientras <span className="font-bold text-very-dark-blue">Hernán J.</span> realiza el trabajo, tu dinero permanece seguro en nuestra plataforma.
+            </Typography>
+
             <WaitingSpinner />
             <div className="flex flex-row justify-center w-full mt-8 pb-10 gap-4">
                 

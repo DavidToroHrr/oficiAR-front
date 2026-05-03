@@ -1,8 +1,6 @@
 import logo from '../../assets/logo.svg'
 import useFormNavigation from '../../hooks/useFormNavigation'
 
-// Recibe navigateTo para ir a una ruta específica
-// o usaGoBack=true para ir a la página anterior
 export default function ClickableLogo({ navigateTo, useGoBack = false }) {
     const { goBack, goNext } = useFormNavigation();
 

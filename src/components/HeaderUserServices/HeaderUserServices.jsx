@@ -6,11 +6,8 @@ export default function HeaderUserServices({ children }) {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     return (
-        <header className="py-4 bg-white shadow-sm px-4 xl:px-24 lg:px-16 relative w-full">
-            
-            {/* Contenedor principal: Mantenemos 'justify-between' para separar Logo e Ícono */}
-            <div className="flex items-center justify-between w-full">
-                
+        <header className="flex items-center justify-between px-4 md:px-8 py-4 bg-white shadow-sm relative w-full">
+                            
                 {/* 1. EL LOGO (Visible en ambas vistas) */}
                 <ClickableLogo navigateTo="/officers-home" />
 
@@ -28,8 +25,6 @@ export default function HeaderUserServices({ children }) {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
-
-            </div>
 
             {/* 4. OVERLAY OSCURO (Fondo semitransparente) */}
             {isDrawerOpen && (

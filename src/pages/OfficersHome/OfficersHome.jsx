@@ -11,6 +11,7 @@ import SecondaryTitle from "../../components/OfficerHomeComponents/SecondaryTitl
 import Footer from "../../components/FooterComponent/FooterComponent";
 import Cleaning from "../../assets/OfficersHomeCards/limpieza.png";
 import Multimeter from "../../assets/OfficersHomeCards/multimetro.png";
+import useFormNavigation from "../../hooks/useFormNavigation";
 
 export default function OfficersHome(){
     const ExclusiveOffersList = [
@@ -47,6 +48,8 @@ export default function OfficersHome(){
         }
     ];
 
+    const { goNext } = useFormNavigation();
+
     return(
         <div>
             {/* Aquí usamos el className como variable que viene
@@ -58,20 +61,27 @@ export default function OfficersHome(){
             {/* Clases actualizadas para apilar en celular (flex-col) y separar a los lados en PC (justify-between) */}
             <Header className="w-full flex flex-row md:flex-row items-center justify-between gap-4 px-2 md:px-8">
                 
-                
-                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
-                        Inicio
-                    </Button>
-                                                            
-                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
-                        Solicitudes de Servicios
-                    </Button>
-                                
-                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
-                        Historial de Servicios
-                    </Button>
+                <Button 
+                    className="text-xs sm:text-base px-2 py-2 sm:px-4"
+                    onClick={() => goNext("/")}
+                >
+                    Inicio
+                </Button>
 
-                
+                <Button 
+                    className="text-xs sm:text-base px-2 py-2 sm:px-4"
+                    onClick={() => goNext("/client-service-requests")}
+                >
+                    Solicitudes de Servicios
+                </Button>
+
+                <Button 
+                    className="text-xs sm:text-base px-2 py-2 sm:px-4"
+                    onClick={() => goNext("/user-historial")}
+                >
+                    Historial de Servicios
+                </Button>
+
             </Header>
 
             {/* Contenedor principal: le damos un padding (p-30) para que no se pegue a los bordes */}

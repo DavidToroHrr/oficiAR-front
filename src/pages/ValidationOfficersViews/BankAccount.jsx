@@ -3,6 +3,7 @@ import logoImg from "../../assets/logo.png";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import Button from "../../components/Button/Button";
 import useFormNavigation from "../../hooks/useFormNavigation";
+import Typography from "../../components/Typography/Typography";
 
 export default function BankAccount() {
     const { goNext } = useFormNavigation();
@@ -45,14 +46,16 @@ export default function BankAccount() {
                 className="w-[247px] h-[55px] object-contain mb-8" 
             />
 
-            <h2 className="text-2xl font-bold mb-10 text-very-dark-blue">¡Tus datos bancarios!</h2>
+            <Typography variant="h2" className="mb-10 text-center">
+                ¡Tus datos bancarios!
+            </Typography>
 
             {/* EL FORMULARIO: Limitamos el ancho a 400px para que los inputs no se vean deformes en PC */}
             <div className="flex flex-col w-full max-w-[290px] gap-5">
 
                 {/* --- 1. BANCO (Dropdown) --- */}
                 <div className="flex flex-col items-center w-full">
-                    <label className="mb-1 text-sm text-gray-800 font-medium">Banco</label>
+                    <Typography variant="subtitle" className="mb-1 text-sm">Banco</Typography>
                     <Dropdown 
                         label="Seleccionar Banco" 
                         options={listaBancos} 
@@ -62,7 +65,7 @@ export default function BankAccount() {
 
                 {/* --- 2. NÚMERO DE IDENTIFICACIÓN (Input) --- */}
                 <div className="flex flex-col items-center w-full">
-                    <label className="mb-1 text-sm text-gray-800 font-medium">Número de identificación</label>
+                    <Typography variant="subtitle" className="mb-1 text-sm">Número de identificación</Typography>
                     <input 
                         type="text" 
                         value={numeroIdentificacion}
@@ -73,7 +76,7 @@ export default function BankAccount() {
 
                 {/* --- 3. PAÍS (Dropdown) --- */}
                 <div className="flex flex-col items-center w-full">
-                    <label className="mb-1 text-sm text-gray-800 font-medium">País</label>
+                    <Typography variant="subtitle" className="mb-1 text-sm">País</Typography>
                     <Dropdown 
                         label="Seleccionar País" 
                         options={listaPaises} 
@@ -83,7 +86,7 @@ export default function BankAccount() {
 
                 {/* --- 4. NÚMERO DE CUENTA (Input) --- */}
                 <div className="flex flex-col items-center w-full">
-                    <label className="mb-1 text-sm text-gray-800 font-medium">Número de cuenta</label>
+                    <Typography variant="subtitle" className="mb-1 text-sm">Número de cuenta</Typography>
                     <input 
                         type="text" 
                         value={numeroCuenta}
@@ -94,7 +97,7 @@ export default function BankAccount() {
 
                 {/* --- 5. TIPO DE DOCUMENTO (Dropdown) --- */}
                 <div className="flex flex-col items-center w-full">
-                    <label className="mb-1 text-sm text-gray-800 font-medium">Tipo de Documento</label>
+                    <Typography variant="subtitle" className="mb-1 text-sm">Tipo de Documento</Typography>
                     <Dropdown 
                         label="Seleccionar Documento" 
                         options={listaTiposDocumento} 
@@ -107,7 +110,9 @@ export default function BankAccount() {
             <div className="flex justify-end w-full">
                 <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-medium transition-colors mt-4"
                 onClick={()=>goNext("/pricing")}>
-                    Ir a pagar
+                    <Typography variant="body" className="text-white font-medium">
+                        Ir a pagar
+                    </Typography>
                 </Button>
             </div>
             

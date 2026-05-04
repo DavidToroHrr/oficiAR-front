@@ -3,6 +3,7 @@ import UploadDni from "../../components/UploadDni/UploadDni"
 import UploadElement from "../../components/UploadElement/UploadElement"
 import Button from "../../components/Button/Button"
 import useFormNavigation from "../../hooks/useFormNavigation"
+import Typography from "../../components/Typography/Typography"
 
 export default function ValidationIdentity() {
     const { goNext } = useFormNavigation();
@@ -18,13 +19,13 @@ export default function ValidationIdentity() {
                 className="w-[247px] h-[55px] object-contain mb-6"
             />
 
-            <h2 className="text-2xl font-bold mb-2 text-center text-very-dark-blue">
+            <Typography variant="h2" className="mb-2 text-center">
                 ¡Verifica tu identidad!
-            </h2>
+            </Typography>
 
-            <p className="mb-8 text-center">
+            <Typography variant="body" className="mb-8 text-center">
                 No es que no confiemos en tí, pero es mejor estar seguros.
-            </p>
+            </Typography>
 
             {/* CORRALITO: Envuelve tarjetas y botón */}
             <div className="flex flex-col gap-6">
@@ -39,7 +40,9 @@ export default function ValidationIdentity() {
                 <div className="flex justify-end w-full">
                     <Button className="bg- text-white px-8 py-2.5 rounded-lg font-medium bg-light-blue transition-colors"
                     onClick={()=>goNext("/validation/officer-specification")}>
-                        Continuar
+                        <Typography variant="body" className="text-white">
+                            Continuar
+                        </Typography>
                     </Button>
                 </div>
 

@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import Typography from "../Typography/Typography";
 
 export default function InteractiveChat({ initialMessages = [] }) {
     // Arreglo de mensajes dinámicos, vienen de las vistas donde se usa este componente
@@ -44,10 +45,14 @@ export default function InteractiveChat({ initialMessages = [] }) {
                         H
                     </div>
                     <div>
-                        <h3 className="font-bold text-lg leading-tight">Hernán J.</h3>
+                        <Typography variant="subtitle" className="!text-white leading-tight">
+                            Hernán J.
+                        </Typography>
                         <div className="flex items-center gap-1">
                             <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                            <span className="text-xs font-medium text-green-100">Online</span>
+                            <Typography variant="small" className="!text-green-100">
+                                Online
+                            </Typography>
                         </div>
                     </div>
                 </div>

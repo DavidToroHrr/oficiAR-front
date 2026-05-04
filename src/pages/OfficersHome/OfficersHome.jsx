@@ -88,7 +88,7 @@ export default function OfficersHome(){
             {/* Responsive: Por defecto, React toma las dimensiones para móvil, al ponerle
             lg: delante de una clase, quiere decir que aplica para pantallas grandes (pcs)
             e ignora las clases anteriores */}
-            <div className="px-4 py-8 lg:px-35 lg:mt-20 lg:mb-10 max-w-7xl mx-auto">
+            <div className="px-4 py-8 lg:px-35 lg:mt-15 lg:mb-10 max-w-7xl mx-auto">
                 <MainTitle >
                     {/* El <span> actúa como un "resaltador" en línea. Permite aplicar 
                             un color diferente a esta palabra específica sin romper la 

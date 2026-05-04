@@ -16,6 +16,7 @@ import Limpieza from "../../assets/UsersHomeCards/limpieza profesional.png";
 import Pintura from "../../assets/UsersHomeCards/pintura.png";
 import Plomeria from "../../assets/UsersHomeCards/plomeria.png";
 import Refrigeracion from "../../assets/UsersHomeCards/tecnico en refrigeracion.png";
+import Typography from "../../components/Typography/Typography";
 
 export default function UsersHome(){
     const OurServices = [
@@ -125,8 +126,6 @@ export default function UsersHome(){
                 Y el logo quede arriba de ellos */}
             <Header className="w-full flex flex-row md:flex-row items-center justify-between gap-4 px-2 md:px-8">
                             
-                
-                                
                     <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
                         Inicio
                     </Button>
@@ -139,10 +138,9 @@ export default function UsersHome(){
                         Historial de Servicios
                     </Button>
             
-                
             </Header>
 
-            <div className="px-4 py-8 lg:px-35 lg:mt-15 lg:mb-10 max-w-7xl mx-auto">
+            <div className="px-4 py-8 lg:px-35 lg:mt-15 lg:mb-2 max-w-7xl mx-auto">
                 <SecondaryTitle>
                     {/* El <span> actúa como un "resaltador" en línea. Permite aplicar 
                             un color diferente a esta palabra específica sin romper la 
@@ -168,17 +166,22 @@ export default function UsersHome(){
                     automático (solo lo que ocupe el texto)
                 text-sm md:text-base: Letra un poco más pequeña en móvil, tamaño normal en PC
                 py-3 md:py-4: Un poco menos de altura en celular, más alto en PC */}
-                <Button className="flex mx-auto mb-25 bg-light-blue text-white w-full md:w-auto text-sm md:text-base py-3 px-6 md:py-4 md:px-8 lg:px-10 lg:py-8 rounded-[8px]
+                <Button className="flex mx-auto mb-20 bg-light-blue text-white w-full md:w-auto text-sm md:text-base py-3 px-6 md:py-4 md:px-8 lg:px-10 lg:py-8 rounded-[8px]
                     font-extrabold lg:text-[20px]">
 
-                    Solicitar un servicio
+                    <Typography 
+                        variant="h3" 
+                        className="text-white font-extrabold lg:text-[20px] text-center"
+                    >
+                        Solicitar un servicio
+                    </Typography>
                 </Button>
 
                 <SecondaryTitle>           
                     Ofertas <span className="text-light-blue">Exclusivas</span>
                 </SecondaryTitle>
 
-                <div className="mt-25">
+                <div className="mt-20">
                     <ExclusiveOffers 
                         list={ExclusiveOffersList}
                     />

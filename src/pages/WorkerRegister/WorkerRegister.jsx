@@ -2,7 +2,7 @@ import FormComponent from "../../components/FormComponent/FormComponent";
 import background from "../../assets/login_background_image.jpeg"
 import TextInput from "../../components/TextInput/TextInput"
 import { useNavigate } from "react-router-dom";
-
+import Typography from "../../components/Typography/Typography";
 
 export default function WorkerRegister(){
     const navigate = useNavigate();
@@ -32,9 +32,10 @@ export default function WorkerRegister(){
 
                             {/* COLUMNA IZQUIERDA: texto + rayita debajo */}
                             <div className="flex flex-col items-center">
-                                <span className="font-medium text-base italic text-soft-gray mb-2">
+                                <Typography variant="body" className="font-medium text-base italic text-soft-gray mb-2">
                                     ¿Ya tienes cuenta?
-                                </span>
+                                </Typography>
+
                                 <div className="w-full h-px bg-soft-gray" />
                             </div>
 
@@ -44,7 +45,9 @@ export default function WorkerRegister(){
                                     href="/login"
                                     className="font-medium text-base italic text-light-blue hover:opacity-70 transition-opacity no-underline mb-2"
                                 >
-                                    Inicia Sesión
+                                    <Typography variant="body" className="font-medium text-base italic text-light-blue">
+                                        Inicia Sesión
+                                    </Typography>
                                 </a>
                                 <div className="w-full h-px bg-soft-gray" />
                             </div>
@@ -62,7 +65,9 @@ export default function WorkerRegister(){
                                     type="checkbox" 
                                     className="w-5 h-5 text-light-blue bg-gray-50 border-gray-300 rounded focus:ring-light-blue focus:ring-2 cursor-pointer"
                                 />
-                                <span>Aceptar términos y condiciones</span>
+                                <Typography variant="body" className="font-medium text-base italic text-soft-gray">
+                                    Aceptar términos y condiciones
+                                </Typography>
                             </label>
 
                             {/* CHECKBOX 2: ¿Quieres recibir nuevas promociones? */}
@@ -71,7 +76,9 @@ export default function WorkerRegister(){
                                     type="checkbox" 
                                     className="w-5 h-5 text-light-blue bg-gray-50 border-gray-300 rounded focus:ring-light-blue focus:ring-2 cursor-pointer" 
                                 />
-                                <span>¿Quieres recibir nuevas promociones?</span>
+                                <Typography variant="body" className="font-medium text-base italic text-soft-gray">
+                                    ¿Quieres recibir nuevas promociones?
+                                </Typography>
                             </label>
 
                         </div>
@@ -92,8 +99,6 @@ export default function WorkerRegister(){
                 <TextInput id="telefono" name="telefono" type="tel" label="Teléfono (opcional)" />
             </FormComponent>
 
-           
-            
         </div>
     );
     

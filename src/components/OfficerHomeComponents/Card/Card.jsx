@@ -1,3 +1,5 @@
+import Typography from "../../Typography/Typography"
+
 export default function Card({image, description}){
     // https://flowbite.com/docs/components/card/
     // Sección --> Horizontal card de la documentación de Flowbite
@@ -21,13 +23,15 @@ export default function Card({image, description}){
                 {/* Centramos el texto y ajustamos padding */}
                 <div className="flex flex-col items-center justify-center p-4 text-center">
                     
-                    {/* Título de la oferta */}
-                    {/* Ajustamos el tamaño y el color con los predefinidos en index.css */}
-                    {/* Cambiamos text-[36px] por algo responsive: text-lg en celulares y 
-                        text-xl en pantallas grandes */}
-                    <h5 className="text-lg md:text-xl font-semibold tracking-tight text-light-blue">
+                    {/* TÍTULO DE LA OFERTA: Usamos subtitle.
+                        Usamos !text-light-blue para mantener el color de marca 
+                        específico de estas tarjetas */}
+                    <Typography 
+                        variant="subtitle" 
+                        className="!text-light-blue tracking-tight"
+                    >
                         {description}
-                    </h5>
+                    </Typography>
                     
                 </div>
             </div>

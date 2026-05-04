@@ -3,6 +3,7 @@ import Dropdown from "../../components/Dropdown/Dropdown";
 import logoImg from '../../assets/logo.png';
 import Button from "../../components/Button/Button";
 import useFormNavigation from "../../hooks/useFormNavigation";
+import Typography from "../../components/Typography/Typography";
 
 export default function SpecificationOfficer() {
     const { goNext } = useFormNavigation();
@@ -24,23 +25,29 @@ export default function SpecificationOfficer() {
                 alt="Logo de OficiAR" 
                 className="w-[247px] h-[55px] object-contain mb-6" 
             />
-            <h2 className="text-2xl font-bold mb-10 text-very-dark-blue">¡Háblanos de tí!</h2>
-                {/* Llamamos al componente reutilizable */}
+            
+            <Typography variant="h2" className="mb-10">
+                ¡Háblanos de tí!
+            </Typography>
 
             <div>
 
                 <div className="flex flex-col items-center mb-10 w-full">
-                <p className="mb-2">Elige tu oficio</p>
-                <Dropdown 
-                    label="Selecciona un oficio" 
-                    options={listaDeOficios} 
-                    onSelect={(opcion) => setOficioSeleccionado(opcion)}
-                />
+                    <Typography variant="body" className="mb-2">
+                        Elige tu oficio
+                    </Typography>
+                    <Dropdown 
+                        label="Selecciona un oficio" 
+                        options={listaDeOficios} 
+                        onSelect={(opcion) => setOficioSeleccionado(opcion)}
+                    />
                 </div>
             
             
                 <div className="flex flex-col items-center mb-10 w-full">
-                    <p className="mb-2">Cuéntamos de tus especialidades</p>
+                    <Typography variant="body" className="mb-2">
+                        Cuéntamos de tus especialidades
+                    </Typography>
                     <textarea 
                         className="h-[100px] w-full border-0 rounded-lg p-3 resize-none focus:ring-2 focus:ring-blue-buttons outline-none" 
                         placeholder="Ej: Tengo 5 años de experiencia instalando tuberías..."
@@ -53,7 +60,9 @@ export default function SpecificationOfficer() {
             <div className="flex justify-end w-full">
                 <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-medium transition-colors"
                 onClick={()=>goNext("/validation/certifications")}>
-                    Continuar
+                    <Typography variant="body" className="text-white">
+                        Continuar
+                    </Typography>
                 </Button>
             </div>
         </div>

@@ -1,10 +1,14 @@
+import Typography from "../../Typography/Typography"
+
 export default function UpcomingServices(){
     return(
         // Tarjeta 1: Próximos Servicios
         // Aquí reutilizamos este componente de Flowbite: https://flowbite.com/docs/components/tables/ 
         // (sección hover state)
         <div className="bg-white rounded-xl shadow-md p-6 min-h-[475px]">
-            <h2 className="font-extrabold text-black text-[24px] mb-6">Próximos servicios</h2>
+            <Typography variant="h2" className="mb-6">
+                Próximos servicios
+            </Typography>
 
             <div className="relative overflow-x-auto bg-neutral-primary-soft rounded-base">
                 <table className="w-full text-sm text-left rtl:text-right text-body">

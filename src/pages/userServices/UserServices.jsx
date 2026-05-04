@@ -8,6 +8,7 @@ import victor from "../../assets/victor.jpeg"
 import jacobo from "../../assets/jacobo.jpeg"
 import david from "../../assets/david.jpeg"
 import Footer from "../../components/FooterComponent/FooterComponent"
+import Typography from "../../components/Typography/Typography"
 
 const estadosDisponibles = [
     "Caducado",
@@ -89,9 +90,12 @@ export default function UserServices() {
                 <Button className="text-xs sm:text-base px-2 py-2 sm:px-4 text-black">Historial</Button>
             </HeaderUserServices>
 
-            <h2 className="mt-16 text-3xl font-black text-very-dark-blue px-16 mb-10">
+            <Typography 
+                variant="h1" 
+                className="mt-16 px-16 mb-10"
+            >
                 Comunicación con <span className="text-light-blue">trabajadores</span>
-            </h2>
+            </Typography>
 
             {/* Mantenemos tus márgenes en este div contenedor */}
             <div className="px-4 mb-32 xl:px-16">

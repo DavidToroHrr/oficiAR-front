@@ -1,9 +1,12 @@
 import Button from "../Button/Button";
+import Typography from "../Typography/Typography";
 
 export default function UploadElement({title,buttonTitle}){
     return(
         <div className="flex flex-col justify-center items-center bg-white max-w-full w-[370px] h-[290px] p-5 rounded-[0.5rem] ">
-            <h3>{title}</h3>
+            <Typography variant="h3">
+                {title}
+            </Typography>
 
             <div className="bg-very-light-gray h-[200px] rounded-[0.5rem] flex flex-col justify-center items-center w-full">
                 <svg 
@@ -22,7 +25,11 @@ export default function UploadElement({title,buttonTitle}){
                     />
                 </svg>
 
-                <Button className="bg-light-blue rounded-[0.5rem] !text-white">{buttonTitle}</Button>
+                <Button className="bg-light-blue rounded-[0.5rem] !text-white">
+                    <Typography variant="body" className="text-white font-medium">
+                        {buttonTitle}
+                    </Typography>
+                </Button>
             </div>
             
         </div>

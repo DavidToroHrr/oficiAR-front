@@ -2,6 +2,7 @@ import InteractiveChat from "../../components/InteractiveChat/InteractiveChat";
 import Logo from "../../assets/logo.png";
 import Button from "../../components/Button/Button";
 import Background from "../../assets/chat-background.png";
+import Typography from "../../components/Typography/Typography";
 
 export default function UserServicesChat() {
     const chatConCliente = [
@@ -20,14 +21,20 @@ export default function UserServicesChat() {
             <div className="flex flex-col items-center gap-15">
                 <img src={Logo} className="w-[247px] h-[55px] mt-5" />
 
-                <h2 className="mb-4 text-4xl md:text-[25px] font-extrabold text-center pt-5">
+                <Typography 
+                    variant="h2" 
+                    className="text-center pt-5"
+                >
                     ¡Tu solicitud está en <span className="text-light-blue">marcha</span>!
-                </h2>
+                </Typography>
 
-                <p className="mt-4 mx-15 text-center text-sm md:text-[18px] mb-5">
+                <Typography 
+                    variant="body" 
+                    className="mx-15 text-center mb-5"
+                >
                     Pronto, técnicos certificados se pondrán en contacto contigo por este chat para establecer la negociación, 
                     confirmar detalles como los horarios de los días elegidos y acordar el precio final.
-                </p>
+                </Typography>
 
                 <InteractiveChat initialMessages={chatConCliente}/>
 

@@ -2,6 +2,7 @@ import logoImg from "../../assets/logo.png"
 import Button from "../../components/Button/Button"
 import UploadElement from "../../components/UploadElement/UploadElement"
 import useFormNavigation from "../../hooks/useFormNavigation"
+import Typography from "../../components/Typography/Typography"
 
 export default function CertificationsUpload() {
     const { goNext } = useFormNavigation();
@@ -12,12 +13,14 @@ export default function CertificationsUpload() {
                 alt="Logo de OficiAR"
                 className="w-[247px] h-[55px] object-contain mb-6"
             />
-            <h2 className="text-2xl font-bold mb-2 text-center text-very-dark-blue">
+
+            <Typography variant="h2" className="mb-2 text-center">
                 ¡Adjunta tus certificados!
-            </h2>
-            <p className="mb-8 text-center">
+            </Typography>
+
+            <Typography variant="body" className="mb-8 text-center">
                 Sube tus certificados para validar tus conocimientos.
-            </p>
+            </Typography>
 
             <div className="flex flex-col gap-6">
                 <div className="flex flex-col md:flex-row gap-5">
@@ -29,7 +32,9 @@ export default function CertificationsUpload() {
             <div className="flex justify-end w-full">
                 <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-medium transition-colors"
                 onClick={()=>goNext("/validation/bank-account")}>
-                    Continuar
+                    <Typography variant="body" className="text-white">
+                        Continuar
+                    </Typography>
                 </Button>
             </div>
         </div>

@@ -12,6 +12,7 @@ import tuberiaRota from "../../assets/tuberia_rota.png"
 
 import useResponsiveItems from "../../hooks/useResponsiveItems"
 import useFormNavigation from "../../hooks/useFormNavigation"
+import Typography from "../../components/Typography/Typography"
 
 const estadosDisponibles = [
     "Caducado",
@@ -86,8 +87,9 @@ const historial = [
 
 const botonFinalizar = (
     <Button className="absolute bottom-3 right-3 bg-light-blue text-white rounded-[8px] font-medium transition-colors flex flex-col items-center justify-center w-12 h-8 sm:w-16 sm:h-10 md:w-[141px] md:h-[66px] !px-0 !py-0">
-        <span className="text-[9px] sm:text-xs md:text-base leading-tight">Finalizar</span>
-        <span className="text-[9px] sm:text-xs md:text-base leading-tight">servicio</span>
+        <Typography variant="small" className="text-white font-bold leading-tight uppercase md:normal-case">
+            Finalizar <br/> servicio
+        </Typography>
     </Button>
 );
 
@@ -122,9 +124,12 @@ export default function UserHistorial() {
                 </Button>
             </HeaderUserServices>
 
-            <h2 className="mt-16 text-3xl font-black text-very-dark-blue px-16 mb-10">
+            <Typography 
+                variant="h1" 
+                className="mt-16 px-16 mb-10"
+            >
                 Historial de <span className="text-light-blue">servicios</span>
-            </h2>
+            </Typography>
 
             {/* Envolvemos en el contenedor original para mantener tus márgenes */}
             <div className="px-4 mb-32 xl:px-16">

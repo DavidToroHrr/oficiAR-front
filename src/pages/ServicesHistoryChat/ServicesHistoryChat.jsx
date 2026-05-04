@@ -3,6 +3,7 @@ import Logo from "../../assets/logo.png";
 import Button from "../../components/Button/Button";
 import Background from "../../assets/chat-background.png";
 import useFormNavigation from "../../hooks/useFormNavigation";
+import Typography from "../../components/Typography/Typography";
 
 export default function ServicesHistoryChat() {
 
@@ -28,9 +29,12 @@ export default function ServicesHistoryChat() {
                 onClick={() => goBack()}
                 />
 
-                <h2 className="mb-4 text-4xl md:text-[25px] font-extrabold text-center pt-5">
-                    En unos breves instates el cliente <br/> se pondrá en contacto contigo
-                </h2>
+                <Typography 
+                    variant="h2" 
+                    className="mb-4 text-center pt-5"
+                >
+                    En unos breves instantes el cliente <br/> se pondrá en contacto contigo
+                </Typography>
 
                 <InteractiveChat initialMessages={chatConCliente}/>
 
@@ -41,7 +45,9 @@ export default function ServicesHistoryChat() {
                 className="bg-light-blue text-white px-8 py-2.5 rounded-[8px] font-bold shadow-md mt-8 self-end mr-20 mb-10 w-[180px] h-[71px] text-[20px] flex items-center justify-center"
                 onClick={() => goBack()}
             >
-                Volver al <br/> historial
+                <Typography variant="body" className="font-bold text-white leading-tight text-center">
+                    Volver al <br/> historial
+                </Typography>
             </Button>
             
         </div>

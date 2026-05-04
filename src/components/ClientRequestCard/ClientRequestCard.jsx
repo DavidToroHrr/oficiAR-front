@@ -1,7 +1,10 @@
 import { FiCheckCircle, FiHeadphones, FiXCircle } from "react-icons/fi";
 import Typography from "../Typography/Typography";
+import useFormNavigation from "../../hooks/useFormNavigation";
 
 export default function ClientRequestCard({clientName, requestType, date, imageUrl}) {
+    const { goNext } = useFormNavigation();
+
     return (
         <div className="bg-white rounded-[8px] p-3 flex flex-row items-center gap-5 w-full max-w-[400px] shadow-sm">
         
@@ -35,13 +38,18 @@ export default function ClientRequestCard({clientName, requestType, date, imageU
                 <div className="flex flex-row justify-between w-full">
                 
                     {/* Botón Aceptar (Azul) */}
-                    <button className="text-light-blue hover:scale-110 transition-transform">
-                        {/* El ícono ahora es un componente. Le pasamos el tamaño con className */}
+                    <button 
+                        className="text-light-blue hover:scale-110 transition-transform"
+                        onClick={() => goNext("/user-historial")}
+                    >
                         <FiCheckCircle className="w-8 h-8" />
                     </button>
 
                     {/* Botón Soporte / Chat (Gris) */}
-                    <button className="text-light-gray hover:scale-110 transition-transform">
+                    <button 
+                        className="text-light-gray hover:scale-110 transition-transform"
+                        onClick={() => goNext("/client-requests-chat")}
+                    >
                         <FiHeadphones className="w-8 h-8" />
                     </button>
 

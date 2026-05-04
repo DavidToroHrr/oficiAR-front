@@ -4,6 +4,8 @@ import MainTitle from "../../components/OfficerHomeComponents/MainTitle/MainTitl
 import Footer from "../../components/FooterComponent/FooterComponent";
 import ClientRequestCard from "../../components/ClientRequestCard/ClientRequestCard";
 import useResponsiveItems from "../../hooks/useResponsiveItems"
+import useFormNavigation from "../../hooks/useFormNavigation";
+
 
 // 1. IMPORTAMOS NUESTRO COMPONENTE DE PAGINACIÓN
 import PaginatedList from "../../components/PaginatedList/PaginatedList";
@@ -12,6 +14,9 @@ import BrokenPipe from "../../assets/tuberia_rota.png";
 import GasLeak from "../../assets/escape_gas.png";
 
 export default function ClientServiceRequests() {
+
+    const { goNext } = useFormNavigation();
+    
     const services = [
         { id: 1, name: "Jacobito AP", type: "Tubería rota", date: "12/05/2023", img: BrokenPipe },
         { id: 2, name: "Jacobito AP", type: "Tubería rota", date: "12/05/2023", img: BrokenPipe },
@@ -31,12 +36,27 @@ export default function ClientServiceRequests() {
     return (
         <div className="min-h-screen flex flex-col">
             
-            <Header className="w-full flex flex-row md:flex-row items-center justify-between gap-4 px-2 md:px-8">
+            <Header className="w-full flex flex-row md:flex-row items-center justify-between gap-4 px-2 md:px-8" navigateTo="/officers-home">
                 
-                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">Inicio</Button>
-                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">Solicitudes de Servicios</Button>
-                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">Historial de Servicios</Button>
-                
+                <Button 
+                    className="text-xs sm:text-base px-2 py-2 sm:px-4"
+                    onClick={() => goNext("/officers-home")}
+                >
+                    Inicio
+                </Button>
+
+                {/* Solicitudes — página actual, resaltada */}
+                <Button className="text-xs sm:text-base px-2 py-2 sm:px-4 text-light-blue font-bold border-b-2 border-light-blue">
+                    Solicitudes de Servicios
+                </Button>
+
+                <Button 
+                    className="text-xs sm:text-base px-2 py-2 sm:px-4"
+                    onClick={() => goNext("/user-historial")}
+                >
+                    Historial de Servicios
+                </Button>
+
             </Header>
 
             <div className="flex-grow w-full px-4 py-8 lg:px-35 lg:mb-10 max-w-7xl mx-auto">

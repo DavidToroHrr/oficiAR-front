@@ -27,66 +27,71 @@ import ClientServiceRequests from './pages/ClientServiceRequests/ClientServiceRe
 import UserHistorial from './pages/UserHistorial/UserHistorial';
 import UserServicesChat from './pages/UserServicesChat/UserServicesChat';
 
+// entre llaves porque no es un export default, sino un export const
+import { AuthProvider } from './context/AuthContext';
+
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* Ruta para el inicio (cuando entras a localhost:5173/) */}
-        <Route path="/" element={<DefaultHome />} />
-        
-        
-        {/* Puedes ir agregando todas las que necesites para tu entrega */}
-        <Route path="/login" element={<Login />} />
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          {/* Ruta para el inicio (cuando entras a localhost:5173/) */}
+          <Route path="/" element={<DefaultHome />} />
+          
+          
+          {/* Puedes ir agregando todas las que necesites para tu entrega */}
+          <Route path="/login" element={<Login />} />
 
-        <Route path="/worker-register" element={<WorkerRegister />}>
-        </Route>
+          <Route path="/worker-register" element={<WorkerRegister />}>
+          </Route>
 
-        {/* UserServices va aquí, al mismo nivel que las demás rutas */}
-        <Route path="/user-services" element={<UserServices />} />
+          {/* UserServices va aquí, al mismo nivel que las demás rutas */}
+          <Route path="/user-services" element={<UserServices />} />
 
-        <Route path="/user-services-chat" element={<UserServicesChat />} />
+          <Route path="/user-services-chat" element={<UserServicesChat />} />
 
-        <Route path="/user-historial" element={<UserHistorial />} />
+          <Route path="/user-historial" element={<UserHistorial />} />
 
-        <Route path="/validation" element={<VerificationComponent />} >
-                <Route index element={<Navigate to="validation-identity" replace />} />
-                <Route path="validation-identity" element={<ValidationIdentity />} />
-                <Route path="officer-specification" element={<SpecificationOfficer />} />
-                <Route path="certifications" element={<CertificationsUpload />} />
-                <Route path="bank-account" element={<BankAccount />} />
-        </Route>
+          <Route path="/validation" element={<VerificationComponent />} >
+                  <Route index element={<Navigate to="validation-identity" replace />} />
+                  <Route path="validation-identity" element={<ValidationIdentity />} />
+                  <Route path="officer-specification" element={<SpecificationOfficer />} />
+                  <Route path="certifications" element={<CertificationsUpload />} />
+                  <Route path="bank-account" element={<BankAccount />} />
+          </Route>
 
-        <Route path="/officers-home" element={<OfficersHome />} />
-        <Route path="/users-home" element={<UsersHome />} />
-        
-        <Route path="/pricing" element={<PricingComponent />} />
-        <Route path="/checkout" element={<CheckOutMercadoPago />} />
+          <Route path="/officers-home" element={<OfficersHome />} />
+          <Route path="/users-home" element={<UsersHome />} />
+          
+          <Route path="/pricing" element={<PricingComponent />} />
+          <Route path="/checkout" element={<CheckOutMercadoPago />} />
 
-        <Route path="/client-flow" element={<ClientFlowLayout/>} >
-          <Route index element={<Navigate to="problem-specification" replace />} />
+          <Route path="/client-flow" element={<ClientFlowLayout/>} >
+            <Route index element={<Navigate to="problem-specification" replace />} />
 
-          <Route path="problem-specification" element={<ProblemSpecification/>} />
+            <Route path="problem-specification" element={<ProblemSpecification/>} />
 
-          <Route path="officer-selection" element={<OfficerSelection/>} />
+            <Route path="officer-selection" element={<OfficerSelection/>} />
 
-          <Route path="negotiation-and-contact" element={<NegotiationAndContact/>} />
+            <Route path="negotiation-and-contact" element={<NegotiationAndContact/>} />
 
-          <Route path="payment-release" element={<PaymentRelease/>} />
+            <Route path="payment-release" element={<PaymentRelease/>} />
 
-          <Route path="service-execution" element={<ServiceExecution/>} />
+            <Route path="service-execution" element={<ServiceExecution/>} />
 
-          <Route path="payment-confirmation" element={<PaymentConfirmation/>} />
-                
-        </Route>
+            <Route path="payment-confirmation" element={<PaymentConfirmation/>} />
+                  
+          </Route>
 
-        <Route path="services-history-chat" element={<ServicesHistoryChat />} />
-        <Route path="payment-release-chat" element={<PaymentReleaseChat />} />
-        <Route path="client-requests-chat" element={<ClientRequestsChat />} />
+          <Route path="services-history-chat" element={<ServicesHistoryChat />} />
+          <Route path="payment-release-chat" element={<PaymentReleaseChat />} />
+          <Route path="client-requests-chat" element={<ClientRequestsChat />} />
 
-        <Route path="client-service-requests" element={<ClientServiceRequests />} />
+          <Route path="client-service-requests" element={<ClientServiceRequests />} />
 
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   )
 }
 

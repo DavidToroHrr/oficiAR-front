@@ -27,6 +27,7 @@ import ClientServiceRequests from './pages/ClientServiceRequests/ClientServiceRe
 import UserHistorial from './pages/UserHistorial/UserHistorial';
 import UserServicesChat from './pages/UserServicesChat/UserServicesChat';
 import UserRegister from './pages/UserRegister/UserRegister';
+import FinishedJob from './pages/FinishedJob/FinishedJob';
 
 // entre llaves porque no es un export default, sino un export const
 import { AuthProvider } from './context/AuthContext';
@@ -55,6 +56,8 @@ function App() {
           <Route path="/user-services-chat" element={<UserServicesChat />} />
 
           <Route path="/user-historial" element={<UserHistorial />} />
+
+          <Route path="/finished-job" element={<FinishedJob />} />
 
           <Route path="/validation" element={<VerificationComponent />} >
                   <Route index element={<Navigate to="validation-identity" replace />} />

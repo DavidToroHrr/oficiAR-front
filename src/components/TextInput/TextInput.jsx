@@ -1,4 +1,4 @@
-export default function TextInput({ id, name, type, label, value, onChange }) {
+export default function TextInput({ id, name, type, label, value, onChange, required }) {
   return (
     /* Contenedor principal
     relative: Sirve de "ancla". Obliga a que la etiqueta (que es absolute) 
@@ -39,7 +39,7 @@ export default function TextInput({ id, name, type, label, value, onChange }) {
         id={id} 
         className="block py-2.5 px-0 w-full text-sm text-very-dark-blue bg-transparent border-0 border-b-2 border-light-blue appearance-none focus:outline-none focus:ring-0 focus:border-dark-blue peer" 
         placeholder=" " 
-        required 
+        required={required}
         value={value}
         onChange={onChange}
       />

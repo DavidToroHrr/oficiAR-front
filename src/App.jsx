@@ -26,6 +26,7 @@ import ClientRequestsChat from './pages/ClientRequestsChat/ClientRequestsChat';
 import ClientServiceRequests from './pages/ClientServiceRequests/ClientServiceRequests';
 import UserHistorial from './pages/UserHistorial/UserHistorial';
 import UserServicesChat from './pages/UserServicesChat/UserServicesChat';
+import UserRegister from './pages/UserRegister/UserRegister';
 
 // entre llaves porque no es un export default, sino un export const
 import { AuthProvider } from './context/AuthContext';
@@ -43,6 +44,9 @@ function App() {
           <Route path="/login" element={<Login />} />
 
           <Route path="/worker-register" element={<WorkerRegister />}>
+          </Route>
+
+          <Route path="/user-register" element={<UserRegister />}>
           </Route>
 
           {/* UserServices va aquí, al mismo nivel que las demás rutas */}

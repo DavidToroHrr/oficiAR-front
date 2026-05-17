@@ -4,13 +4,53 @@ import TextInput from "../../components/TextInput/TextInput"
 import { useNavigate } from "react-router-dom";
 import Typography from "../../components/Typography/Typography";
 
-export default function WorkerRegister(){
+import { useState } from "react";
+import { register } from "../../api/AuthService";
+
+export default function UserRegister(){
     const navigate = useNavigate();
 
-    function navigationForm(e){
-        console.log("Navegando a validación");
-        e.preventDefault(); // ¡ESTO EVITA QUE LA PÁGINA SE RECARGUE!
-        navigate("/validation");
+    // Estados para capturar los inputs
+    const [formData, setFormData] = useState({
+        nombres: "",
+        apellidos: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+    });
+
+    // Función para actualizar el estado cada vez que se escribe en un input
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    // Función de envío
+    const navigationForm = async (e) => {
+        e.preventDefault(); 
+        
+        // Validación básica de contraseñas en el front
+        if (formData.password !== formData.confirmPassword) {
+            alert("Las contraseñas no coinciden. Por favor, verifica.");
+            return;
+        }
+
+        // Unimos nombres y apellidos porque el backend solo recibe "name"
+        const fullName = `${formData.nombres} ${formData.apellidos}`.trim();
+
+        try {
+            // Llamamos al backend pasando los datos y quemando el rol "CLIENT"
+            const response = await register(fullName, formData.email, formData.password, "CLIENT");
+            
+            console.log("Registro exitoso:", response);
+            alert("¡Usuario registrado con éxito!"); // mensaje de éxito
+                        
+        } catch (error) {
+            console.error("Error en el registro:", error);
+            alert(error.message); // Mostrará el error (ej: "usuario ya registrado")
+        }
     }
 
    return(
@@ -19,7 +59,7 @@ export default function WorkerRegister(){
             style={{ backgroundImage: `url(${background})` }}
         >
             <FormComponent
-                title="¡Hazte Officer!"
+                title="¡Únete a OficiAR!"
                 buttonLabel="Registrarse"
                 navigationFunction={navigationForm}
                 showForgotPassword={false}
@@ -86,15 +126,15 @@ export default function WorkerRegister(){
                 }
             >
                 {/* Input 1: Nombre/s */}
-                <TextInput id="nombres" name="nombres" type="text" label="Nombre/s" />
+                <TextInput id="nombres" name="nombres" type="text" label="Nombre/s" value={formData.nombres} onChange={handleChange} required />
                 {/* Input 2: Apellidos/s */}
-                <TextInput id="apellidos" name="apellidos" type="text" label="Apellidos/s" />
+                <TextInput id="apellidos" name="apellidos" type="text" label="Apellidos/s" value={formData.apellidos} onChange={handleChange} required />
                 {/* Input 3: Email */}
-                <TextInput id="email" name="email" type="email" label="Email" />
+                <TextInput id="email" name="email" type="email" label="Email" value={formData.email} onChange={handleChange} required />
                 {/* Input 4: Contraseña */}
-                <TextInput id="password" name="password" type="password" label="Contraseña" />
+                <TextInput id="password" name="password" type="password" label="Contraseña" value={formData.password} onChange={handleChange} required />
                 {/* Input 5: Confirmar Contraseña */}
-                <TextInput id="confirmPassword" name="confirmPassword" type="password" label="Confirmar Contraseña" />
+                <TextInput id="confirmPassword" name="confirmPassword" type="password" label="Confirmar Contraseña" value={formData.confirmPassword} onChange={handleChange} required />
             </FormComponent>
 
         </div>

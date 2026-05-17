@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
         const role = localStorage.getItem('role');
         
         if (token && role) {
-        setUser({ token, role });
+            setUser({ token, role });
         }
     }, []);
 

@@ -16,3 +16,19 @@ export const login = async (email, password) => {
     // Retorna el token, el rol y el email para guardarlos en el contexto
     return await response.json();
 };
+
+export const register = async (name, email, password, role) => {
+    const response = await fetch(`${API_URL}/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password, role }),
+    });
+
+    if (!response.ok) {
+        // Capturamos el mensaje de error del backend (ej. "el usuario ya existe")
+        const errorData = await response.json().catch(() => null);
+        throw new Error(errorData?.message || "Error al registrar el usuario");
+    }
+    
+    return await response.json();
+};

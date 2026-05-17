@@ -2,8 +2,12 @@ import { Outlet } from "react-router-dom";
 import ContratationStepper from "../../components/ContratationStepper/ContratationStepper";
 import validationOfficerImg from "../../assets/client-flow.png";
 import logo from "../../assets/logo.png";
+import useFormNavigation from "../../hooks/useFormNavigation";
 
 export default function ClientFlowLayout() {
+
+    const { goBack } = useFormNavigation();
+
     return (
         // 1. Agregamos w-full y overflow-x-hidden para evitar el scroll horizontal fantasma
         <div className="relative flex flex-col min-h-screen items-center w-full overflow-x-hidden">      
@@ -12,7 +16,8 @@ export default function ClientFlowLayout() {
             <img 
                 src={logo} 
                 alt="Logo de OficiAR" 
-                className="w-[200px] md:w-[247px] object-contain mb-8 mt-8 z-10" 
+                className="w-[200px] md:w-[247px] object-contain mb-8 mt-8 z-10 cursor-pointer" 
+                onClick={() => goBack()}
             />
 
             {/* FONDO GLOBAL: Quitamos 'absolute', dejamos SOLO 'fixed inset-0' */}

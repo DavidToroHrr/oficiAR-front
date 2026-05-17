@@ -63,6 +63,7 @@ export default function Login(){
             {/* El formulario ahora se dibujará sobre este fondo y centrado */}
             <FormComponent
                 // Espacio para los botones sociales como prop del FormComponent
+                navigateTo="/"
                 socialButtons={
                     <div className="flex justify-center gap-1 w-full max-w-[360px] mx-auto">
                         <Button className='!bg-soft-gray !text-white w-[85.25px] !px-0 !font-medium border-[1.35px] border-black rounded-full'>

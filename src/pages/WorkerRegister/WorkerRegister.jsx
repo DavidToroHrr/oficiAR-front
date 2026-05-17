@@ -19,6 +19,7 @@ export default function WorkerRegister(){
             style={{ backgroundImage: `url(${background})` }}
         >
             <FormComponent
+                navigateTo="/"
                 title="¡Hazte Officer!"
                 buttonLabel="Registrarse"
                 navigationFunction={navigationForm}

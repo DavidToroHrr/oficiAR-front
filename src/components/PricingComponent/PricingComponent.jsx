@@ -77,7 +77,7 @@ export default function PricingSection() {
                 <Button 
                     type="button" 
                     className="w-full max-w-[460px] text-white bg-light-blue font-bold rounded-xl text-lg sm:text-xl px-5 py-4 shadow-lg"
-                    onClick={()=>goNext("/checkout")}
+                    onClick={()=>goNext("/checkout-officer")}
                 >
                     Activar Suscripción Anual
                 </Button>

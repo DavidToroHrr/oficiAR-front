@@ -1,8 +1,10 @@
 import logo from '../../assets/logo.svg';import Button from '../Button/Button';
 import Typography from '../Typography/Typography';
+import ClickableLogo from '../ClickableLogo/ClickableLogo';
+
 
 export default function FormComponent({children, socialButtons, registerFooter, buttonLabel,navigationFunction,title = "¡Bienvenido a OficiAR!",showForgotPassword = true,
-  showSeparator = true}) {
+  showSeparator = true, navigateTo}) {
    return (
     /* CONTENEDOR PRINCIPAL (Glassmorphism)
       bg-white/70: Fondo blanco con 70% de opacidad (semitransparente).
@@ -21,13 +23,11 @@ export default function FormComponent({children, socialButtons, registerFooter, 
           mb-6: Margen inferior (margin-bottom) de 24px para separarlo del 
             título. */}
       <div className="flex justify-center mb-6">
-         {/* IMAGEN DEL LOGO
-            h-5 w-24: Altura de 20px y ancho de 96px.
-            object-cover object-center: Evita que la imagen se deforme y la 
-              centra en su caja.
-            scale-150: Aumenta el tamaño visual de la imagen a un 150% 
-              (sin cambiar el tamaño de su caja). */}
-         <img src={logo} alt="OficiAR Logo" className="h-5 w-24 object-cover object-center scale-150" />
+                {navigateTo ? (
+              <ClickableLogo navigateTo={navigateTo} />
+          ) : (
+              <img src={logo} alt="OficiAR Logo" className="h-5 w-24 object-cover object-center scale-150" />
+          )}
       </div>
 
       {/* Usamos h2. Eliminamos text-2xl y font-bold. El componente ya trae 

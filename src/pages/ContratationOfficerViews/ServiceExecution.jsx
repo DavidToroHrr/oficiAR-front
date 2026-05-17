@@ -29,11 +29,6 @@ export default function PaymentRelease() {
                 onClick={()=>goNext("/users-home")}>
                     Volver al inicio
                 </Button>
-
-                <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-bold transition-colors shadow-md"
-                                onClick={()=>goNext("/client-flow/payment-release")}>
-                                    Siguiente (prueba)
-                </Button>
                 
             </div>
         </div>

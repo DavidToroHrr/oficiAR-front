@@ -150,7 +150,7 @@ export default function UserHistorial() {
                             precio={servicio.precio}
                             estado={servicio.estado}
                             icono={<HeadphonesIcon onClick={() => goNext("/services-history-chat")} />}
-                            botonAccion={botonFinalizar}
+                            botonAccion={servicio.estado === "En ejecución" ? botonFinalizar : null}
                         />
                     )}
                 />

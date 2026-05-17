@@ -3,6 +3,7 @@ import Logo from "../../assets/logo.png";
 import Button from "../../components/Button/Button";
 import Background from "../../assets/chat-background.png";
 import Typography from "../../components/Typography/Typography";
+import useFormNavigation from "../../hooks/useFormNavigation";
 
 export default function UserServicesChat() {
     const chatConCliente = [
@@ -12,6 +13,8 @@ export default function UserServicesChat() {
         { id: 4, text: "¡Muchas gracias!", sender: "me", time: "14:35" }
     ];
 
+    const { goBack } = useFormNavigation();
+
     return (
         <div 
             style={{ backgroundImage: `url(${Background})` }}
@@ -19,7 +22,11 @@ export default function UserServicesChat() {
         >
 
             <div className="flex flex-col items-center gap-15">
-                <img src={Logo} className="w-[247px] h-[55px] mt-5" />
+                <img 
+                    src={Logo} 
+                    className="w-[247px] h-[55px] mt-5 cursor-pointer"
+                    onClick={() => goBack()}
+                />
 
                 <Typography 
                     variant="h2" 
@@ -41,8 +48,10 @@ export default function UserServicesChat() {
             </div>
 
             {/* self-end se pone a flotar a la derecha ignorando el flex del contenedor padre */}
-            <Button className="bg-light-blue text-white px-8 py-2.5 rounded-[8px] font-bold shadow-md mt-8
-                                self-start ml-20 mb-10 w-[180px] h-[71px] text-[20px] flex items-center justify-center">
+           <Button 
+                className="bg-light-blue text-white px-8 py-2.5 rounded-[8px] font-bold shadow-md mt-8 self-start ml-20 mb-10 w-[180px] h-[71px] text-[20px] flex items-center justify-center"
+                onClick={() => goBack()}
+            >
                 Regresar
             </Button>
         </div>

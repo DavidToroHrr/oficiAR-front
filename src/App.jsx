@@ -69,6 +69,11 @@ function App() {
           
           <Route path="/pricing" element={<PricingComponent />} />
           <Route path="/checkout" element={<CheckOutMercadoPago />} />
+        <Route path="/officers-home" element={<OfficersHome />} />
+        <Route path="/users-home" element={<UsersHome />} />
+        
+        <Route path="/pricing" element={<PricingComponent />} />
+        <Route path="/checkout" element={<CheckOutMercadoPago navigateTo="/client-flow/service-execution" />} />
 
           <Route path="/client-flow" element={<ClientFlowLayout/>} >
             <Route index element={<Navigate to="problem-specification" replace />} />

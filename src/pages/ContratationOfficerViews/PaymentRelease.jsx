@@ -22,7 +22,7 @@ export default function PaymentConfirmation() {
             </Typography>
 
             <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-medium transition-colors"
-            onClick={()=>goNext("/checkout")}>
+            onClick={()=>goNext("/users-home")}>
                     Liberar pago
             </Button>
         </div>

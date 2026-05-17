@@ -50,7 +50,7 @@ export default function PaymentConfirmation() {
                 
                 {/* Botón Primario (Avanzar) */}
                 <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-bold transition-colors shadow-md"
-                onClick={()=>goNext("/client-flow/service-execution")}>
+                onClick={()=>goNext("/checkout")}>
                     Depositar y bloquear fondos
                 </Button>
                 

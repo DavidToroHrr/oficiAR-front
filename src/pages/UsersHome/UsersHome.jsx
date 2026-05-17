@@ -17,8 +17,12 @@ import Pintura from "../../assets/UsersHomeCards/pintura.png";
 import Plomeria from "../../assets/UsersHomeCards/plomeria.png";
 import Refrigeracion from "../../assets/UsersHomeCards/tecnico en refrigeracion.png";
 import Typography from "../../components/Typography/Typography";
+import useFormNavigation from "../../hooks/useFormNavigation"
 
 export default function UsersHome(){
+
+const { goNext } = useFormNavigation();       
+
     const OurServices = [
         {
             id: 1,
@@ -124,18 +128,24 @@ export default function UsersHome(){
             */}
             {/* Agregamos contenedor para botones para que se muestren en su propia fila
                 Y el logo quede arriba de ellos */}
-            <Header className="w-full flex flex-row md:flex-row items-center justify-between gap-4 px-2 md:px-8">
+            <Header className="w-full flex flex-row md:flex-row items-center justify-between gap-4 px-2 md:px-8" navigateTo="/">
                             
-                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
+                     <Button 
+                        className="text-xs sm:text-base px-2 py-2 sm:px-4"
+                        onClick={() => goNext("/")}
+                    >
                         Inicio
                     </Button>
                                                                         
-                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
+                    <Button 
+                        className="text-xs sm:text-base px-2 py-2 sm:px-4"
+                        onClick={() => goNext("/user-services")}
+                    >
                         Servicios
                     </Button>
                                             
                     <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
-                        Historial de Servicios
+                        Perfil
                     </Button>
             
             </Header>
@@ -166,13 +176,11 @@ export default function UsersHome(){
                     automático (solo lo que ocupe el texto)
                 text-sm md:text-base: Letra un poco más pequeña en móvil, tamaño normal en PC
                 py-3 md:py-4: Un poco menos de altura en celular, más alto en PC */}
-                <Button className="flex mx-auto mb-20 bg-light-blue text-white w-full md:w-auto text-sm md:text-base py-3 px-6 md:py-4 md:px-8 lg:px-10 lg:py-8 rounded-[8px]
-                    font-extrabold lg:text-[20px]">
-
-                    <Typography 
-                        variant="h3" 
-                        className="text-white font-extrabold lg:text-[20px] text-center"
-                    >
+                <Button 
+                    className="flex mx-auto mb-20 bg-light-blue text-white w-full md:w-auto text-sm md:text-base py-3 px-6 md:py-4 md:px-8 lg:px-10 lg:py-8 rounded-[8px] font-extrabold lg:text-[20px]"
+                    onClick={() => goNext("/client-flow/problem-specification")}
+                >
+                    <Typography variant="h3" className="text-white font-extrabold lg:text-[20px] text-center">
                         Solicitar un servicio
                     </Typography>
                 </Button>

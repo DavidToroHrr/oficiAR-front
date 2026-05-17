@@ -1,6 +1,6 @@
-export default function TextInput({ id, name, type, label }) {
+export default function TextInput({ id, name, type, label, value, onChange, required }) {
   return (
-    /* 1. Contenedor principal
+    /* Contenedor principal
     relative: Sirve de "ancla". Obliga a que la etiqueta (que es absolute) 
       se mueva dentro de esta caja y no salga volando por toda la pantalla.
     z-0: Lo pone en un nivel de profundidad base.
@@ -10,7 +10,7 @@ export default function TextInput({ id, name, type, label }) {
       interactúa con esta caja contenedora. */
     <div className="relative z-0 w-full mb-6 group">
       
-      {/* 2. Campo de texto */}
+      {/* Campo de texto */}
       {/* Atributos HTML:
         type: Define si el teclado/formato es texto normal, contraseña 
           (puntos ocultos) o email.
@@ -39,10 +39,12 @@ export default function TextInput({ id, name, type, label }) {
         id={id} 
         className="block py-2.5 px-0 w-full text-sm text-very-dark-blue bg-transparent border-0 border-b-2 border-light-blue appearance-none focus:outline-none focus:ring-0 focus:border-dark-blue peer" 
         placeholder=" " 
-        required 
+        required={required}
+        value={value}
+        onChange={onChange}
       />
 
-      {/* 3. LA ETIQUETA ANIMADA (LABEL) */}
+      {/* LA ETIQUETA ANIMADA (LABEL) */}
       {/* Atributos HTML:
           htmlFor: Es el equivalente en React al atributo 'for' de HTML. 
             Vincula esta palabra con el input. Si el usuario toca la palabra 

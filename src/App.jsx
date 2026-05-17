@@ -64,11 +64,7 @@ function App() {
                   <Route path="bank-account" element={<BankAccount />} />
           </Route>
 
-          <Route path="/officers-home" element={<OfficersHome />} />
-          <Route path="/users-home" element={<UsersHome />} />
-          
-          <Route path="/pricing" element={<PricingComponent />} />
-          <Route path="/checkout" element={<CheckOutMercadoPago />} />
+        
         <Route path="/officers-home" element={<OfficersHome />} />
         <Route path="/users-home" element={<UsersHome />} />
         

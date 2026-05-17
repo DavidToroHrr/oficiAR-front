@@ -31,8 +31,7 @@ export default function ServiceCard({ imageSrc, imageAlt, nombre, descripcion, f
                 </Button>
             )}
 
-            {/* Botón personalizado desde la vista — Finalizar servicio */}
-            {botonAccion && estado === "En ejecución" && botonAccion}
+           {botonAccion && botonAccion}
             
         </div>
     );

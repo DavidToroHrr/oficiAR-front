@@ -6,7 +6,7 @@ import useFormNavigation from "../../hooks/useFormNavigation"
 import Typography from "../../components/Typography/Typography"
 
 export default function ValidationIdentity() {
-    const { goNext } = useFormNavigation();
+    const { goBack,goNext } = useFormNavigation();
     return (
         // CORRECCIÓN 1: w-[955px] cambió a w-full max-w-[955px].
         // CORRECCIÓN 2: Se eliminó h-[755px] para que la altura sea automática.
@@ -16,7 +16,8 @@ export default function ValidationIdentity() {
             <img
                 src={logoImg}
                 alt="Logo de OficiAR"
-                className="w-[247px] h-[55px] object-contain mb-6"
+                className="w-[247px] h-[55px] object-contain mb-6 cursor-pointer"
+                onClick={() => goNext("/")}
             />
 
             <Typography variant="h2" className="mb-2 text-center">

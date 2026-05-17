@@ -6,7 +6,7 @@ import useFormNavigation from "../../hooks/useFormNavigation";
 import Typography from "../../components/Typography/Typography";
 
 export default function SpecificationOfficer() {
-    const { goNext } = useFormNavigation();
+    const { goBack,goNext } = useFormNavigation();
     // Aquí guardaremos el oficio que el trabajador elija para luego mandarlo a la base de datos
     const [oficioSeleccionado, setOficioSeleccionado] = useState(null);
 
@@ -23,7 +23,8 @@ export default function SpecificationOfficer() {
             <img 
                 src={logoImg} 
                 alt="Logo de OficiAR" 
-                className="w-[247px] h-[55px] object-contain mb-6" 
+                className="w-[247px] h-[55px] object-contain mb-6 cursor-pointer"
+                onClick={() => goBack()} 
             />
             
             <Typography variant="h2" className="mb-10">

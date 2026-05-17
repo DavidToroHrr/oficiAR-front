@@ -6,7 +6,7 @@ import useFormNavigation from "../../hooks/useFormNavigation";
 import Typography from "../../components/Typography/Typography";
 
 export default function BankAccount() {
-    const { goNext } = useFormNavigation();
+    const { goBack,goNext } = useFormNavigation();
     // 1. Estados para guardar toda la información del formulario
     const [bancoSeleccionado, setBancoSeleccionado] = useState(null);
     const [numeroIdentificacion, setNumeroIdentificacion] = useState("");
@@ -43,7 +43,8 @@ export default function BankAccount() {
             <img 
                 src={logoImg} 
                 alt="Logo de OficiAR" 
-                className="w-[247px] h-[55px] object-contain mb-8" 
+                className="w-[247px] h-[55px] object-contain mb-8 cursor-pointer"
+                onClick={() => goBack()}
             />
 
             <Typography variant="h2" className="mb-10 text-center">

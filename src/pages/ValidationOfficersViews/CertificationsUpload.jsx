@@ -5,13 +5,14 @@ import useFormNavigation from "../../hooks/useFormNavigation"
 import Typography from "../../components/Typography/Typography"
 
 export default function CertificationsUpload() {
-    const { goNext } = useFormNavigation();
+    const { goBack,goNext } = useFormNavigation();
     return (
         <div className="flex flex-col items-center w-full max-w-[955px] mx-auto p-6 bg-white/70 rounded-2xl shadow-xl mb-10 min-w-[370px]" >
             <img
                 src={logoImg}
                 alt="Logo de OficiAR"
-                className="w-[247px] h-[55px] object-contain mb-6"
+                className="w-[247px] h-[55px] object-contain mb-6 cursor-pointer"
+                onClick={() => goBack()}
             />
 
             <Typography variant="h2" className="mb-2 text-center">

@@ -9,8 +9,12 @@ import Satisfaction from "../../components/Satisfaction/Satisfaction"
 import SloganApp from "../../components/SloganApp/SloganApp"
 import HowItWorks from "../../components/HowItWorks/HowItWorks"
 import Typography from "../../components/Typography/Typography"
+import useFormNavigation from "../../hooks/useFormNavigation"
+
 
 export default function DefaultHome(){
+
+    const { goNext } = useFormNavigation();
     
     return(
         
@@ -27,15 +31,24 @@ export default function DefaultHome(){
                 {/* Un div agrupando los botones para que se mantengan en su propia fila */}
                 
                                 
-                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
+                     <Button 
+                        className="text-xs sm:text-base px-2 py-2 sm:px-4"
+                        onClick={() => goNext("/login")}
+                    >
                         Iniciar sesión
                     </Button>
-                                                                        
-                    <Button className="text-xs sm:text-base px-2 py-2 sm:px-4">
+
+                    <Button 
+                        className="text-xs sm:text-base px-2 py-2 sm:px-4"
+                        onClick={() => goNext("/user-register")}
+                    >
                         Registro
                     </Button>
-                                            
-                    <Button className="bg-yellow text-very-dark-blue px-8 py-2.5 rounded-full font-medium transition-colors">
+
+                    <Button 
+                        className="bg-yellow text-very-dark-blue px-8 py-2.5 rounded-full font-medium transition-colors"
+                        onClick={() => goNext("/worker-register")}
+                    >
                         Hazte Officer
                     </Button>
                 

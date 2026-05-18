@@ -1,7 +1,10 @@
 // Este archivo es el encargado de hacer la petición al backend para 
 // iniciar sesión
 
-const API_URL = "http://localhost:8080/api/auth"; 
+// Lee la URL de la nube desde el .env, si no existe usa la local por defecto
+const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
+
+const API_URL = `${BASE_URL}/api/auth`; 
 
 export const login = async (email, password) => {
     // Aquí hacemos la petición al backend con el email y password

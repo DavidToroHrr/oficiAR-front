@@ -28,6 +28,7 @@ import UserHistorial from './pages/UserHistorial/UserHistorial';
 import UserServicesChat from './pages/UserServicesChat/UserServicesChat';
 import UserRegister from './pages/UserRegister/UserRegister';
 import FinishedJob from './pages/FinishedJob/FinishedJob';
+import AccessibilityMenu from './components/AccessibilityMenu/AccessibilityMenu';
 
 // entre llaves porque no es un export default, sino un export const
 import { AuthProvider } from './context/AuthContext';
@@ -36,6 +37,8 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+        <AccessibilityMenu />
+
         <Routes>
           {/* Ruta para el inicio (cuando entras a localhost:5173/) */}
           <Route path="/" element={<DefaultHome />} />
@@ -101,6 +104,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </AuthProvider>
+
   )
 }
 

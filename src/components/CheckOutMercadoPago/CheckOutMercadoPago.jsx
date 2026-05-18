@@ -2,46 +2,63 @@ import { useEffect } from 'react';
 import { initMercadoPago, Payment } from '@mercadopago/sdk-react';
 import useFormNavigation from '../../hooks/useFormNavigation';
 
+import { register } from '../../api/AuthService';
+
 // 1. Inicializamos con tu Llave Pública de Prueba (Public Key)
 initMercadoPago('TEST-a4a005de-ad51-4f9b-8eb1-40d1af54f9f0', { locale: 'es-CO' });
 
-
 export default function CheckoutMercadoPago({ navigateTo }) {
-
-        const { goBack,goNext } = useFormNavigation();
+    const { goBack, goNext } = useFormNavigation();
 
     useEffect(() => {
-    const alertaMostrada = sessionStorage.getItem('alertaCheckout');
-    if (!alertaMostrada) {
-        alert("⚠️ Modo de prueba: Para simular un pago, selecciona Efecty, ingresa cualquier correo y haz clic en Pagar.");
-        sessionStorage.setItem('alertaCheckout', 'true');
-    }
+        const alertaMostrada = sessionStorage.getItem('alertaCheckout');
+        if (!alertaMostrada) {
+            alert("⚠️ Modo de prueba: Para simular un pago, selecciona Efecty, ingresa cualquier correo y haz clic en Pagar.");
+            sessionStorage.setItem('alertaCheckout', 'true');
+        }
     }, []);
 
-    
-    // 2. Configuramos el monto visual ($450.000 COP del Plan Pro Anual)
-    const initialization = {
-        amount: 450000, 
-    };
+    const initialization = { amount: 450000 };
 
-    // 3. Configuramos cómo se ve y qué métodos de pago aceptamos
     const customization = {
-        visual: {
-            style: {
-                theme: 'default', // 'default' es blanco limpio. Puedes usar 'dark' si prefieres.
-            },
-        },
+        visual: { style: { theme: 'default' } },
         paymentMethods: {
-            creditCard: 'all',
-            debitCard: 'all',
-            ticket: 'all', // Esto habilita pagos en efectivo (como Efecty)
+            creditCard: 'all', debitCard: 'all', ticket: 'all', 
         },
     };
 
-    // 4. Función que se dispara al darle clic al botón azul de Pagar
     const onSubmit = async (formData) => {
-    console.log("Datos capturados listos para el backend:", formData);
-    if (navigateTo) goNext(navigateTo);
+        console.log("Pago aprobado simulación:", formData);
+        
+        // Sacamos los datos de la mochila temporal
+        const draftString = sessionStorage.getItem('workerDraft');
+        
+        if (draftString) {
+            const workerDraft = JSON.parse(draftString);
+            
+            try {
+                // Llamamos al backend para que AHORA SÍ lo guarde en MySQL
+                await register(
+                    workerDraft.name, 
+                    workerDraft.email, 
+                    workerDraft.password, 
+                    "WORKER"
+                );
+                
+                alert("¡Worker registrado con éxito!");
+                
+                // Limpiamos la mochila
+                sessionStorage.removeItem('workerDraft');
+                
+            } catch (error) {
+                console.error("Error al registrar el worker en BD:", error);
+                alert("Hubo un problema guardando tu cuenta: " + error.message);
+                return; // Detenemos la navegación si falló el registro
+            }
+        }
+
+        // Si todo salió bien, navega al home del trabajador
+        if (navigateTo) goNext(navigateTo);
     };
 
     return (

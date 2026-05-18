@@ -3,8 +3,12 @@ import Logo from "../../assets/logo.png";
 import Button from "../../components/Button/Button";
 import Background from "../../assets/chat-background.png";
 import Typography from "../../components/Typography/Typography";
+import useFormNavigation from "../../hooks/useFormNavigation";
 
 export default function PaymentReleaseChat() {
+
+    const { goNext } = useFormNavigation();
+
     const chatConCliente = [
         { id: 1, text: "Hola worker, ¿en qué te puedo ayudar?", sender: "them", time: "14:30" },
         { id: 2, text: "Hola Jacobo, gracias por responder, ¿Cuándo se verá reflejado mi pago?", sender: "me", time: "14:32" },
@@ -19,7 +23,11 @@ export default function PaymentReleaseChat() {
         >
 
             <div className="flex flex-col items-center gap-15">
-                <img src={Logo} className="w-[247px] h-[55px] mt-5" />
+                <img 
+                    src={Logo} 
+                    className="w-[247px] h-[55px] mt-5 cursor-pointer"
+                    onClick={() => goNext("/officers-home")}
+                />
 
                 <Typography variant="h2" className="mb-4 mt-5 text-center px-4">
                     En unos breves instantes el cliente <br/> se pondrá en contacto contigo
@@ -36,20 +44,26 @@ export default function PaymentReleaseChat() {
                 gap-4 para que NUNCA se toquen, sin importar qué tan pequeña sea la pantalla */}
             <div className="flex flex-row justify-between w-full px-4 md:px-20 mt-8 mb-10 gap-4">
                 
-                <Button className="bg-light-blue text-white rounded-[8px] font-bold shadow-md 
+                <Button 
+                    className="bg-light-blue text-white rounded-[8px] font-bold shadow-md 
                                 w-full max-w-[150px] md:max-w-[180px] 
                                 h-[50px] md:h-[71px] 
                                 text-sm md:text-[20px] 
-                                flex items-center justify-center">
+                                flex items-center justify-center"
+                    onClick={() => goNext("/finished-job")}
+                >
                     Regresar
                 </Button>
 
                 {/* Se agregó leading-tight para que el salto de línea (<br/>) no separe tanto el texto */}
-                <Button className="bg-light-blue text-white rounded-[8px] font-bold shadow-md 
+                 <Button 
+                    className="bg-light-blue text-white rounded-[8px] font-bold shadow-md 
                                 w-full max-w-[150px] md:max-w-[180px] 
                                 h-[50px] md:h-[71px] 
                                 text-sm md:text-[20px] leading-tight
-                                flex items-center justify-center text-center">
+                                flex items-center justify-center text-center"
+                    onClick={() => goNext("/user-historial")}
+                >
                     Volver al <br/> historial
                 </Button>
                 

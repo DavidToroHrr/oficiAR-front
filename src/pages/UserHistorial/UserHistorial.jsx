@@ -85,18 +85,19 @@ const historial = [
     }
 ];
 
-const botonFinalizar = (
-    <Button className="absolute bottom-3 right-3 bg-light-blue text-white rounded-[8px] font-medium transition-colors flex flex-col items-center justify-center w-12 h-8 sm:w-16 sm:h-10 md:w-[141px] md:h-[66px] !px-0 !py-0">
-        <Typography variant="small" className="text-white font-bold leading-tight uppercase md:normal-case">
-            Finalizar <br/> servicio
-        </Typography>
-    </Button>
-);
-
-
 export default function UserHistorial() {
     const responsiveItemsPerPage= useResponsiveItems(3,6);
     const { goBack, goNext } = useFormNavigation();
+     const botonFinalizar = (
+        <Button 
+            className="absolute bottom-3 right-3 bg-light-blue text-white rounded-[8px] font-medium transition-colors flex flex-col items-center justify-center w-12 h-8 sm:w-16 sm:h-10 md:w-[141px] md:h-[66px] !px-0 !py-0"
+            onClick={() => goNext("/finished-job")}
+        >
+            <Typography variant="small" className="text-white font-bold leading-tight uppercase md:normal-case">
+                Finalizar <br/> servicio
+            </Typography>
+        </Button>
+    );
 
 
     return (

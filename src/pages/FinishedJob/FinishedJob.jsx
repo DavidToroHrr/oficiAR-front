@@ -3,13 +3,23 @@ import Button from "../../components/Button/Button";
 import Typography from "../../components/Typography/Typography";
 import Background from "../../assets/FinishedJobViewBackground.jpeg";
 import logo from "../../assets/logo.png";
+import useFormNavigation from "../../hooks/useFormNavigation";
+
 
 export default function FinishedJob() {
+
+    const { goNext } = useFormNavigation();
+
     return (
         <div className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex flex-col items-center" 
             style={{ backgroundImage: `url(${Background})` }}
         >
-            <img src={logo} alt="Logo" className="w-[247px] h-[55px] mb-5 mt-8" />
+            <img 
+                src={logo} 
+                alt="Logo" 
+                className="w-[247px] h-[55px] mb-5 mt-8 cursor-pointer"
+                onClick={() => goNext("/officers-home")}
+            />
 
             {/* Usamos h1. Eliminamos text-4xl/5xl y font-black. 
                 Mantenemos el padding superior y el margen inferior */}
@@ -27,12 +37,12 @@ export default function FinishedJob() {
 
             <div className="flex w-full max-w-md justify-between px-4 mt-4">
                 <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-medium transition-colors"
-                onClick={()=>goNext("/users-home")}>
+                onClick={()=>goNext("/user-historial")}>
                     Regresar
                 </Button>
 
                 <Button className="bg-light-blue text-white px-8 py-2.5 rounded-lg font-medium transition-colors"
-                onClick={()=>goNext("/users-home")}>
+                onClick={()=>goNext("/payment-release-chat")}>
                     Preguntar
                 </Button>
             </div>

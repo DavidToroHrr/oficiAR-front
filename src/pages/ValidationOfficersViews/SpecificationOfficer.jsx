@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Dropdown from "../../components/Dropdown/Dropdown";
-import logoImg from '../../assets/logo.png';
+import logoImg from '../../assets/logo.svg';
 import Button from "../../components/Button/Button";
 import useFormNavigation from "../../hooks/useFormNavigation";
 import Typography from "../../components/Typography/Typography";

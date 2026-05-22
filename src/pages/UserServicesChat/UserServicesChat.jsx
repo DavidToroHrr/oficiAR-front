@@ -1,5 +1,5 @@
 import InteractiveChat from "../../components/InteractiveChat/InteractiveChat";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/logo.svg";
 import Button from "../../components/Button/Button";
 import Background from "../../assets/chat-background.png";
 import Typography from "../../components/Typography/Typography";

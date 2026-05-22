@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import ContratationStepper from "../../components/ContratationStepper/ContratationStepper";
 import validationOfficerImg from "../../assets/client-flow.png";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg";
 import useFormNavigation from "../../hooks/useFormNavigation";
 
 export default function ClientFlowLayout() {

@@ -1,4 +1,4 @@
-import logoImg from "../../assets/logo.png"
+import logoImg from "../../assets/logo.svg";
 import Button from "../../components/Button/Button"
 import UploadElement from "../../components/UploadElement/UploadElement"
 import useFormNavigation from "../../hooks/useFormNavigation"

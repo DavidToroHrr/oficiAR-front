@@ -1,4 +1,4 @@
-import logoImg from "../../assets/logo.png"
+import logoImg from "../../assets/logo.svg"
 import UploadDni from "../../components/UploadDni/UploadDni"
 import UploadElement from "../../components/UploadElement/UploadElement"
 import Button from "../../components/Button/Button"

@@ -2,7 +2,7 @@ import SuccessCheckmark from "../../components/SuccesCheckMark/SuccesCheckMark";
 import Button from "../../components/Button/Button";
 import Typography from "../../components/Typography/Typography";
 import Background from "../../assets/FinishedJobViewBackground.jpeg";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg";
 import useFormNavigation from "../../hooks/useFormNavigation";
 
 

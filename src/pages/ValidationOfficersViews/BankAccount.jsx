@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logoImg from "../../assets/logo.png";
+import logoImg from "../../assets/logo.svg";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import Button from "../../components/Button/Button";
 import useFormNavigation from "../../hooks/useFormNavigation";
